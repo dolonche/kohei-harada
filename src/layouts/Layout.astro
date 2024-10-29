@@ -1,0 +1,208 @@
+---
+import "../styles/style.scss";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kohei Korada" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+      integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script> -->
+  </head>
+  <body>
+    <div class="circle-cursor circle-cursor--inner"></div>
+    <div class="circle-cursor circle-cursor--outer"></div>
+    <slot />
+  </body>
+</html>
+<style lang="scss" is:global>
+  :root {
+    --fontColor: #111;
+    --fontSubColor: #fff;
+  }
+  @font-face {
+    font-family: "Fenwick";
+    src: url("/fonts/Fenwick.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Big Caslon";
+    src:
+      url("/fonts/BigCaslonFB-Regular.ttf") format("truetype"),
+      src("/fonts/BigCaslonFB-Regular.woff"),
+      src("/fonts/BigCaslonFB-Regular.woff2");
+  }
+  html {
+    font-family: "Fenwick", sans-serif;
+    font-size: 16px;
+    cursor: none;
+  }
+  a {
+    cursor: none;
+  }
+  .circle-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    backdrop-filter: invert(1);
+    // mix-blend-mode: difference;
+    &--outer {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--fontColor);
+      z-index: 12000;
+      opacity: 1;
+    }
+    &--inner {
+      width: 5px;
+      height: 5px;
+      left: -2.5px;
+      top: -2.5px;
+      z-index: 11000;
+      background: var(--fontColor);
+    }
+  }
+</style>
+<script>
+  import gsap from "gsap";
+  console.log(gsap);
+  
+
+
+  class customCursor {
+    constructor() {
+      this.initCursor();
+      this.initHovers();
+    }
+
+    initCursor() {
+      const { Back } = window;
+      this.outerCursor = document.querySelector(".circle-cursor--outer");
+      this.innerCursor = document.querySelector(".circle-cursor--inner");
+      this.outerCursorBox = this.outerCursor.getBoundingClientRect();
+      this.outerCursorSpeed = 0;
+      this.easing = gsap.parseEase("back.out(1.7)"); 
+      this.clientX = -100;
+      this.clientY = -100;
+      this.showCursor = false;
+
+      const unveilCursor = () => {
+        gsap.set(this.innerCursor, {
+          x: this.clientX,
+          y: this.clientY,
+        });
+        gsap.set(this.outerCursor, {
+          x: this.clientX - this.outerCursorBox.width / 2,
+          y: this.clientY - this.outerCursorBox.height / 2,
+        });
+        setTimeout(() => {
+          this.outerCursorSpeed = 0.2;
+        }, 100);
+        this.showCursor = true;
+      };
+      document.addEventListener("mousemove", unveilCursor);
+
+      document.addEventListener("mousemove", (e) => {
+        this.clientX = e.clientX;
+        this.clientY = e.clientY;
+      });
+
+      const render = () => {
+        gsap.set(this.innerCursor, {
+          x: this.clientX,
+          y: this.clientY,
+        });
+        if (!this.isStuck) {
+          gsap.to(this.outerCursor, this.outerCursorSpeed, {
+            x: this.clientX - this.outerCursorBox.width / 2,
+            y: this.clientY - this.outerCursorBox.height / 2,
+          });
+        }
+        if (this.showCursor) {
+          document.removeEventListener("mousemove", unveilCursor);
+        }
+        requestAnimationFrame(render);
+      };
+      requestAnimationFrame(render);
+    }
+
+    initHovers() {
+      const handleMouseEnter = (e) => {
+        this.isStuck = false;
+        const target = e.currentTarget;
+        const box = target.getBoundingClientRect();
+        gsap.to(this.outerCursor, 0.2, {
+          transformOrigin: "center center",
+          scale: 2,
+        });
+      };
+
+      const handleMouseLeave = () => {
+        this.isStuck = false;
+        gsap.to(this.outerCursor, 0.2, {
+          transformOrigin: "center center",
+          scale: 1,
+        });
+      };
+
+      const linkItems = document.querySelectorAll("a");
+      linkItems.forEach((item) => {
+        item.addEventListener("mouseenter", handleMouseEnter);
+        item.addEventListener("mouseleave", handleMouseLeave);
+      });
+
+      const mainNavHoverTween = gsap.to(this.outerCursor, 0.3, {
+        backgroundColor: "#ffffff",
+        ease: this.easing,
+        paused: true,
+      });
+
+      const mainNavMouseEnter = () => {
+        this.outerCursorSpeed = 0;
+        gsap.set(this.innerCursor, { opacity: 0 });
+        mainNavHoverTween.play();
+      };
+
+      const mainNavMouseLeave = () => {
+        this.outerCursorSpeed = 0.2;
+        gsap.set(this.innerCursor, { opacity: 1 });
+        mainNavHoverTween.reverse();
+      };
+
+      const mainNavLinks = document.querySelectorAll(".content--fixed a");
+      mainNavLinks.forEach((item) => {
+        item.addEventListener("mouseenter", mainNavMouseEnter);
+        item.addEventListener("mouseleave", mainNavMouseLeave);
+      });
+    }
+  }
+  const cursor = new customCursor();
+</script>

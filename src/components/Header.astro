@@ -1,0 +1,78 @@
+---
+import Logo from "../assets/logo.svg";
+import Image from "astro/components/Image.astro";
+---
+
+<header class="page-header">
+  <a href="/" class="page-header__logo">
+    <Image src={Logo} width={62} height={30} alt="Kohei Korada" />
+  </a>
+  <div class="page-header__actions">
+    <nav class="main-nav">
+      <ul class="main-nav__list">
+        <li class="main-nav__list-item">
+          <a href="/about/" class="main-nav__list-item-link">About</a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="#" class="main-nav__list-item-link">Office</a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="/works/" class="main-nav__list-item-link">Works</a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="#" class="main-nav__list-item-link">Future</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="#" class="language-selector">JP</a>
+  </div>
+</header>
+<style lang="scss">
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-inline: 30px;
+    align-items: center;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0)
+    );
+    z-index: 200;
+    &__actions {
+      display: flex;
+      align-items: center;
+      column-gap: 46px;
+    }
+  }
+  .language-selector {
+    color: var(--fontSubColor);
+    background-color: var(--fontColor);
+    border-radius: 20px;
+    padding-inline: 19px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+  .main-nav {
+    &__list {
+      display: flex;
+      column-gap: 45px;
+      font-size: 16px;
+      &-item {
+        &-link {
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,922 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import PageFooter from "../components/PageFooter.astro";
+import Header from "../components/Header.astro";
+import Spacer from "../components/Spacer.astro";
+---
+<Layout title="Kohei Korada.">
+    <Header />
+    <main class="page-main">
+      <section class="main-sections">
+        <div class="main-sections__top">
+          <article class="main-sections__item main-sections__item--main">
+            <div class="container h-full flex-grow">
+              <div class="main-section flex-grow">
+                <div class="main-section__main">
+                  <h1 class="main-section__title">Kohei Harada</h1>
+                  <div class="main-section__sub">Creative Factory</div>
+                </div>
+                <div class="main-section__descr">
+                  <p class="main-section__descr-text">
+                    As a Creative Director, I oversee everything from generating
+                    new business ideas to designing and managing projects. I
+                    prioritize developing the MVP (Mission, Value, Purpose) of
+                    brands and communicating their essence to customers.
+                    Additionally, I focus on designing user behaviors with a
+                    vision towards the future of DAOs (Decentralized Autonomous
+                    Organizations).
+                  </p>
+                  <Button
+                    content="View"
+                    className="ml-auto main-section__descr-btn"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="main-sections__item main-sections__item--main-sub z-10">
+            <div class="container h-full flex-grow">
+              <div class="flex flex-col h-full justify-center flex-grow">
+                <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
+                  Office
+                </h2>
+                <Button content="View" className="w-max" />
+              </div>
+            </div>
+          </article>
+        </div>
+        <article class="main-sections__item main-sections__item--collab">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <h2
+                class="font-title uppercase text-[54px] leading-[54px] max-w-[400px]"
+              >
+                ICM × adidas COLLABO
+              </h2>
+              <p class="max-w-[530px] text-[20px] leading-[28px] mt-[20px]">
+                Adidas launched the original INSPIRATION CULT sneaker worldwide.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="main-sections__item main-sections__item--sake">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <b
+                class="uppercase font-title text-[54px] leading-[54px] mb-auto mt-[100px]"
+                >Works</b
+              >
+              <video
+                src="video/sake.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              >
+              </video>
+  
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name"
+                  >SAKE STORM COWBOY</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--adidas">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/adidas.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              >
+              </video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name"
+                  >HUMAN MADE × Adidas Original</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--adidas-tokyo">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/adidas-energy-pc.mp4"
+                muted
+                class="main-sections__item-media w-[760px] h-[429px] mx-auto"
+              >
+              </video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name"
+                  >Adidas TOKYO ENERGY</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--kode">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/kode-pc.mp4"
+                muted
+                class="main-sections__item-media w-[760px] h-[429px] mx-auto"
+              >
+              </video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">KODE</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--auger">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/auger.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">貝印 AUGER</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--pokemon">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/pokemon.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name"
+                  >Pokémon × Daniel Arsham</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--rimowa">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/rimowa.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">RIMOWA</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--jw">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/jw.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">JOHNNIE WALKER</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    PROMOTION PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    EVENT PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--casio">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/casio.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">CASIO</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    EVENT PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--uniqlo">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/uniqlo.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Uniqlo STAR WARS</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--foot-locker">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/footlocker.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Foot Locker</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--adidas-base">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/adidas-base.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Adidas</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--loro">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/loro.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Loro Piana</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--north-face">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/north-face.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">THE NORTH FACE</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--adidas-shibuya">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/adidas-shibuya.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name"
+                  >Adidas Brand Core Store Shibuya</span
+                >
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--iwc">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/iwc.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">IWC</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--redbull">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/redbull.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Red Bull</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--coach">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/coach.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">COACH</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    CREATIVE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--mini">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/mini.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">MINI Crossover</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--tommy">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/tommy.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Tommy Hilfiger</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    MOVIE PRODUCE
+                  </li>
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="main-sections__item main-sections__item--chandon">
+          <div class="container h-full flex-grow">
+            <div
+              class="flex flex-col h-full justify-center text-white m-0 flex-grow"
+            >
+              <video
+                src="video/chandon.mp4"
+                muted
+                class="main-sections__item-media w-[480px] h-[275px] mx-auto"
+              ></video>
+              <div class="main-sections__item-info">
+                <span class="main-sections__item-info-name">Moët&Chandon</span>
+                <ul class="main-sections__item-info-tags">
+                  <li class="main-sections__item-info-tags-item">
+                    PHOTOGRAPH PRODUCE
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article
+          class="main-sections__item main-sections__item--footer overflow-hidden"
+        >
+          <div class="container h-full flex-grow">
+            <div class="flex flex-col h-full justify-center flex-grow">
+              <h2
+                class="font-title uppercase text-[80px] leading-[80px] mb-6 text-white"
+              >
+                Future
+              </h2>
+              <Button content="View" className="w-max" invert />
+              <div class="box" id="box1"></div>
+              <div class="box" id="box2"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- <PageFooter></PageFooter> -->
+  </Layout>
+  
+  <style lang="scss" is:global>
+    :root {
+      --topSectionBlur: 10px;
+    }
+    .container {
+      max-width: 1600px;
+      padding-inline: 45px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+    }
+    .box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #707070;
+      z-index: -10;
+      width: 420px;
+      height: 315px;
+      border-radius: 200px;
+      transform: rotate(-30deg);
+      filter: blur(15px);
+    }
+  
+    #box1 {
+      bottom: 20px;
+      left: 200px;
+    }
+  
+    #box2 {
+      top: 100px;
+      right: 20px;
+    }
+  </style>
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger); 
+  
+  
+    let pageTopTl = new gsap.timeline();
+    pageTopTl
+      .to(".main-section__title", 0.6, {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+      })
+      .to(
+        ".main-section__sub",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      )
+      .to(
+        ".main-section__descr-text",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      )
+      .to(
+        ".main-section__descr-btn",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      );
+    // .staggerFromTo('.page-header__nav-list-item', 0.4, {y: 20, opacity: 0}, {
+    //   y: 0,
+    //   opacity: 1
+    // }, 0.05, '-=0.2')
+    // .fromTo('.page-header__currency', 0.4, {y: 20, opacity: 0}, {y: 0, opacity: 1}, '-=0.2')
+    // .fromTo('.page-header__lang', 0.4, {y: 20, opacity: 0}, {y: 0, opacity: 1}, '-=0.2')
+    // .fromTo('.page-header__user', 0.4, {y: 20, opacity: 0}, {y: 0, opacity: 1}, '-=0.2')
+    // .fromTo('.page-main__title', 0.4, {y: 20, opacity: 0}, {y: 0, opacity: 1}, '-=0.2')
+    // .staggerFromTo('.page-main__search-form-item', 0.4, {y: 20, opacity: 0}, {
+    //   y: 0,
+    //   opacity: 1
+    // }, 0.05, '-=0.2')
+    // .fromTo('.page-main__search-form-add', 0.3, {y: 20, opacity: 0, visibility: 'hidden'}, {
+    //   y: 0,
+    //   opacity: 1,
+    //   visibility: 'visible'
+    // }, '-=0.1')
+    // .fromTo('.page-main__search-form-search', 0.3, {y: 20, opacity: 0, visibility: 'hidden'}, {
+    //   y: 0,
+    //   opacity: 1,
+    //   visibility: 'visible'
+    // }, '-=0.2');
+    const pauseAllVideos = () => {
+      const videos = document.querySelectorAll("video");
+      videos.forEach((video) => {
+        video.pause();
+      });
+    };
+  
+    let panels = gsap.utils.toArray(".main-sections__item"),
+      observer = ScrollTrigger.normalizeScroll(true),
+      scrollTween;
+  
+    document.addEventListener(
+      "touchstart",
+      (e) => {
+        if (scrollTween) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      },
+      { capture: true, passive: false }
+    );
+  
+    let tops = panels.map((panel) =>
+      ScrollTrigger.create({ trigger: panel, start: "top top" })
+    );
+    ScrollTrigger.create({
+      snap: {
+        snapTo: (progress, self) => {
+          let panelStarts = tops.map((st) => st.start),
+            snapScroll = gsap.utils.snap(panelStarts, self.scroll());
+  
+          return gsap.utils.normalize(
+            0,
+            ScrollTrigger.maxScroll(window),
+            snapScroll
+          );
+        },
+        onComplete: () => {
+          const currentYpos = window.pageYOffset;
+          panels.forEach(async (panel) => {
+            await pauseAllVideos();
+  
+            if (panel.parentNode.offsetTop === currentYpos) {
+              if (panel.querySelector("video")) {
+                panel.querySelector("video").play();
+              }
+              return;
+            }
+          });
+        },
+        duration: 0.5,
+      },
+    });
+  
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: () =>
+          panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: !panel.parentNode.classList.contains("main-sections__top"),
+        pinSpacing: false,
+      });
+    });
+  
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    gsap.set([box1, box2], { rotate: "-30deg" });
+  
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    let rootStyle = document.querySelector(":root");
+  
+    const moveElementsToCenter = (event) => {
+      const { clientX: mouseX, clientY: mouseY } = event;
+  
+      // Рассчитываем, на сколько нужно сместить элементы в сторону центра
+      const distanceX1 = (centerX - mouseX) / 3; // Множитель 20 для медленного движения
+      const distanceY1 = (centerY - mouseY) / 3;
+      const distanceX2 = -(centerX - mouseX) / 2; // Множитель 10 для быстрого движения
+      const distanceY2 = -(centerY - mouseY) / 2;
+  
+      // Двигаем первый элемент
+      gsap.to(box1, {
+        x: distanceX1,
+        y: distanceY1,
+        duration: 2.5,
+        ease: "ease-in",
+      });
+  
+      // Двигаем второй элемент
+      gsap.to(box2, {
+        x: distanceX2,
+        y: distanceY2,
+        duration: 2.5,
+        ease: "ease-in",
+      });
+    };
+  
+    // Применяем движение на контейнере
+    document
+      .querySelector(".main-sections__item--footer")
+      .addEventListener("mousemove", moveElementsToCenter);
+  
+    gsap.to(".main-sections__top", {
+      scrollTrigger: {
+        trigger: ".main-sections__item--main-sub",
+        toggleActions: "restart resume reverse resume",
+        start: "top bottom",
+        end: "top top",
+        //   markers: true,
+        scrub: true,
+        onUpdate: (self) => {
+          rootStyle.style.setProperty(
+            "--topSectionBlur",
+            `${10 * (1 - self.progress)}px`
+          );
+  
+          if (self.direction === 1) {
+            self.progress;
+          } else {
+          }
+        },
+      },
+    });
+  
+    //   gsap.to(".main-sections__item--main", {
+    //     scrollTrigger: {
+    //       trigger: ".main-sections__item--main",
+    //       toggleActions: "restart resume reverse resume",
+    //       start: "top bottom",
+    //       end: "bottom top",
+    //       markers: true,
+    //       scrub: true,
+    //       onUpdate: (self) => {
+    // 		console.log(self);
+  
+    //         if (self.direction === 1) {
+    //           console.log(self.progress);
+  
+    //           self.progress;
+    //         } else {
+    //         }
+    //       },
+    //     },
+    //   });
+    // 	import * as THREE from 'three';
+    // 	let scene, camera, renderer, uniforms;
+  
+    // function init() {
+    //   scene = new THREE.Scene();
+    //   camera = new THREE.OrthographicCamera(
+    //     window.innerWidth / -2, window.innerWidth / 2,
+    //     window.innerHeight / 2, window.innerHeight / -2,
+    //     1, 1000
+    //   );
+    //   camera.position.z = 1;
+  
+    //   renderer = new THREE.WebGLRenderer();
+    //   renderer.setSize(window.innerWidth, window.innerHeight);
+    //   document.body.appendChild(renderer.domElement);
+  
+    //   const textureLoader = new THREE.TextureLoader();
+    //   const images = document.querySelectorAll('img');
+  
+    //   images.forEach((img) => {
+    //     const texture = textureLoader.load(img.src);
+    //     const geometry = new THREE.PlaneGeometry(img.width, img.height);  // исправлено
+  
+    //     uniforms = {
+    //       uTexture: { value: texture },
+    //       uMouse: { value: new THREE.Vector2(0.5, 0.5) }
+    //     };
+  
+    //     const material = new THREE.ShaderMaterial({
+    //       uniforms: uniforms,
+    //       vertexShader: document.getElementById('vertexShader').textContent,
+    //       fragmentShader: document.getElementById('fragmentShader').textContent
+    //     });
+  
+    //     const mesh = new THREE.Mesh(geometry, material);
+    //     scene.add(mesh);
+    //   });
+  
+    //   window.addEventListener('mousemove', onMouseMove);
+    //   animate();
+    // }
+  
+    // function onMouseMove(event) {
+    //   uniforms.uMouse.value.x = event.clientX / window.innerWidth;
+    //   uniforms.uMouse.value.y = 1 - event.clientY / window.innerHeight;
+    // }
+  
+    // function animate() {
+    //   requestAnimationFrame(animate);
+    //   renderer.render(scene, camera);
+    // }
+  
+    // init();
+  </script>
+  

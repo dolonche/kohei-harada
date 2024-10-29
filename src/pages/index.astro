@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import PageFooter from "../components/PageFooter.astro";
+import Header from "../components/Header.astro";
+import Spacer from "../components/Spacer.astro";
+import MainPageFull from "../components/MainPageFull.astro"
+import MainPageComing from "../components/MainPageComing.astro"
+const isComingSoon = true;
+---
+{ isComingSoon ? <MainPageComing/> : <MainPageFull/>}
