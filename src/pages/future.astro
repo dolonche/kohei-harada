@@ -1,0 +1,720 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageFooter from "../components/PageFooter.astro";
+import Header from "../components/Header.astro";
+import Image from "astro/components/Image.astro";
+import FutureCoffeeAboutImg from "../assets/images/future-coffee-about.png";
+import FutureCoffeeFeatureImg1 from "../assets/images/future-coffee-global.png";
+import FutureCoffeeFeatureImg2 from "../assets/images/future-coffee-toward.png";
+import FutureCoffeeFeatureImg3 from "../assets/images/future-coffee-formation.png";
+import FutureMagTitleImg from "../assets/images/future-magazine-title.png";
+import FutureMagExpImg from "../assets/images/future-magazine-experience.png";
+import FutureMagArImg from "../assets/images/future-magazine-ar.png";
+import FutureMagSliderImg from "../assets/images/future-magazine-slider.png";
+---
+
+<Layout title="Kohei Korada.">
+  <Header />
+  <main class="page-main">
+    <div class="flex flex-col">
+      <article class="future-section future-section--coffee">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-font font-title">
+            Coffee
+          </div>
+        </div>
+        <div class="future-section__content future-coffee">
+          <h2 class="future-coffee__title font-title">
+            <div class="future-coffee__title-top">Coffee</div>
+            <div class="future-coffee__title-sub">KOPPE 4th Wave Project</div>
+          </h2>
+          <div class="future-coffee__about">
+            <Image
+              src={FutureCoffeeAboutImg}
+              width={323}
+              height={535}
+              alt="KOPPE 4th Wave Project"
+              class:list={"future-coffee__about-img"}
+            />
+            <div class="future-coffee__about-descr">
+              <b class="future-coffee__about-descr-title">
+                Style <br /> Creates Culture
+              </b>
+              <p class="future-coffee__about-descr-text font-text-content">
+                KOPPE is dedicated to creating a new coffee culture known as the
+                “4th Wave,” with the aim of spreading Japan’s esteemed coffee
+                style across the globe. Our vision goes beyond coffee as just a
+                beverage. We aim to deliver an experience that embodies respect
+                and diversity in every cup, offering a sustainable and graceful
+                “experience” through beautiful coffee-making rituals.
+              </p>
+            </div>
+          </div>
+          <div class="future-coffee__purpose">
+            <b class="future-coffee__purpose-title">Project Purpose</b>
+            <p class="future-coffee__purpose-descr font-text-content">
+              The 4th Wave Project seeks to revive Japan’s traditional nel drip
+              brewing method and share its elegant extraction process with the
+              world. By doing so, we aim to make the act of brewing coffee a
+              mindful experience, allowing users to savor the rich flavors and
+              aromas in a deeply personal way. We are also committed to
+              developing eco-friendly products that reduce environmental impact,
+              aligning with our sustainability goals.
+            </p>
+          </div>
+          <div class="future-coffee__features">
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image src={FutureCoffeeFeatureImg1} alt="Global Expansion" />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >Global <br />
+                  Expansion</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  In February 2026, KOPPE plans to open its flagship store in
+                  the United States. This store will be a space where innovation
+                  meets tradition, offering an immersive experience that
+                  introduces a new coffee culture to coffee lovers worldwide.
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image
+                  src={FutureCoffeeFeatureImg2}
+                  alt="Toward a Sustainable Future"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >Toward a Sustainable Future</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPE is actively addressing the “2050 Problem” that the
+                  coffee industry faces, promoting environmental conservation
+                  and ethical production practices. With respect for all
+                  stakeholders, we are working towards building a sustainable
+                  coffee culture that looks to the future.
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image
+                  src={FutureCoffeeFeatureImg3}
+                  alt="Formation of a Coffee Community DAO"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >Formation of a Coffee Community DAO</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPE aims to create a “Coffee Community DAO” (Decentralized
+                  Autonomous Organization), where users can connect, share
+                  diverse brewing methods, and styles. This DAO will serve as a
+                  platform for coffee enthusiasts to collaborate, learn from one
+                  another, and develop the coffee culture together. The
+                  community members will take the lead in creating new coffee
+                  experiences and growing together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="future-section future-section--film">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-white font-title">
+            Film
+          </div>
+        </div>
+        <div class="future-section__content future-film">
+          <h2 class="future-film__title font-title">
+            <div class="future-film__title-top">Coffee</div>
+            <div class="future-film__title-sub">KOPPE 4th Wave Project</div>
+          </h2>
+          <div class="future-film__feature">
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >“Exodus from <br /> the Land of Hope” <br /> Film Adaptation Project</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                Adapting Ryu Murakami’s Masterpiece “Exodus from the Land of
+                Hope” into Film This project aims to adapt Ryu Murakami’s
+                globally renowned novel Exodus from the Land of Hope into a
+                film. The story portrays a society that has lost hope, where a
+                group of middle school students independently create their own
+                economy and carve out a future for themselves. Having secured
+                the copyright for this work, we are now adapting it for a modern
+                audience, delivering it to viewers around the world with an
+                updated approach.
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >Depicting <br />the Future of DAOs through Film</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                The organization formed by the middle school students in Exodus
+                from the Land of Hope closely resembles what we now know as a
+                DAO (Decentralized Autonomous Organization), which is currently
+                gaining attention. Through this film adaptation, we aim to help
+                viewers naturally understand the concept of DAOs. By
+                illustrating the DAO structure in an easy-to-understand way
+                through the storyline, we hope to communicate the vast potential
+                of this new economic system.
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >Expanding into <br />the Real World</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                The ultimate goal of this project is to recreate the DAO and the
+                economic system, including the fictional currency “EXO,”
+                depicted in the film, in the real world. By integrating the
+                media and economic systems shown in the film with real-world
+                Web3.0 technology, we plan to build a platform that anyone can
+                participate in. This will link the fictional world of the film
+                with reality, allowing viewers to experience a new culture that
+                bridges both worlds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="future-section future-section--magazine">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-white font-title">
+            Ar magazine
+          </div>
+        </div>
+        <div class="future-section__content future-mag">
+          <div class="future-mag__title">
+            <Image
+              src={FutureMagTitleImg}
+              width={430}
+              height={771}
+              alt="Media Experience"
+              class:list={"future-mag__title-img"}
+            />
+            <div class="future-mag__title-descr">
+              <div class="future-mag__title-descr-top font-title">
+                AR Magazine
+              </div>
+              <div class="future-mag__title-descr-sub font-title">
+                Media Experience
+              </div>
+              <img
+                src="future-magazine-logo.svg"
+                alt="MNC"
+                class="future-mag__title-descr-img"
+              />
+            </div>
+          </div>
+          <div class="future-mag__exp">
+            <div class="future-mag__exp-descr">
+              <b class="future-mag__exp-descr-title"
+                >A Futuristic <br />
+                Media Experience <br />
+                with AR Magazine</b
+              >
+              <p class="future-mag__exp-descr-text font-text-content">
+                MNC (Menace) is a quarterly AR (Augmented Reality) magazine that
+                combines the warmth of print with cutting-edge AR technology to
+                deliver a unique media experience. Through real-time content
+                updates via AR, readers are constantly provided with the latest
+                information and experiences, even between issues. This
+                innovative approach creates an unprecedented media experience
+                that blends the physical charm of magazines with the future of
+                digital technology.
+              </p>
+            </div>
+            <Image
+              src={FutureMagExpImg}
+              width={430}
+              height={771}
+              alt="Media Experience"
+              class:list={"future-mag__title-img"}
+            />
+          </div>
+          <div class="future-mag__slider">
+            <Image
+              src={FutureMagSliderImg}
+              width={7540}
+              height={420}
+              alt="MNC"
+              class:list={"future-mag__slider-img"}
+            />
+            <div class="future-mag__slider-descr">
+              <b class="future-mag__slider-descr-title"
+                >Co-Creating Culture <br /> with a DAO</b
+              >
+              <p class="future-mag__slider-descr-text font-text-content">
+                Our ultimate goal is to build a “Culture DAO” (Decentralized
+                Autonomous Organization) centered around MNC AR Magazine, where
+                music and culture enthusiasts come together to collaboratively
+                shape the future. In this DAO, everyone participates equally,
+                engaging in free self-expression and creating new value. By
+                sharing ideas and working together, users will help form a more
+                diverse and creative community. MNC provides a platform where
+                readers and participants can actively build the future of
+                culture through music and other cultural expressions.
+              </p>
+            </div>
+          </div>
+          <div class="future-mag__ar">
+            <Image
+              src={FutureMagArImg}
+              width={430}
+              height={771}
+              alt="Media Experience"
+              class:list={"future-mag__ar-img"}
+            />
+            <div class="future-mag__ar-descr">
+              <b class="future-mag__ar-descr-title"
+                >A Futuristic <br /> Media Experience <br /> with AR Magazine</b
+              >
+              <p class="future-mag__ar-descr-text font-text-content">
+                MNC (Menace) is a quarterly AR (Augmented Reality) magazine that
+                combines the warmth of print with cutting-edge AR technology to
+                deliver a unique media experience. Through real-time content
+                updates via AR, readers are constantly provided with the latest
+                information and experiences, even between issues. This
+                innovative approach creates an unprecedented media experience
+                that blends the physical charm of magazines with the future of
+                digital technology.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <style lang="scss">
+    *::selection {
+      color: #222;
+      background-color: rgba(255, 235, 153, 1);
+    }
+    .future-section {
+      display: flex;
+      flex-direction: column;
+      &__preview {
+        height: max(calc(100vh / 3), 270px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: top center;
+        overflow: hidden;
+
+        &-title {
+          font-size: 54px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+      .future-section__content {
+        display: none;
+      }
+      &--coffee {
+        .future-section {
+          &__preview {
+            background-image: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.5),
+                rgb(128, 128, 128, 0.5)
+              ),
+              url(../future-coffee.png);
+          }
+        }
+      }
+      &--film {
+        .future-section {
+          &__preview {
+            background-image: url(../future-film.png);
+            background-size: cover;
+          }
+        }
+      }
+      &--magazine {
+        .future-section {
+          &__preview {
+            background-image: url(../future-magazine.png);
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    .future-coffee {
+      display: flex;
+      flex-direction: column;
+      padding-top: 110px;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        &-top {
+          font-size: 32px;
+          text-transform: uppercase;
+        }
+        &-sub {
+          font-size: 54px;
+        }
+      }
+      &__about {
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1000px;
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          max-width: 540px;
+          &-title {
+            max-width: 350px;
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 20px;
+          }
+          &-text {
+            font-size: 16px;
+          }
+        }
+      }
+      &__purpose {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 220px;
+        padding-bottom: 230px;
+        background-image: url(../future-coffee-purpose.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        &-title {
+          font-size: 38px;
+          line-height: 48px;
+          margin-bottom: 20px;
+        }
+        &-descr {
+          max-width: 620px;
+          font-size: 16px;
+        }
+      }
+      &__features {
+        display: flex;
+        flex-direction: column;
+        row-gap: 80px;
+        margin-inline: auto;
+        max-width: 790px;
+        margin-bottom: 80px;
+        &-item {
+          display: flex;
+          column-gap: 57px;
+          &-media {
+            width: 184px;
+            display: flex;
+            justify-content: center;
+            img {
+              object-fit: contain;
+              object-position: 50% 0;
+            }
+          }
+          &-descr {
+            max-width: 540px;
+            display: flex;
+            flex-direction: column;
+            &-title {
+              font-size: 38px;
+              line-height: 48px;
+              margin-bottom: 20px;
+            }
+            &-text {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .future-film {
+      background-image: url(../future-film-bg.png);
+      background-position: center top;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-color: #222222;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      padding-top: 220px;
+      padding-bottom: 100px;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 92px;
+        &-top {
+          font-size: 32px;
+          text-transform: uppercase;
+        }
+        &-sub {
+          font-size: 54px;
+        }
+      }
+      &__feature {
+        max-width: 540px;
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        row-gap: 80px;
+        &-item {
+          display: flex;
+          flex-direction: column;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 15px;
+          }
+          &-descr {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .future-mag {
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      background-color: #111;
+      color: #fff;
+      &__title {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 66px;
+        &-img {
+        }
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          &-top {
+            font-size: 32px;
+            line-height: 54px;
+          }
+          &-sub {
+            font-size: 54px;
+            line-height: 54px;
+          }
+          &-img {
+            margin-top: 30px;
+          }
+        }
+      }
+      &__exp {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 66px;
+        &-img {
+        }
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 540px;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      &__slider {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 100%;
+        &-img {
+          min-width: fit-content;
+          width: fit-content;
+        }
+        &-descr {
+          margin-inline: auto;
+          max-width: 620px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      &__ar {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 154px;
+        margin-top: 54px;
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: right;
+          max-width: 540px;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  </style>
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const sliderImg = document.querySelector(".future-mag__slider-img");
+
+    //   // Получаем ширину изображения и ширину окна
+    //   const imageWidth = sliderImg.offsetWidth;
+    //   const windowWidth = window.innerWidth;
+
+    //   // Рассчитываем расстояние прокрутки
+    //   const scrollDistance = imageWidth - windowWidth;
+
+    //   // Анимация GSAP
+    //   gsap.to(sliderImg, {
+    //     x: -scrollDistance, // Прокрутка изображения влево
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: sliderImg, // Триггер ScrollTrigger
+    //       start: "top center", // Когда изображение по центру
+    //       end: `+=${scrollDistance}`, // Длина прокрутки равна расстоянию движения
+    //       scrub: true, // Привязка к скроллу
+    //       pin: true, // Фиксация изображения по центру
+    //     },
+    //   });
+    // });
+
+    const previewTitles = document.querySelectorAll(".future-section__preview");
+
+    previewTitles.forEach((title) => {
+      title.addEventListener("click", () => {
+        const preview = title.closest(".future-section__preview");
+        const content = preview.nextElementSibling;
+        const parent = preview.parentElement;
+
+        if (!content) return;
+
+        const initialHeight = parent.offsetHeight;
+
+        gsap.set(content, { display: "block" });
+        const contentHeight = content.offsetHeight;
+
+        gsap.set(content, { display: "none" });
+
+        gsap.to(title, {
+          duration: 2,
+          opacity: 0,
+          height: 0,
+          onComplete: () => {
+            preview.style.display = "none";
+          },
+        });
+
+        gsap.to(parent, {
+          duration: 2,
+          height: contentHeight,
+          ease: "power2.out",
+          onComplete: () => {
+            parent.style.height = "auto";
+            if (parent.classList.contains("future-section--magazine")) {
+              const sliderImg = document.querySelector(
+                ".future-mag__slider-img"
+              );
+
+              // Получаем ширину изображения и ширину окна
+              const imageWidth = sliderImg.offsetWidth;
+              const windowWidth = window.innerWidth;
+
+              // Рассчитываем расстояние прокрутки
+              const scrollDistance = imageWidth - windowWidth;
+
+              // Анимация GSAP
+              gsap.to(sliderImg, {
+                x: -scrollDistance, // Прокрутка изображения влево
+                ease: "none",
+                scrollTrigger: {
+                  trigger: sliderImg, // Триггер ScrollTrigger
+                  start: "bottom bottom", // Когда изображение по центру
+                  end: `top top`, // Длина прокрутки равна расстоянию движения
+                  scrub: 10, // Привязка к скроллу
+                  markers: true,
+                  // pin: true, // Фиксация изображения по центру
+                },
+              });
+            }
+          },
+        });
+
+        gsap.set(content, { display: "block", opacity: 0 });
+        gsap.to(content, {
+          duration: 2,
+          opacity: 1,
+          scale: 1,
+          ease: "power2.out",
+        });
+      });
+    });
+  </script>
+</Layout>
