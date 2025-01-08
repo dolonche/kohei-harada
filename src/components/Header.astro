@@ -156,7 +156,7 @@ import Image from "astro/components/Image.astro";
         &-item {
           background-color: #000;
           width: 31px;
-          height: 1px;
+          height: calc(1px * var(--device-pixel-ratio, 1));
           transition: 0.8s transform ease-in-out;
           pointer-events: none;
         }
@@ -166,7 +166,7 @@ import Image from "astro/components/Image.astro";
           left: 50%;
           background-color: #000;
           width: 35px;
-          height: 1px;
+          height: calc(1px * var(--device-pixel-ratio, 1));
           transition: 0.8s transform ease-out;
           pointer-events: none;
           &--left {
