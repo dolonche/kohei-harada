@@ -807,8 +807,34 @@ import Spacer from "../components/Spacer.astro";
       }
     }
   }
+  @media (max-width: 767.9px) {
+    .container {
+      padding-inline: 40px;
+    }
+    .works-slider-item {
+      &__media {
+        width: calc(100% - 40px);
+      }
+      &__info {
+        row-gap: 5px;
+        &-name {
+          font-size: 24px;
+        }
+        &-tags {
+          flex-wrap: wrap;
+          row-gap: 5px;
+          &-item {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
 </style>
 <script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  import ScrollToPlugin from "gsap/ScrollToPlugin";
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   const slider = document.querySelector(".works-slider");
   slider.addEventListener("click", (e) => {

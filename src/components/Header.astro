@@ -8,6 +8,20 @@ import Image from "astro/components/Image.astro";
     <Image src={Logo} width={62} height={30} alt="Kohei Korada" />
   </a>
   <div class="page-header__actions">
+    <div class="page-header__toggle">
+      <div class="page-header__toggle-item page-header__toggle-item--left">
+      </div>
+      <div class="page-header__toggle-item page-header__toggle-item--right">
+      </div>
+      <div
+        class="page-header__toggle-item-active page-header__toggle-item-active--left"
+      >
+      </div>
+      <div
+        class="page-header__toggle-item-active page-header__toggle-item-active--right"
+      >
+      </div>
+    </div>
     <nav class="main-nav">
       <ul class="main-nav__list">
         <li class="main-nav__list-item">
@@ -21,6 +35,9 @@ import Image from "astro/components/Image.astro";
         </li>
         <li class="main-nav__list-item">
           <a href="#" class="main-nav__list-item-link">Future</a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="#" class="main-nav__list-item-link">Contact</a>
         </li>
       </ul>
     </nav>
@@ -50,6 +67,9 @@ import Image from "astro/components/Image.astro";
       align-items: center;
       column-gap: 46px;
     }
+    &__toggle {
+      display: none;
+    }
   }
   .language-selector {
     color: var(--fontSubColor);
@@ -75,4 +95,163 @@ import Image from "astro/components/Image.astro";
       }
     }
   }
+  @media (max-width: 767.9px) {
+    :root {
+      --overlayHeight: 0%;
+    }
+    .page-header {
+      padding-inline: 20px;
+      padding-top: 16px;
+      &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        width: 100dvw;
+        height: 100dvh;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% var(--overlayHeight),
+          0 var(--overlayHeight)
+        );
+      }
+      &__logo {
+        z-index: 100;
+      }
+      &__toggle {
+        z-index: 100;
+      }
+      &--active {
+        .page-header {
+          &__logo {
+            filter: invert(1);
+          }
+          &__toggle {
+            filter: invert(1);
+          }
+        }
+        .main-nav {
+          display: flex;
+        }
+      }
+      &__logo {
+        width: 48px;
+        transition: 0.4s filter;
+      }
+      &__toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 16px;
+        height: 30px;
+        width: 40px;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.4s filter;
+        &-item {
+          background-color: #000;
+          width: 31px;
+          height: 1px;
+          transition: 0.8s transform ease-in-out;
+          pointer-events: none;
+        }
+        &-item-active {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background-color: #000;
+          width: 35px;
+          height: 1px;
+          transition: 0.8s transform ease-out;
+          pointer-events: none;
+          &--left {
+            transform: translate(-50px, 40px) rotate(-45deg);
+          }
+          &--right {
+            transform: translate(50px, 40px) rotate(45deg);
+          }
+        }
+        &--active &-item {
+          &--left {
+            transform: translateX(-200%);
+          }
+          &--right {
+            transform: translateX(200%);
+          }
+          &-active {
+            &--left {
+              transform: translate(-50%, -50%) rotate(calc(-225deg - 360deg));
+            }
+            &--right {
+              transform: translate(-50%, -50%) rotate(calc(225deg + 360deg));
+            }
+          }
+          // background-color: #fff;
+        }
+      }
+    }
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      &__list {
+        flex-direction: column;
+        row-gap: 20px;
+        &-item {
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          font-size: 28px;
+          clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+        }
+      }
+    }
+    .language-selector {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+    }
+  }
 </style>
+<script>
+  import gsap from "gsap";
+  const pageHeader = document.querySelector(".page-header");
+  const headerToggle = pageHeader.querySelector(".page-header__toggle");
+  headerToggle.addEventListener("click", (e) => {
+    e.target.classList.toggle("page-header__toggle--active");
+    pageHeader.classList.toggle("page-header--active");
+    if (e.target.classList.contains("page-header__toggle--active")) {
+      const headerTl = new gsap.timeline();
+      headerTl
+        .to(".page-header", 0.6, {
+          "--overlayHeight": "100%",
+          ease: "power2.inOut",
+        })
+        .to(".main-nav__list-item", 0.3, {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          stagger: 0.1,       
+          ease: "power2.inOut", 
+        }, "-=0.4");
+    } else {
+      const headerTl = new gsap.timeline();
+      headerTl.to(".main-nav__list-item", 0.3, {
+          clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+          stagger: -0.1,
+          ease: "power2.inOut"        
+        }).to(".page-header", 0.6, {
+        "--overlayHeight": "0%",
+        ease: "power2.inOut",
+      }, "-=0.4");
+    }
+  });
+</script>
