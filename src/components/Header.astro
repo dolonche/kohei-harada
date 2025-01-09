@@ -135,6 +135,7 @@ import Image from "astro/components/Image.astro";
         }
         .main-nav {
           display: flex;
+          pointer-events: all;
         }
       }
       &__logo {
@@ -203,6 +204,7 @@ import Image from "astro/components/Image.astro";
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: 100;
+      pointer-events: none;
       &__list {
         flex-direction: column;
         row-gap: 20px;

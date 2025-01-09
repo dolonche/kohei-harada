@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="About">
+  <Header />
+  <div class="container pt-[225px] pb-[67px]">
+    <h1 class="main-title">About</h1>
+    <div
+      class="flex flex-col max-w-[674px] font-text-content font-normal gap-6 mt-[86px] leading-[24px]"
+    >
+      <p class="">
+        As a Creative Director, I generate innovative business ideas, design
+        projects, and oversee their execution. Whether directing promotional
+        videos or capturing the essence on set as a cameraman, I bring creative
+        visions to life. As a specialist in brand development, I provide
+        groundbreaking solutions that lead to significant successes.
+      </p>
+
+      <p class="">
+        My mission is to craft the DNA of brands through MVP (Mission, Value,
+        Purpose) development, ensuring that the core essence of the brand
+        resonates with customers. Additionally, I focus on designing user
+        behaviors with an eye towards the future of DAOs (Decentralized
+        Autonomous Organizations).
+      </p>
+
+      <p class="">
+        In my role, I bridge the gap between creativity and strategy,
+        transforming concepts into impactful realities.
+      </p>
+    </div>
+    <Button content="Contact" href="/contact/" className="mr-auto mt-7" />
+    <h2 class="text-[40px] mt-[120px] font-title">KOHEI HARADA</h2>
+    <p class="leading-[24px] font-text-content mt-6">
+      Creative Factory <br />
+      WIT inc. (Japan) CEO / WIT B.V. <br />
+      (Netherlands) CEO
+    </p>
+  </div>
+  <section class="main-sections">
+    <article class="main-sections__item main-sections__item--main-sub z-10">
+      <div class="container h-full flex-grow">
+        <div class="flex flex-col h-full justify-center flex-grow">
+          <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
+            Office
+          </h2>
+          <Button content="View" className="w-max" />
+        </div>
+      </div>
+    </article>
+    <article
+        class="main-sections__item main-sections__item--footer overflow-hidden"
+      >
+        <div class="container h-full flex-grow">
+          <div class="flex flex-col h-full justify-center flex-grow">
+            <h2
+              class="font-title uppercase text-[80px] leading-[80px] mb-6 text-white"
+            >
+              Future
+            </h2>
+            <Button content="View" className="w-max" invert />
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+          </div>
+        </div>
+      </article>
+  </section>
+</Layout>
+<style lang="scss">
+  .main-sections__item--main-sub {
+    background-image: url(../images/office.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+</style>
