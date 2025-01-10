@@ -16,7 +16,11 @@ import OfficeImg9 from "../assets/images/office-9.png";
 import OfficeImg10 from "../assets/images/office-10.png";
 ---
 
-<Layout title="Kohei Korada — Office">
+<Layout
+  title="OFFICE |KOHEI HARADA"
+  keywords="KOHEIHARADA, Project Design, Creative, Note Drop, Design Office"
+  descr="A design office that handles everything from the ideation of new business ventures to project design and creative direction. We are committed to designing user behaviors with a focus on the future of DAOs (Decentralized Autonomous Organizations)."
+>
   <Header />
   <span class="kh">(C)KOHEI HARADA</span>
   <section class="office">
@@ -33,13 +37,13 @@ import OfficeImg10 from "../assets/images/office-10.png";
         <div class="office__map-info-content">
           <b class="office__map-info-title font-title">OFFICE</b>
           <p class="office__map-info-descr font-text-content">
-            Anemoon8 2631VR Nootdorp Netherlands
+            Insulindestraat 78 3038 JB Rotterdam, Netherlands
           </p>
         </div>
       </div>
       <iframe
         class="office__map-iframe"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.1430288356405!2d4.400906841822878!3d52.0407078992603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5c9e8a545d5cf%3A0xe38ff8855243584b!2zMjYzMSBWUiDQndC-0YLQtNC-0YDQvywg0J3QuNC00LXRgNC70LDQvdC00Ys!5e0!3m2!1sru!2sjp!4v1735111092407!5m2!1sru!2sjp"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.931720161329!2d4.466096176750145!3d51.93519897936146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c434ad14a923a9%3A0xc853e7edb64e95e0!2zSW5zdWxpbmRlc3RyYWF0IDc4LCAzMDM4IEpCIFJvdHRlcmRhbSwg0J3QuNC00LXRgNC70LDQvdC00Ys!5e0!3m2!1sru!2sjp!4v1736492759886!5m2!1sru!2sjp"
         width="600"
         height="450"
         style="border:0;"
@@ -170,9 +174,9 @@ import OfficeImg10 from "../assets/images/office-10.png";
   <style lang="scss">
     .kh {
       position: fixed;
-      font-size: 14px;
+      font-size: 8px;
       bottom: 14px;
-      right: 16px;
+      left: 16px;
       z-index: 1000;
     }
     .office {
@@ -258,12 +262,6 @@ import OfficeImg10 from "../assets/images/office-10.png";
       width: 100%;
       height: 100%;
     }
-    .gallery__item:first-child .gallery__img {
-      border-radius: 8px 8px 0 0;
-    }
-    .gallery__item:last-child .gallery__img {
-      border-radius: 0 0 8px 8px;
-    }
     .content__inner {
       display: flex;
       flex-direction: column;
@@ -344,7 +342,7 @@ import OfficeImg10 from "../assets/images/office-10.png";
       object-fit: contain;
     }
     @media (max-width: 767.9px) {
-      .office{
+      .office {
         &__map {
           flex-direction: column;
           margin-bottom: 60px;
@@ -390,6 +388,8 @@ import OfficeImg10 from "../assets/images/office-10.png";
     import ScrollTrigger from "gsap/ScrollTrigger";
     document.addEventListener("DOMContentLoaded", function (event) {
       gsap.registerPlugin(ScrollTrigger);
+      const officeVideo = document.querySelector(".office-top__media");
+      officeVideo.play();
       ScrollTrigger.matchMedia({
         "(min-width: 768px)": function () {
           gsap.set(".gallery .gallery__item:not(:last-child)", {
@@ -446,13 +446,14 @@ import OfficeImg10 from "../assets/images/office-10.png";
             // Анимация выезда следующего элемента
             if (index > 0) {
               gsap.fromTo(
-                item ,
-                { opacity: 0, 
-                  y: '-100%',
-                  clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' 
+                item,
+                {
+                  opacity: 0,
+                  y: "-100%",
+                  clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
                 },
                 {
-                  clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', 
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
                   y: 0,
                   opacity: 1,
                   duration: 1,

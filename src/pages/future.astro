@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import PageFooter from "../components/PageFooter.astro";
 import Header from "../components/Header.astro";
 import Image from "astro/components/Image.astro";
-import FutureCoffeeAboutImg from "../assets/images/future-coffee-about.png";
-import FutureCoffeeFeatureImg1 from "../assets/images/future-coffee-global.png";
-import FutureCoffeeFeatureImg2 from "../assets/images/future-coffee-toward.png";
-import FutureCoffeeFeatureImg3 from "../assets/images/future-coffee-formation.png";
+import FutureCoffeeAboutImg from "../assets/images/future-coffee-about.webp";
+import FutureCoffeeFeatureImg1 from "../assets/images/future-coffee-global.webp";
+import FutureCoffeeFeatureImg2 from "../assets/images/future-coffee-toward.webp";
+import FutureCoffeeFeatureImg3 from "../assets/images/future-coffee-formation.webp";
 import FutureMagTitleImg from "../assets/images/future-magazine-title.png";
 import FutureMagExpImg from "../assets/images/future-magazine-experience.png";
 import FutureMagArImg from "../assets/images/future-magazine-ar.png";
@@ -28,7 +28,11 @@ import FutureMagSliderImg15 from "../assets/images/magazine-slider-image-15.jpg"
 import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg";
 ---
 
-<Layout title="Kohei Korada.">
+<Layout
+  title="FUTURE | KOHEI HARADA"
+  keywords="KOHEIHARADA, Coffee, Exodus From the Country of Hope, Community, DAO, MNC, AR Magazine"
+  descr="I am working on projects like «KOPPE», a brand envisioning a new coffee culture called the «4th Wave», the adaptation of Ryu Murakami's novel Exodus From the Country of Hope into visual media, and the AR magazine «MNC», which offers futuristic media experiences."
+>
   <Header />
   <main class="page-main">
     <div class="flex flex-col">
@@ -154,8 +158,10 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
         </div>
         <div class="future-section__content future-film">
           <h2 class="future-film__title font-title">
-            <div class="future-film__title-top">Coffee</div>
-            <div class="future-film__title-sub">KOPPE 4th Wave Project</div>
+            <div class="future-film__title-top">
+              Exodus from the Land of Hope
+            </div>
+            <div class="future-film__title-sub">Film Adaptation Project</div>
           </h2>
           <div class="future-film__feature">
             <div class="future-film__feature-item">
@@ -231,7 +237,7 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
                 Media Experience
               </div>
               <img
-                src="future-magazine-logo.svg"
+                src="/future-magazine-logo.svg"
                 alt="MNC"
                 class="future-mag__title-descr-img"
               />
@@ -601,7 +607,6 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
         margin-bottom: 92px;
         &-top {
           font-size: 32px;
-          text-transform: uppercase;
         }
         &-sub {
           font-size: 54px;

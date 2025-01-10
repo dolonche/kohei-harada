@@ -4,7 +4,11 @@ import Header from "../components/Header.astro";
 import Spacer from "../components/Spacer.astro";
 ---
 
-<Layout title="Works">
+<Layout
+  title="WORKS | KOHEI HARADA"
+  keywords="KOHEIHARADA, adidas, HUMAN MADE, Project Design, Creative Direction, Promotional Movies"
+  descr="Engaged in project design and creative direction. On promotional movie sets, I also bring creative visions to life as a director and cinematographer."
+>
   <Header />
   <div class="container pt-[145px] pb-[67px]">
     <h1 class="main-title">Works</h1>
@@ -49,9 +53,15 @@ import Spacer from "../components/Spacer.astro";
     <article class="works-slider-item works-slider-item--adidas-tokyo">
       <div class="container h-full pointer-events-none">
         <video
-          src="/video/adidas-energy-pc.mp4"
           muted
-          class="works-slider-item__media w-[480px] h-[275px] mx-auto"></video>
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+        >
+          <source
+            src="/video/adidas-energy-mob.mp4"
+            media="(max-width:767.9px)"
+          />
+          <source src="/video/adidas-energy-pc.mp4" />
+        </video>
         <div class="works-slider-item__info">
           <span class="works-slider-item__info-name">Adidas TOKYO ENERGY</span>
           <ul class="works-slider-item__info-tags">
@@ -67,9 +77,12 @@ import Spacer from "../components/Spacer.astro";
     <article class="works-slider-item works-slider-item--kode">
       <div class="container h-full pointer-events-none">
         <video
-          src="/video/kode-pc.mp4"
           muted
-          class="works-slider-item__media w-[480px] h-[275px] mx-auto"></video>
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+        >
+          <source src="/video/kode-mob.mp4" media="(max-width:767.9px)" />
+          <source src="/video/kode-pc.mp4" />
+        </video>
         <div class="works-slider-item__info">
           <span class="works-slider-item__info-name">KODE</span>
           <ul class="works-slider-item__info-tags">
@@ -168,7 +181,7 @@ import Spacer from "../components/Spacer.astro";
       </div>
     </article>
 
-    <article class="works-slider-item works-slider-item--uniqlo">
+    <!-- <article class="works-slider-item works-slider-item--uniqlo">
       <div class="container h-full pointer-events-none">
         <video
           src="/video/uniqlo.mp4"
@@ -181,9 +194,9 @@ import Spacer from "../components/Spacer.astro";
           </ul>
         </div>
       </div>
-    </article>
+    </article> -->
 
-    <article class="works-slider-item works-slider-item--foot-locker">
+    <!-- <article class="works-slider-item works-slider-item--foot-locker">
       <div class="container h-full pointer-events-none">
         <video
           src="/video/footlocker.mp4"
@@ -199,14 +212,20 @@ import Spacer from "../components/Spacer.astro";
           </ul>
         </div>
       </div>
-    </article>
+    </article> -->
 
     <article class="works-slider-item works-slider-item--adidas-base">
       <div class="container h-full pointer-events-none">
         <video
-          src="/video/adidas-base.mp4"
           muted
-          class="works-slider-item__media w-[480px] h-[275px] mx-auto"></video>
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+        >
+          <source
+            src="/video/adidas-base-mob.mp4"
+            media="(max-width:767.9px)"
+          />
+          <source src="/video/adidas-base.mp4" />
+        </video>
         <div class="works-slider-item__info">
           <span class="works-slider-item__info-name">Adidas</span>
           <ul class="works-slider-item__info-tags">
@@ -238,9 +257,12 @@ import Spacer from "../components/Spacer.astro";
     <article class="works-slider-item works-slider-item--north-face">
       <div class="container h-full pointer-events-none">
         <video
-          src="/video/north-face.mp4"
           muted
-          class="works-slider-item__media w-[480px] h-[275px] mx-auto"></video>
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+        >
+          <source src="/video/north-face-mob.mp4" media="(max-width:767.9px)" />
+          <source src="/video/north-face.mp4" />
+        </video>
         <div class="works-slider-item__info">
           <span class="works-slider-item__info-name">THE NORTH FACE</span>
           <ul class="works-slider-item__info-tags">
@@ -381,14 +403,22 @@ import Spacer from "../components/Spacer.astro";
     </article>
   </section>
   <article class="main-sections__item main-sections__item--collab">
-    <div class="container h-full pointer-events-none flex-grow">
-      <div class="flex flex-col h-full justify-center text-white m-0 flex-grow">
+    <video class="main-sections__item-video-bg" loop autoplay muted>
+      <source src="/video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
+      <source src="/video/adidas-icm-pc.mp4" />
+    </video>
+    <div class="container h-full flex-grow">
+      <div
+        class="flex flex-col h-full justify-center text-white m-0 flex-grow max-md:justify-end max-md:pb-[42px]"
+      >
         <h2
-          class="font-title uppercase text-[54px] leading-[54px] max-w-[400px]"
+          class="font-title uppercase text-[54px] leading-[54px] max-w-[400px] max-md:text-[36px] max-md:leading-[48px]"
         >
           ICM × adidas COLLABO
         </h2>
-        <p class="max-w-[530px] text-[20px] leading-[28px] mt-[20px]">
+        <p
+          class="max-w-[530px] text-[20px] leading-[28px] mt-[20px] max-md:text-base max-md:max-w-[350px]"
+        >
           Adidas launched the original INSPIRATION CULT sneaker worldwide.
         </p>
       </div>
@@ -803,7 +833,6 @@ import Spacer from "../components/Spacer.astro";
         }
       }
       &--collab {
-        background-image: url(../images/adidas-collab.webp);
       }
     }
   }
@@ -814,9 +843,16 @@ import Spacer from "../components/Spacer.astro";
     .works-slider-item {
       &__media {
         width: calc(100% - 40px);
+        &--mob {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+        }
       }
       &__info {
         row-gap: 5px;
+        z-index: 1;
         &-name {
           font-size: 24px;
         }
@@ -836,6 +872,8 @@ import Spacer from "../components/Spacer.astro";
   import ScrollTrigger from "gsap/ScrollTrigger";
   import ScrollToPlugin from "gsap/ScrollToPlugin";
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  const collabVideo = document.querySelector(".main-sections__item-video-bg");
+  collabVideo.play();
   const slider = document.querySelector(".works-slider");
   slider.addEventListener("click", (e) => {
     if (e.target.classList.contains("works-slider-item")) {

@@ -2,9 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Button from "../components/Button.astro";
+import Image from "astro/components/Image.astro";
+import WitLogo from "../assets/images/logo-wit.svg";
+import CultLogo from "../assets/images/logo-cult.svg";
+import MncLogo from "../assets/images/logo-mnc.svg";
 ---
 
-<Layout title="About">
+<Layout
+  title="ABOUT | KOHEI HARADA"
+  keywords="KOHEIHARADA, WIT, New Business, Project Design, Creative Director"
+  descr="A creative director overseeing the creation of new business ideas, project design, and operations. My mission is to develop MVPs that shape the DNA of a brand and communicate its essence to customers."
+>
   <Header />
   <div class="container pt-[225px] pb-[67px]">
     <h1 class="main-title">About</h1>
@@ -39,11 +47,50 @@ import Button from "../components/Button.astro";
       WIT inc. (Japan) CEO / WIT B.V. <br />
       (Netherlands) CEO
     </p>
+    <Button
+      content="Instagram"
+      href="https://www.instagram.com/phryne_sense/"
+      className="mr-auto mt-7"
+    />
+    <div class="flex flex-col gap-y-[20px] mt-[75px]">
+      <b class="font-title text-[24px] max-md:text-lg">Japan Branch</b>
+      <a href="https://witdesignplaats.com/" target="_blank">
+        <Image src={WitLogo} width={120} height={38} alt="WIT" />
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-[20px] mt-[80px] max-md:mt-[57px]">
+      <b class="font-title text-[24px] max-md:text-lg">Project</b>
+      <div class="flex items-center gap-x-[40px]">
+        <a href="https://inspirationcultmag.com/" target="_blank">
+          <Image
+            src={CultLogo}
+            width={200}
+            height={48}
+            alt="Inspiration Cult"
+          />
+        </a>
+        <a href="https://mnc-dao.com/" target="_blank">
+          <Image src={MncLogo} width={162} height={20} alt="MNC" />
+        </a>
+      </div>
+    </div>
   </div>
   <section class="main-sections">
-    <article class="main-sections__item main-sections__item--main-sub z-10">
-      <div class="container h-full flex-grow">
-        <div class="flex flex-col h-full justify-center flex-grow">
+    <article
+      class="main-sections__item main-sections__item--main-sub z-10 relative"
+    >
+      <div class="absolute w-full h-full object-cover top-0 left-0 z-10">
+        <video
+          src="/video/office-video.mp4"
+          autoplay
+          loop
+          muted
+          class="w-full h-full object-cover office-video"></video>
+      </div>
+      <div class="container h-full flex-grow z-20">
+        <div
+          class="flex flex-col h-full justify-center flex-grow max-md:items-center"
+        >
           <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
             Office
           </h2>
@@ -52,21 +99,23 @@ import Button from "../components/Button.astro";
       </div>
     </article>
     <article
-        class="main-sections__item main-sections__item--footer overflow-hidden"
-      >
-        <div class="container h-full flex-grow">
-          <div class="flex flex-col h-full justify-center flex-grow">
-            <h2
-              class="font-title uppercase text-[80px] leading-[80px] mb-6 text-white"
-            >
-              Future
-            </h2>
-            <Button content="View" className="w-max" invert />
-            <div class="box" id="box1"></div>
-            <div class="box" id="box2"></div>
-          </div>
+      class="main-sections__item main-sections__item--footer overflow-hidden"
+    >
+      <div class="container h-full flex-grow">
+        <div
+          class="flex flex-col h-full justify-center flex-grow max-md:items-center"
+        >
+          <h2
+            class="font-title uppercase text-[80px] leading-[80px] mb-6 text-white"
+          >
+            Future
+          </h2>
+          <Button content="View" href="/future" className="w-max" invert />
+          <div class="box" id="box1"></div>
+          <div class="box" id="box2"></div>
         </div>
-      </article>
+      </div>
+    </article>
   </section>
 </Layout>
 <style lang="scss">
@@ -77,3 +126,9 @@ import Button from "../components/Button.astro";
     background-repeat: no-repeat;
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    const officeVideo = document.querySelector(".office-video");
+    officeVideo.play();
+  });
+</script>

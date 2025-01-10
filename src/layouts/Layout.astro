@@ -2,20 +2,23 @@
 import "../styles/style.scss";
 interface Props {
   title: string;
+  descr: string;
+  keywords: string;
 }
 
-const { title } = Astro.props;
+const { title, descr, keywords } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Kohei Korada" />
+    <title>{title}</title>
+    <meta name="description" content={descr} />
+    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
     <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
@@ -89,6 +92,28 @@ const { title } = Astro.props;
       z-index: 11000;
       background: var(--fontColor);
     }
+  }
+  .box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #707070;
+    z-index: -10;
+    width: 420px;
+    height: 315px;
+    border-radius: 200px;
+    transform: rotate(-30deg);
+    filter: blur(15px);
+  }
+
+  #box1 {
+    bottom: 20px;
+    left: 200px;
+  }
+
+  #box2 {
+    top: 100px;
+    right: 20px;
   }
   @media (max-width: 767.9px) {
     html {
@@ -213,4 +238,40 @@ const { title } = Astro.props;
     }
   }
   const cursor = new customCursor();
+
+  if (document.querySelector("#box1")) {
+    console.log(10);
+
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    gsap.set([box1, box2], { rotate: "-30deg" });
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const moveElementsToCenter = (event) => {
+      const { clientX: mouseX, clientY: mouseY } = event;
+
+      const distanceX1 = (centerX - mouseX) / 3;
+      const distanceY1 = (centerY - mouseY) / 3;
+      const distanceX2 = -(centerX - mouseX) / 2;
+      const distanceY2 = -(centerY - mouseY) / 2;
+
+      gsap.to(box1, {
+        x: distanceX1,
+        y: distanceY1,
+        duration: 2.5,
+        ease: "ease-in",
+      });
+
+      gsap.to(box2, {
+        x: distanceX2,
+        y: distanceY2,
+        duration: 2.5,
+        ease: "ease-in",
+      });
+    };
+    document
+      .querySelector(".main-sections__item--footer")
+      .addEventListener("mousemove", moveElementsToCenter);
+  }
 </script>

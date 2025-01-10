@@ -6,7 +6,11 @@ import Header from "../components/Header.astro";
 import Spacer from "../components/Spacer.astro";
 ---
 
-<Layout title="Kohei Korada.">
+<Layout
+  title="KOHEI HARADA | Creative Factory "
+  descr="A creative director who oversees everything from ideation for new business ventures to project design and management. I focus on developing a brand's MVP to convey its essence to customers and am also dedicated to designing user behaviors with a vision toward the future of DAOs."
+  keywords="KOHEIHARADA, Project Design, Creative, Promotional Movies, adidas, HUMAN MADE"
+>
   <Header />
   <main class="page-main">
     <section class="main-sections">
@@ -30,6 +34,7 @@ import Spacer from "../components/Spacer.astro";
                 </p>
                 <Button
                   content="View"
+                  href="/about"
                   className="ml-auto main-section__descr-btn"
                 />
               </div>
@@ -44,7 +49,7 @@ import Spacer from "../components/Spacer.astro";
               <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
                 Office
               </h2>
-              <Button content="View" className="w-max" />
+              <Button content="View" href="/office" className="w-max" />
             </div>
           </div>
         </article>
@@ -55,6 +60,10 @@ import Spacer from "../components/Spacer.astro";
           muted></video>
       </div>
       <article class="main-sections__item main-sections__item--collab">
+        <video class="main-sections__item-video-bg" muted>
+          <source src="video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
+          <source src="video/adidas-icm-pc.mp4" />
+        </video>
         <div class="container h-full flex-grow">
           <div
             class="flex flex-col h-full justify-center text-white m-0 flex-grow max-md:justify-end max-md:pb-[42px]"
@@ -64,7 +73,9 @@ import Spacer from "../components/Spacer.astro";
             >
               ICM × adidas COLLABO
             </h2>
-            <p class="max-w-[530px] text-[20px] leading-[28px] mt-[20px] max-md:text-base max-md:max-w-[350px]">
+            <p
+              class="max-w-[530px] text-[20px] leading-[28px] mt-[20px] max-md:text-base max-md:max-w-[350px]"
+            >
               Adidas launched the original INSPIRATION CULT sneaker worldwide.
             </p>
           </div>
@@ -383,11 +394,13 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/adidas-base.mp4"
               muted
               class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto"
             >
-              <source src="video/adidas-base-mob.mp4" media="(max-width:767.9px)" />
+              <source
+                src="video/adidas-base-mob.mp4"
+                media="(max-width:767.9px)"
+              />
               <source src="video/adidas-base.mp4" /></video
             >
             <div class="main-sections__item-info">
@@ -436,10 +449,15 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/north-face.mp4"
               muted
-              class="main-sections__item-media w-[480px] h-[275px] mx-auto"
-            ></video>
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto"
+            >
+              <source
+                src="video/north-face-mob.mp4"
+                media="(max-width:767.9px)"
+              />
+              <source src="video/north-face-pc.mp4" /></video
+            >
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name">THE NORTH FACE</span>
               <ul class="main-sections__item-info-tags">
@@ -633,13 +651,15 @@ import Spacer from "../components/Spacer.astro";
         class="main-sections__item main-sections__item--footer overflow-hidden"
       >
         <div class="container h-full flex-grow">
-          <div class="flex flex-col h-full justify-center flex-grow max-md:items-center">
+          <div
+            class="flex flex-col h-full justify-center flex-grow max-md:items-center"
+          >
             <h2
               class="font-title uppercase text-[80px] leading-[80px] mb-6 text-white"
             >
               Future
             </h2>
-            <Button content="View" className="w-max" invert />
+            <Button content="View" href="/future" className="w-max" invert />
             <div class="box" id="box1"></div>
             <div class="box" id="box2"></div>
           </div>
@@ -662,28 +682,6 @@ import Spacer from "../components/Spacer.astro";
     flex-direction: column;
     flex-grow: 2;
   }
-  .box {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: #707070;
-    z-index: -10;
-    width: 420px;
-    height: 315px;
-    border-radius: 200px;
-    transform: rotate(-30deg);
-    filter: blur(15px);
-  }
-
-  #box1 {
-    bottom: 20px;
-    left: 200px;
-  }
-
-  #box2 {
-    top: 100px;
-    right: 20px;
-  }
   @media (max-width: 767.9px) {
     .container {
       padding-inline: 40px;
@@ -694,6 +692,9 @@ import Spacer from "../components/Spacer.astro";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
+
+  const officeVideo = document.querySelector(".main-sections__top-video");
+  officeVideo.play();
 
   let pageTopTl = new gsap.timeline({
     onComplete: () =>
@@ -790,44 +791,7 @@ import Spacer from "../components/Spacer.astro";
     });
   });
 
-  const box1 = document.getElementById("box1");
-  const box2 = document.getElementById("box2");
-  gsap.set([box1, box2], { rotate: "-30deg" });
-
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
   let rootStyle = document.querySelector(":root");
-
-  const moveElementsToCenter = (event) => {
-    const { clientX: mouseX, clientY: mouseY } = event;
-
-    // Рассчитываем, на сколько нужно сместить элементы в сторону центра
-    const distanceX1 = (centerX - mouseX) / 3; // Множитель 20 для медленного движения
-    const distanceY1 = (centerY - mouseY) / 3;
-    const distanceX2 = -(centerX - mouseX) / 2; // Множитель 10 для быстрого движения
-    const distanceY2 = -(centerY - mouseY) / 2;
-
-    // Двигаем первый элемент
-    gsap.to(box1, {
-      x: distanceX1,
-      y: distanceY1,
-      duration: 2.5,
-      ease: "ease-in",
-    });
-
-    // Двигаем второй элемент
-    gsap.to(box2, {
-      x: distanceX2,
-      y: distanceY2,
-      duration: 2.5,
-      ease: "ease-in",
-    });
-  };
-
-  // Применяем движение на контейнере
-  document
-    .querySelector(".main-sections__item--footer")
-    .addEventListener("mousemove", moveElementsToCenter);
 
   gsap.to(".main-sections__top", {
     scrollTrigger: {

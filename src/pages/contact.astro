@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout
+  title="CONTACT | KOHEI HARADA"
+  keywords="KOHEIHARADA, Contact, Creative, Collaboration, New Business"
+  descr="This is the contact page. Feel free to reach out with inquiries about requests, questions about the company, or past projects."
+>
+  <Header />
+  <div class="container pt-[225px] pb-[67px]">
+    <h1 class="main-title">Contact</h1>
+    <form
+      class="flex flex-col w-full max-w-[600px] font-text-content font-normal gap-6 mt-[86px] leading-[24px] mx-auto gap-y-[30px]"
+    >
+      <div class="flex flex-col w-full">
+        <label for="name">Your name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="bg-[#E8E8E8] h-[37px] outline-none shadow-none px-4"
+        />
+      </div>
+
+      <div class="flex flex-col w-full gap-y-2">
+        <label for="email">Mail address</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="bg-[#E8E8E8] h-[37px] outline-none shadow-none px-4"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="details">Inquiry details</label>
+        <textarea
+          name="details"
+          id="details"
+          rows="8"
+          class="resize-y bg-[#E8E8E8] outline-none shadow-none px-4 pt-2"
+        ></textarea>
+      </div>
+      <Button content="Send" className="mx-auto mt-[39px] font-[Fenwick]" />
+    </form>
+  </div>
+</Layout>
+<style lang="scss"></style>
