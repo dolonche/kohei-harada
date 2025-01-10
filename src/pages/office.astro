@@ -30,7 +30,7 @@ import OfficeImg10 from "../assets/images/office-10.png";
         autoplay
         loop
         muted
-        class:list={"office__top-media"}></video>
+        class:list={"office-top__media"}></video>
     </div>
     <div class="office__map">
       <div class="office__map-info">
@@ -386,12 +386,15 @@ import OfficeImg10 from "../assets/images/office-10.png";
   <script>
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
     document.addEventListener("DOMContentLoaded", function (event) {
-      gsap.registerPlugin(ScrollTrigger);
       const officeVideo = document.querySelector(".office-top__media");
       officeVideo.play();
+
       ScrollTrigger.matchMedia({
         "(min-width: 768px)": function () {
+          console.log(10);
+
           gsap.set(".gallery .gallery__item:not(:last-child)", {
             filter: "brightness(1)",
           });
