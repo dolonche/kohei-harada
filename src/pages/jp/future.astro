@@ -1,0 +1,994 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageFooter from "../../components/PageFooter.astro";
+import Header from "../../components/Header.astro";
+import Image from "astro/components/Image.astro";
+import FutureCoffeeAboutImg from "../../assets/images/future-coffee-about.webp";
+import FutureCoffeeFeatureImg1 from "../../assets/images/future-coffee-global.webp";
+import FutureCoffeeFeatureImg2 from "../../assets/images/future-coffee-toward.webp";
+import FutureCoffeeFeatureImg3 from "../../assets/images/future-coffee-formation.webp";
+import FutureMagTitleImg from "../../assets/images/future-magazine-title.png";
+import FutureMagExpImg from "../../assets/images/future-magazine-experience.png";
+import FutureMagArImg from "../../assets/images/future-magazine-ar.png";
+import FutureMagSliderImg1 from "../../assets/images/magazine-slider-image-1.jpg";
+import FutureMagSliderImg2 from "../../assets/images/magazine-slider-image-2.jpg";
+import FutureMagSliderImg3 from "../../assets/images/magazine-slider-image-3.jpg";
+import FutureMagSliderImg4 from "../../assets/images/magazine-slider-image-4.jpg";
+import FutureMagSliderImg5 from "../../assets/images/magazine-slider-image-5.jpg";
+import FutureMagSliderImg6 from "../../assets/images/magazine-slider-image-6.jpg";
+import FutureMagSliderImg7 from "../../assets/images/magazine-slider-image-7.jpg";
+import FutureMagSliderImg8 from "../../assets/images/magazine-slider-image-8.jpg";
+import FutureMagSliderImg9 from "../../assets/images/magazine-slider-image-9.jpg";
+import FutureMagSliderImg10 from "../../assets/images/magazine-slider-image-10.jpg";
+import FutureMagSliderImg11 from "../../assets/images/magazine-slider-image-11.jpg";
+import FutureMagSliderImg12 from "../../assets/images/magazine-slider-image-12.jpg";
+import FutureMagSliderImg13 from "../../assets/images/magazine-slider-image-13.jpg";
+import FutureMagSliderImg14 from "../../assets/images/magazine-slider-image-14.jpg";
+import FutureMagSliderImg15 from "../../assets/images/magazine-slider-image-15.jpg";
+import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.jpg";
+---
+
+<Layout
+  title="FUTURE | KOHEI HARADA"
+  keywords="KOHEIHARADA, コーヒー, 希望の国のエクソダス, コミュニティ, DAO, MNC, ARマガジン"
+  descr="「4th Wave」という新たなコーヒー文化を想像するブランド「KOPPE」や、村上龍の小説『希望の国のエクソダス』の映像化、未来のメディア体験を提供するARマガジン「MNC」などのプロジェクトを進行しています。"
+>
+  <Header />
+  <main class="page-main">
+    <div class="flex flex-col">
+      <article class="future-section future-section--coffee">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-font font-title">
+            Coffee
+          </div>
+        </div>
+        <div class="future-section__content future-coffee">
+          <h2 class="future-coffee__title font-title">
+            <div class="future-coffee__title-top">Coffee</div>
+            <div class="future-coffee__title-sub">KOPPE 4th Wave Project</div>
+          </h2>
+          <div class="future-coffee__about">
+            <Image
+              src={FutureCoffeeAboutImg}
+              width={323}
+              height={535}
+              alt="KOPPE 4th Wave Project"
+              class:list={"future-coffee__about-img"}
+            />
+            <div class="future-coffee__about-descr">
+              <b class="future-coffee__about-descr-title">
+                スタイルがカルチャーを創る
+              </b>
+              <p class="future-coffee__about-descr-text font-text-content">
+                KOPPEは、日本の誇るコーヒースタイルを世界に広める「4th
+                Wave」という新たなコーヒー文化の創造を目指しています。私たちのビジョンは、単なる飲み物としてのコーヒーを超え、1杯ごとの体験にリスペクトと多様性を込めた、持続可能で美しい所作による「エクスペリエンス」を提供することです。
+              </p>
+            </div>
+          </div>
+          <div class="future-coffee__purpose">
+            <b class="future-coffee__purpose-title">プロジェクトの目的</b>
+            <p class="future-coffee__purpose-descr font-text-content">
+              4th
+              Waveプロジェクトでは、日本の伝統的なネルドリップ文化を現代に蘇らせ、世界中にその美しい抽出プロセスを広めていくことを目指します。これにより、コーヒーを淹れる行為そのものがユーザーにとって心を整える特別な体験となり、豊かな風味や香りを楽しむことができます。また、持続可能性を考慮し、環境負荷を軽減するプロダクト開発にも取り組んでいます。
+            </p>
+          </div>
+          <div class="future-coffee__features">
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image src={FutureCoffeeFeatureImg1} alt="Global Expansion" />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >グローバル展開</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、2026年2月にアメリカでのフラッグシップショップのオープンを予定しています。このフラッグシップショップは、KOPPEの革新と伝統が融合した体験を提供し、コーヒーを愛する人々に新しい文化を発信する場となることを目指します。
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image
+                  src={FutureCoffeeFeatureImg2}
+                  alt="Toward a Sustainable Future"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >持続可能な未来へ</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、コーヒー産業が直面する「2050年問題」にも対応し、環境保護と倫理的な生産方法を推進しています。すべての関係者にリスペクトを持ち、未来を見据えた持続可能なコーヒー文化を築くための活動を進めています。
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image
+                  src={FutureCoffeeFeatureImg3}
+                  alt="Formation of a Coffee Community DAO"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >コーヒーコミュニティ DAOの形成</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、コーヒーを通じてユーザー同士が繋がり、多様な淹れ方やスタイルを共有する「コーヒーコミュニティDAO」の形成を目指しています。このDAO（分散型自律組織）は、コーヒー愛好者が協力し、共に学び、コーヒー文化を発展させる場となります。コミュニティメンバーが主体となって、新しいコーヒー体験を創造し、共に成長することを目指しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="future-section future-section--film">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-white font-title">
+            Film
+          </div>
+        </div>
+        <div class="future-section__content future-film">
+          <h2 class="future-film__title font-title">
+            <div class="future-film__title-top">
+              Exodus from the Land of Hope
+            </div>
+            <div class="future-film__title-sub">Film Adaptation Project</div>
+          </h2>
+          <div class="future-film__feature">
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >村上龍の名作 「希望の国のエクソダス」 を映像化</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >DAOの未来を映像で描く</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title">現実世界への展開</b>
+              <p class="future-film__feature-item-descr font-text-content">
+                このプロジェクトの最終目標は、映像内で描かれるDAOや仮想通貨「エクソ」の経済圏を現実世界で再現することです。映像で使用されるメディアや経済システムを、現実のWeb3.0技術と融合させ、誰もが参加できるプラットフォームを構築します。これにより、映像と現実の世界がリンクし、視聴者が物語の一部を体験できる新しいカルチャーを創り上げます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="future-section future-section--magazine">
+        <div class="future-section__preview">
+          <div class="future-section__preview-title text-white font-title">
+            Ar magazine
+          </div>
+        </div>
+        <div class="future-section__content future-mag">
+          <div class="future-mag__title">
+            <video
+              src="/video/ar-magazine-1.mp4"
+              class="future-mag__ar-media"
+              width={430}
+              height={771}
+              playsinline
+              muted
+              loop></video>
+            <div class="future-mag__title-descr">
+              <div class="future-mag__title-descr-top font-title">
+                AR Magazine
+              </div>
+              <div class="future-mag__title-descr-sub font-title">
+                Media Experience
+              </div>
+              <img
+                src="/future-magazine-logo.svg"
+                alt="MNC"
+                class="future-mag__title-descr-img"
+              />
+            </div>
+          </div>
+          <div class="future-mag__exp">
+            <div class="future-mag__exp-descr">
+              <b class="future-mag__exp-descr-title">
+                MNC（メナス）<br /> ARマガジンとカルチャーDAO <br /> プロジェクト</b
+              >
+              <p class="future-mag__exp-descr-text font-text-content">
+                未来のメディア体験を提供するARマガジン
+                MNC（メナス）は、紙の温もりを大切にしながら、AR（拡張現実）技術を融合させた新しいメディア体験を提供する季刊ARマガジンです。次号が出るまでの間にもAR技術を通じてコンテンツをリアルタイムでアップデートし、常に最新の情報や体験を読者に届けています。この革新的なアプローチにより、フィジカルな雑誌とデジタルの未来が融合した、これまでにないメディア体験を創り上げています。
+              </p>
+            </div>
+            <video
+              src="/video/ar-magazine-2.mp4"
+              class="future-mag__ar-media"
+              width={430}
+              height={771}
+              playsinline
+              muted
+              loop></video>
+          </div>
+          <div class="future-mag__slider">
+            <div class="future-mag__slider-media">
+              <Image
+                src={FutureMagSliderImg1}
+                width={595}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg2}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg3}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg4}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg5}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg6}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg7}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg8}
+                width={595}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg9}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg10}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg11}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg12}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg13}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg14}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg15}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+              <Image
+                src={FutureMagSliderImg16}
+                width={1191}
+                height={714}
+                alt="MNC"
+                class:list={"future-mag__slider-img"}
+              />
+            </div>
+            <div class="future-mag__slider-descr">
+              <b class="future-mag__slider-descr-title"
+                >DAOでのカルチャー <br />
+                共創を目指して</b
+              >
+              <p class="future-mag__slider-descr-text font-text-content">
+                私たちが最終的に目指すのは、MNC
+                ARマガジンを軸に、音楽とカルチャーを愛するすべての人々が主体となり、共に創り上げる「カルチャーDAO（分散型自律組織）」です。このDAOでは、全員が対等に参加し、自由な自己表現と新たな価値創造を行います。ユーザー同士が積極的に意見を出し合い、協力してカルチャーを形作ることで、より多様で創造的なコミュニティが生まれます。音楽やカルチャーを通じて、読者や参加者が自らカルチャーの未来を築く場を提供します。
+              </p>
+            </div>
+          </div>
+          <div class="future-mag__ar">
+            <video
+              src="/video/ar-magazine-3.mp4"
+              class="future-mag__ar-media"
+              width={430}
+              height={771}
+              playsinline
+              muted
+              loop></video>
+            <div class="future-mag__ar-descr">
+              <b class="future-mag__ar-descr-title"
+                >共感で繋がる <br />
+                コミュニティの形成</b
+              >
+              <p class="future-mag__ar-descr-text font-text-content">
+                MNCは、ただのメディアではなく、共感と協力を基盤にしたコミュニティを築くことを目指しています。ユーザー同士が音楽やカルチャーを通じて繋がり、互いに学び合い、成長するためのプラットフォームを提供します。このDAOコミュニティの中で、一人ひとりのクリエイティブな表現が尊重され、新しいカルチャーが誕生し進化していく未来を描いています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <style lang="scss">
+    *::selection {
+      color: #222;
+      background-color: rgba(255, 235, 153, 1);
+    }
+    .future-section {
+      display: flex;
+      flex-direction: column;
+      &__preview {
+        height: max(calc(100vh / 3), 270px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: top center;
+        overflow: hidden;
+
+        &-title {
+          font-size: 54px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+      .future-section__content {
+        display: none;
+      }
+      &--coffee {
+        .future-section {
+          &__preview {
+            background-image: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.5),
+                rgb(128, 128, 128, 0.5)
+              ),
+              url(../future-coffee.png);
+          }
+        }
+      }
+      &--film {
+        .future-section {
+          &__preview {
+            background-image: url(../future-film.png);
+            background-size: cover;
+          }
+        }
+      }
+      &--magazine {
+        .future-section {
+          &__preview {
+            background-image: url(../future-magazine.png);
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    .future-coffee {
+      display: flex;
+      flex-direction: column;
+      padding-top: 110px;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        &-top {
+          font-size: 32px;
+          text-transform: uppercase;
+        }
+        &-sub {
+          font-size: 54px;
+        }
+      }
+      &__about {
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1000px;
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          max-width: 620px;
+          &-title {
+            max-width: 350px;
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 20px;
+          }
+          &-text {
+            font-size: 16px;
+          }
+        }
+      }
+      &__purpose {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 220px;
+        padding-bottom: 230px;
+        background-image: url(../future-coffee-purpose.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        &-title {
+          font-size: 38px;
+          line-height: 48px;
+          margin-bottom: 20px;
+        }
+        &-descr {
+          max-width: 620px;
+          font-size: 16px;
+        }
+      }
+      &__features {
+        display: flex;
+        flex-direction: column;
+        row-gap: 80px;
+        margin-inline: auto;
+        max-width: 790px;
+        margin-bottom: 80px;
+        &-item {
+          display: flex;
+          column-gap: 57px;
+          &-media {
+            width: 184px;
+            display: flex;
+            justify-content: center;
+            img {
+              object-fit: contain;
+              object-position: 50% 0;
+            }
+          }
+          &-descr {
+            max-width: 620px;
+            display: flex;
+            flex-direction: column;
+            &-title {
+              font-size: 38px;
+              line-height: 48px;
+              margin-bottom: 20px;
+            }
+            &-text {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .future-film {
+      background-image: url(../future-film-bg.png);
+      background-position: center top;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-color: #222222;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      padding-top: 220px;
+      padding-bottom: 100px;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 92px;
+        &-top {
+          font-size: 32px;
+        }
+        &-sub {
+          font-size: 54px;
+        }
+      }
+      &__feature {
+        max-width: 620px;
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        row-gap: 80px;
+        &-item {
+          display: flex;
+          flex-direction: column;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 15px;
+          }
+          &-descr {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .future-mag {
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      background-color: #111;
+      color: #fff;
+      &__title {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 66px;
+        &-img {
+        }
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          &-top {
+            font-size: 32px;
+            line-height: 54px;
+          }
+          &-sub {
+            font-size: 54px;
+            line-height: 54px;
+          }
+          &-img {
+            margin-top: 30px;
+          }
+        }
+      }
+      &__exp {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 66px;
+        &-img {
+        }
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 620px;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      &__slider {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 100%;
+        &-media {
+          display: flex;
+          width: max-content;
+        }
+        &-img {
+          min-width: fit-content;
+          width: fit-content;
+        }
+        &-descr {
+          margin-inline: auto;
+          max-width: 620px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      &__ar {
+        max-width: 1070px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+        margin-bottom: 154px;
+        margin-top: 54px;
+        &-descr {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: right;
+          max-width: 620px;
+          &-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 30px;
+          }
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767.9px) {
+      .future-section {
+        &__preview {
+          &-title {
+            font-size: 36px;
+            line-height: 54px;
+          }
+        }
+      }
+      .future-coffee {
+        &__title {
+          &-top {
+            font-size: 20px;
+          }
+          &-sub {
+            font-size: 36px;
+            line-height: 40px;
+            padding-inline: 40px;
+            max-width: 600px;
+          }
+        }
+        &__about {
+          flex-direction: column;
+          padding-inline: 40px;
+          row-gap: 60px;
+          &-descr {
+            &-title {
+              font-size: 28px;
+              line-height: 38px;
+            }
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+        &__purpose {
+          background-image: url(../future-coffee-purpose-mobile.png);
+          background-size: cover;
+          padding-inline: 40px;
+          max-width: 600px;
+          align-items: flex-start;
+          text-align: left;
+          padding-top: 310px;
+          padding-bottom: 247px;
+          &-title {
+            font-size: 28px;
+            line-height: 38px;
+          }
+          &-descr {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        &__features {
+          padding-inline: 40px;
+          max-width: 600px;
+          row-gap: 60px;
+          &-item {
+            flex-direction: column;
+            &-media {
+              margin-inline: auto;
+            }
+            &-descr {
+              margin-top: 22px;
+              &-title {
+                font-size: 28px;
+                line-height: 38px;
+              }
+              &-text {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+      .future-film {
+        &__title {
+          &-top {
+            font-size: 20px;
+          }
+          &-sub {
+            font-size: 36px;
+            line-height: 40px;
+            padding-inline: 40px;
+            max-width: 600px;
+          }
+        }
+        &__feature {
+          padding-inline: 40px;
+          max-width: 600px;
+          row-gap: 60px;
+          &-item {
+            &-title {
+              font-size: 28px;
+              line-height: 38px;
+            }
+            &-descr {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+      .future-mag {
+        &__title {
+          flex-direction: column;
+          video {
+            margin-inline: auto;
+            margin-bottom: 40px;
+          }
+          &-descr {
+            &-top {
+              font-size: 20px;
+              line-height: normal;
+            }
+            &-sub {
+              font-size: 36px;
+              line-height: 40px;
+              margin-top: 11px;
+              max-width: 220px;
+            }
+            &-img {
+              max-width: 230px;
+              margin-top: 24px;
+            }
+          }
+        }
+        &__exp {
+          flex-direction: column;
+          video {
+            order: -1;
+            margin-inline: auto;
+          }
+          &-descr {
+            padding-inline: 40px;
+            margin-inline: auto;
+            margin-top: 40px;
+            &-title {
+              font-size: 28px;
+              line-height: 38px;
+              margin-bottom: 20px;
+            }
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+        &__slider {
+          &-media {
+            max-height: 240px;
+          }
+          &-img {
+            width: auto;
+            height: 240px;
+          }
+          &-descr {
+            padding-inline: 40px;
+            margin-inline: auto;
+            margin-top: 40px;
+            text-align: left;
+            align-items: flex-start;
+            &-title {
+              margin-top: 0;
+              margin-bottom: 20px;
+              font-size: 28px;
+              line-height: 38px;
+            }
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+        &__ar {
+          flex-direction: column;
+          video {
+            margin-inline: auto;
+          }
+          &-descr {
+            padding-inline: 40px;
+            margin-inline: auto;
+            margin-top: 40px;
+            text-align: left;
+            align-items: flex-start;
+            &-title {
+              margin-top: 0;
+              margin-bottom: 20px;
+              font-size: 28px;
+              line-height: 38px;
+            }
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  </style>
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import ScrollToPlugin from "gsap/ScrollToPlugin";
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const sliderImg = document.querySelector(".future-mag__slider-img");
+
+    //   // Получаем ширину изображения и ширину окна
+    //   const imageWidth = sliderImg.offsetWidth;
+    //   const windowWidth = window.innerWidth;
+
+    //   // Рассчитываем расстояние прокрутки
+    //   const scrollDistance = imageWidth - windowWidth;
+
+    //   // Анимация GSAP
+    //   gsap.to(sliderImg, {
+    //     x: -scrollDistance, // Прокрутка изображения влево
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: sliderImg, // Триггер ScrollTrigger
+    //       start: "top center", // Когда изображение по центру
+    //       end: `+=${scrollDistance}`, // Длина прокрутки равна расстоянию движения
+    //       scrub: true, // Привязка к скроллу
+    //       pin: true, // Фиксация изображения по центру
+    //     },
+    //   });
+    // });
+
+    const previewTitles = document.querySelectorAll(".future-section__preview");
+
+    previewTitles.forEach((title) => {
+      title.addEventListener("click", () => {
+        const preview = title.closest(".future-section__preview");
+        const content = preview.nextElementSibling;
+        const parent = preview.parentElement;
+
+        if (!content) return;
+
+        const initialHeight = parent.offsetHeight;
+
+        gsap.set(content, { display: "block" });
+        const contentHeight = content.offsetHeight;
+
+        gsap.set(content, { display: "none" });
+        gsap.to(window, {
+          ease: "power2.out",
+          duration: 1,
+          scrollTo: title,
+        }),
+          gsap.to(title, {
+            duration: 2,
+            opacity: 0,
+            height: 0,
+            onComplete: () => {
+              preview.style.display = "none";
+              ScrollTrigger.refresh();
+            },
+          });
+
+        gsap.to(parent, {
+          duration: 2,
+          height: contentHeight,
+          ease: "power2.out",
+          onComplete: () => {
+            parent.style.height = "auto";
+            if (parent.classList.contains("future-section--magazine")) {
+              const sliderImg = document.querySelector(
+                ".future-mag__slider-media"
+              );
+              const magVideos = document.querySelectorAll(
+                ".future-mag__ar-media"
+              );
+
+              const imageWidth = sliderImg.offsetWidth;
+              const windowWidth = window.innerWidth;
+              const scrollDistance = imageWidth - windowWidth;
+
+              gsap.to(sliderImg, {
+                x: -scrollDistance,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: sliderImg,
+                  start: "bottom bottom",
+                  end: `top top`,
+                  scrub: 100,
+                  // pin: true,
+                },
+              });
+              magVideos.forEach((video) => video.play());
+            }
+          },
+        });
+
+        gsap.set(content, { display: "block", opacity: 0 });
+        gsap.to(content, {
+          duration: 2,
+          opacity: 1,
+          scale: 1,
+          ease: "power2.out",
+        });
+      });
+    });
+  </script>
+</Layout>

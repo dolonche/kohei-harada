@@ -10,6 +10,9 @@ export default defineConfig({
   i18n: {
     locales: ["jp", "en"],
     defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: false,
+    },
   },
   integrations: [tailwind(), relativeLinks()],
   vite: {

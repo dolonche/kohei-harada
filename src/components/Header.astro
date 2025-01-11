@@ -1,10 +1,14 @@
 ---
 import Logo from "../assets/logo.svg";
 import Image from "astro/components/Image.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { defaultLang } from "../i18n/ui";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="page-header">
-  <a href="/" class="page-header__logo">
+  <a href={lang === defaultLang ? '/' : '/jp/'} class="page-header__logo">
     <Image src={Logo} width={62} height={30} alt="Kohei Korada" />
   </a>
   <div class="page-header__actions">
@@ -25,23 +29,25 @@ import Image from "astro/components/Image.astro";
     <nav class="main-nav">
       <ul class="main-nav__list">
         <li class="main-nav__list-item">
-          <a href="/about/" class="main-nav__list-item-link">About</a>
+          <a href={lang === defaultLang ? "/about" : "/jp/about"} class="main-nav__list-item-link">About</a>
         </li>
         <li class="main-nav__list-item">
-          <a href="/office/" class="main-nav__list-item-link">Office</a>
+          <a href={lang === defaultLang ? "/office" : "/jp/office"} class="main-nav__list-item-link">Office</a>
         </li>
         <li class="main-nav__list-item">
-          <a href="/works/" class="main-nav__list-item-link">Works</a>
+          <a href={lang === defaultLang ? "/works" : "/jp/works"} class="main-nav__list-item-link">Works</a>
         </li>
         <li class="main-nav__list-item">
-          <a href="/future/" class="main-nav__list-item-link">Future</a>
+          <a href={lang === defaultLang ? "/future" : "/jp/future"} class="main-nav__list-item-link">Future</a>
         </li>
         <li class="main-nav__list-item">
-          <a href="/contact/" class="main-nav__list-item-link">Contact</a>
+          <a href={lang === defaultLang ? "/contact" : "/jp/contact"} class="main-nav__list-item-link">Contact</a>
         </li>
       </ul>
     </nav>
-    <a href="#" class="language-selector">JP</a>
+    <a href={lang === "en" ? "/jp" : "/"} class="language-selector"
+      >{t("lang")}</a
+    >
   </div>
 </header>
 <style lang="scss">
@@ -239,21 +245,33 @@ import Image from "astro/components/Image.astro";
           "--overlayHeight": "100%",
           ease: "power2.inOut",
         })
-        .to(".main-nav__list-item", 0.3, {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          stagger: 0.1,       
-          ease: "power2.inOut", 
-        }, "-=0.4");
+        .to(
+          ".main-nav__list-item",
+          0.3,
+          {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            stagger: 0.1,
+            ease: "power2.inOut",
+          },
+          "-=0.4"
+        );
     } else {
       const headerTl = new gsap.timeline();
-      headerTl.to(".main-nav__list-item", 0.3, {
+      headerTl
+        .to(".main-nav__list-item", 0.3, {
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
           stagger: -0.1,
-          ease: "power2.inOut"        
-        }).to(".page-header", 0.6, {
-        "--overlayHeight": "0%",
-        ease: "power2.inOut",
-      }, "-=0.4");
+          ease: "power2.inOut",
+        })
+        .to(
+          ".page-header",
+          0.6,
+          {
+            "--overlayHeight": "0%",
+            ease: "power2.inOut",
+          },
+          "-=0.4"
+        );
     }
   });
 </script>

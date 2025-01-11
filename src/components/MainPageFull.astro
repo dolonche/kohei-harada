@@ -4,12 +4,21 @@ import Button from "../components/Button.astro";
 import PageFooter from "../components/PageFooter.astro";
 import Header from "../components/Header.astro";
 import Spacer from "../components/Spacer.astro";
+import { defaultLang } from "../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="KOHEI HARADA | Creative Factory "
-  descr="A creative director who oversees everything from ideation for new business ventures to project design and management. I focus on developing a brand's MVP to convey its essence to customers and am also dedicated to designing user behaviors with a vision toward the future of DAOs."
-  keywords="KOHEIHARADA, Project Design, Creative, Promotional Movies, adidas, HUMAN MADE"
+  title={"KOHEI HARADA | Creative Factory"}
+  descr={lang === defaultLang
+    ? "A creative director who oversees everything from ideation for new business ventures to project design and management. I focus on developing a brand's MVP to convey its essence to customers and am also dedicated to designing user behaviors with a vision toward the future of DAOs."
+    : "新規ビジネスのアイデア創出からプロジェクトデザイン、運営までを見守るクリエイティブディレクターです。ブランドのMVPを開発し、顧客にブランドの本質を伝えることを大切にし、DAOの未来を見据えたユーザー行動のデザインにも注力しています。"}
+  keywords={lang === defaultLang
+    ? "KOHEIHARADA, Project Design, Creative, Promotional Movies, adidas, HUMAN MADE"
+    : "KOHEIHARADA, プロジェクトデザイン, クリエイティブ, プロモーションムービー, adidas, HUMAN MADE"}
 >
   <Header />
   <main class="page-main">
@@ -24,17 +33,11 @@ import Spacer from "../components/Spacer.astro";
               </div>
               <div class="main-section__descr">
                 <p class="main-section__descr-text">
-                  As a Creative Director, I oversee everything from generating
-                  new business ideas to designing and managing projects. I
-                  prioritize developing the MVP (Mission, Value, Purpose) of
-                  brands and communicating their essence to customers.
-                  Additionally, I focus on designing user behaviors with a
-                  vision towards the future of DAOs (Decentralized Autonomous
-                  Organizations).
+                  {t("mainAbout")}
                 </p>
                 <Button
                   content="View"
-                  href="/about"
+                  href={lang === defaultLang ? "/about" : "/jp/about"}
                   className="ml-auto main-section__descr-btn"
                 />
               </div>
@@ -49,20 +52,26 @@ import Spacer from "../components/Spacer.astro";
               <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
                 Office
               </h2>
-              <Button content="View" href="/office" className="w-max" />
+              <Button
+                content="View"
+                href={lang === defaultLang ? "/office" : "/jp/office"}
+                className="w-max"
+              />
             </div>
           </div>
         </article>
         <video
           src="/video/office-video.mp4"
           class="main-sections__top-video"
+          autoplay
           loop
-          muted></video>
+          muted
+          playsinline></video>
       </div>
       <article class="main-sections__item main-sections__item--collab">
-        <video class="main-sections__item-video-bg" muted>
-          <source src="video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
-          <source src="video/adidas-icm-pc.mp4" />
+        <video class="main-sections__item-video-bg" muted playsinline>
+          <source src="/video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
+          <source src="/video/adidas-icm-pc.mp4" />
         </video>
         <div class="container h-full flex-grow">
           <div
@@ -91,8 +100,9 @@ import Spacer from "../components/Spacer.astro";
               >Works</b
             >
             <video
-              src="video/sake.mp4"
+              src="/video/sake.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             >
             </video>
@@ -120,8 +130,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/adidas.mp4"
+              src="/video/adidas.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             >
             </video>
@@ -149,13 +160,14 @@ import Spacer from "../components/Spacer.astro";
           >
             <video
               muted
+              playsinline
               class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto"
             >
               <source
-                src="video/adidas-energy-mob.mp4"
+                src="/video/adidas-energy-mob.mp4"
                 media="(max-width:767.9px)"
               />
-              <source src="video/adidas-energy-pc.mp4" />
+              <source src="/video/adidas-energy-pc.mp4" />
             </video>
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name"
@@ -184,10 +196,11 @@ import Spacer from "../components/Spacer.astro";
           >
             <video
               muted
+              playsinline
               class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto"
             >
-              <source src="video/kode-mob.mp4" media="(max-width:767.9px)" />
-              <source src="video/kode-pc.mp4" />
+              <source src="/video/kode-mob.mp4" media="(max-width:767.9px)" />
+              <source src="/video/kode-pc.mp4" />
             </video>
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name">KODE</span>
@@ -213,8 +226,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/auger.mp4"
+              src="/video/auger.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -241,8 +255,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/pokemon.mp4"
+              src="/video/pokemon.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -265,8 +280,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/rimowa.mp4"
+              src="/video/rimowa.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -287,8 +303,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/jw.mp4"
+              src="/video/jw.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -318,8 +335,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/casio.mp4"
+              src="/video/casio.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -346,8 +364,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/uniqlo.mp4"
+              src="/video/uniqlo.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -369,8 +388,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/footlocker.mp4"
+              src="/video/footlocker.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -395,13 +415,14 @@ import Spacer from "../components/Spacer.astro";
           >
             <video
               muted
+              playsinline
               class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto"
             >
               <source
-                src="video/adidas-base-mob.mp4"
+                src="/video/adidas-base-mob.mp4"
                 media="(max-width:767.9px)"
               />
-              <source src="video/adidas-base.mp4" /></video
+              <source src="/video/adidas-base.mp4" /></video
             >
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name">Adidas</span>
@@ -427,8 +448,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/loro.mp4"
+              src="/video/loro.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -450,13 +472,14 @@ import Spacer from "../components/Spacer.astro";
           >
             <video
               muted
+              playsinline
               class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto"
             >
               <source
-                src="video/north-face-mob.mp4"
+                src="/video/north-face-mob.mp4"
                 media="(max-width:767.9px)"
               />
-              <source src="video/north-face-pc.mp4" /></video
+              <source src="/video/north-face-pc.mp4" /></video
             >
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name">THE NORTH FACE</span>
@@ -479,8 +502,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/adidas-shibuya.mp4"
+              src="/video/adidas-shibuya.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -506,8 +530,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/iwc.mp4"
+              src="/video/iwc.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -528,8 +553,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/redbull.mp4"
+              src="/video/redbull.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -556,8 +582,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/coach.mp4"
+              src="/video/coach.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -584,8 +611,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/mini.mp4"
+              src="/video/mini.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -606,8 +634,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/tommy.mp4"
+              src="/video/tommy.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -631,8 +660,9 @@ import Spacer from "../components/Spacer.astro";
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="video/chandon.mp4"
+              src="/video/chandon.mp4"
               muted
+              playsinline
               class="main-sections__item-media w-[480px] h-[275px] mx-auto"
             ></video>
             <div class="main-sections__item-info">
@@ -659,7 +689,12 @@ import Spacer from "../components/Spacer.astro";
             >
               Future
             </h2>
-            <Button content="View" href="/future" className="w-max" invert />
+            <Button
+              content="View"
+              href={lang === defaultLang ? "/future" : "/jp/future"}
+              className="w-max"
+              invert
+            />
             <div class="box" id="box1"></div>
             <div class="box" id="box2"></div>
           </div>
@@ -692,9 +727,6 @@ import Spacer from "../components/Spacer.astro";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-
-  const officeVideo = document.querySelector(".main-sections__top-video");
-  officeVideo.play();
 
   let pageTopTl = new gsap.timeline({
     onComplete: () =>
@@ -730,6 +762,8 @@ import Spacer from "../components/Spacer.astro";
       video.pause();
     });
   };
+  const officeVideo = document.querySelector(".main-sections__top-video");
+  officeVideo.play();
 
   let panels = gsap.utils.toArray(".main-sections__item"),
     observer = ScrollTrigger.normalizeScroll(true),
@@ -755,6 +789,8 @@ import Spacer from "../components/Spacer.astro";
         let panelStarts = tops.map((st) => st.start),
           snapScroll = gsap.utils.snap(panelStarts, self.scroll());
 
+        ScrollTrigger.refresh();
+
         return gsap.utils.normalize(
           0,
           ScrollTrigger.maxScroll(window),
@@ -765,10 +801,8 @@ import Spacer from "../components/Spacer.astro";
         const currentYpos = window.pageYOffset;
         panels.forEach(async (panel) => {
           await pauseAllVideos();
-          // console.log(panel.parentNode.offsetTop, currentYpos);
 
           if (Math.abs(panel.parentNode.offsetTop - currentYpos) < 150) {
-            console.log(10);
 
             if (panel.querySelector("video")) {
               panel.querySelector("video").play();

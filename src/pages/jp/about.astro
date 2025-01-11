@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Button from "../components/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Button from "../../components/Button.astro";
 import Image from "astro/components/Image.astro";
-import WitLogo from "../assets/images/logo-wit.svg";
-import CultLogo from "../assets/images/logo-cult.svg";
-import MncLogo from "../assets/images/logo-mnc.svg";
+import WitLogo from "../../assets/images/logo-wit.svg";
+import CultLogo from "../../assets/images/logo-cult.svg";
+import MncLogo from "../../assets/images/logo-mnc.svg";
 ---
 
 <Layout
   title="ABOUT | KOHEI HARADA"
-  keywords="KOHEIHARADA, WIT, New Business, Project Design, Creative Director"
-  descr="A creative director overseeing the creation of new business ideas, project design, and operations. My mission is to develop MVPs that shape the DNA of a brand and communicate its essence to customers."
+  keywords="KOHEIHARADA, 原田康平, WIT, 新規ビジネス, プロジェクトデザイン, クリエイティブディレクター"
+  descr="新規ビジネスのアイデア創出からプロジェクトデザイン、運営までを見守るクリエイティブディレクターです。ブランドのDNAを形作るMVPを開発し、顧客にブランドの本質を伝えることが私の使命です。"
 >
   <Header />
   <div class="container pt-[225px] pb-[67px]">
@@ -20,27 +20,12 @@ import MncLogo from "../assets/images/logo-mnc.svg";
       class="flex flex-col max-w-[674px] font-text-content font-normal gap-6 mt-[86px] leading-[24px]"
     >
       <p class="">
-        As a Creative Director, I generate innovative business ideas, design
-        projects, and oversee their execution. Whether directing promotional
-        videos or capturing the essence on set as a cameraman, I bring creative
-        visions to life. As a specialist in brand development, I provide
-        groundbreaking solutions that lead to significant successes.
-      </p>
-
-      <p class="">
-        My mission is to craft the DNA of brands through MVP (Mission, Value,
-        Purpose) development, ensuring that the core essence of the brand
-        resonates with customers. Additionally, I focus on designing user
-        behaviors with an eye towards the future of DAOs (Decentralized
-        Autonomous Organizations).
-      </p>
-
-      <p class="">
-        In my role, I bridge the gap between creativity and strategy,
-        transforming concepts into impactful realities.
+        新しいビジネスのアイデアを生み出し、プロジェクトをデザインし、運営までを見守るクリエイティブディレクターです。プロモーションムービーや撮影現場では、ディレクターやカメラマンとしてもクリエイティブなビジョンを形にしています。ブランド開発において、斬新な解決策を提供するスペシャリストとして、多くの成功を収めてきました。
+        ブランドのDNAを形作るMVP（Mission, Value,
+        Purpose）を開発し、顧客にブランドの本質を伝えることが私の使命です。また、DAO（分散型自律組織）の未来を見据え、ユーザーの行動をデザインすることにも力を入れています。
       </p>
     </div>
-    <Button content="Contact" href="/contact/" className="mr-auto mt-7" />
+    <Button content="Contact" href="/jp/contact/" className="mr-auto mt-7" />
     <h2 class="text-[40px] mt-[120px] font-title">KOHEI HARADA</h2>
     <p class="leading-[24px] font-text-content mt-6">
       Creative Factory <br />
@@ -95,7 +80,7 @@ import MncLogo from "../assets/images/logo-mnc.svg";
           <h2 class="font-title uppercase text-[80px] leading-[80px] mb-6">
             Office
           </h2>
-          <Button content="View" className="w-max" href="/office/" />
+          <Button content="View" className="w-max" href="/jp/office/" />
         </div>
       </div>
     </article>
@@ -111,7 +96,7 @@ import MncLogo from "../assets/images/logo-mnc.svg";
           >
             Future
           </h2>
-          <Button content="View" href="/future" className="w-max" invert />
+          <Button content="View" href="/jp/future" className="w-max" invert />
           <div class="box" id="box1"></div>
           <div class="box" id="box2"></div>
         </div>
