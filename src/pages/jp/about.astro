@@ -376,6 +376,8 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
       updateCSSVariable("--blur", `${event.target.value}px`);
     });
 
+    let isCameraAvailable = true;
+
   navigator.mediaDevices
     .getUserMedia(
       isMobile
@@ -392,7 +394,9 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
       videoElement.srcObject = stream;
       videoElement.play();
     })
-    .catch((error) => {});
+    .catch((error) => {
+      isCameraAvailable = false;
+    });
 
   function fillUp(array, max) {
     let length = array.length;
@@ -503,7 +507,7 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
 
     function init() {
       scene = new THREE.Scene();
-      //   scene.background = new THREE.Color(0x000);
+      if(!isCameraAvailable) scene.background = new THREE.Color(0x000);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setPixelRatio(window.devicePixelRatio);
