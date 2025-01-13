@@ -1,14 +1,33 @@
 ---
 import { fade } from "astro:transitions";
 
-const { content, href, className = "", invert = false } = Astro.props;
+const {
+  content,
+  href,
+  className = "",
+  invert = false,
+  isButton = false,
+  buttonType = "button",
+} = Astro.props;
 ---
 
-<a
-  href={href}
-  class:list={[`button ${className} ${invert ? "button--invert" : ""}`]}
-  >{content}</a
->
+{
+  isButton ? (
+    <button
+      type={buttonType}
+      class:list={[`button ${className} ${invert ? "button--invert" : ""}`]}
+    >
+      {content}
+    </button>
+  ) : (
+    <a
+      href={href}
+      class:list={[`button ${className} ${invert ? "button--invert" : ""}`]}
+    >
+      {content}
+    </a>
+  )
+}
 <style lang="scss">
   .button {
     @apply uppercase py-[14px] min-w-[160px] rounded-[28px] border border-solid flex justify-center items-center border-font relative  overflow-hidden;
@@ -23,7 +42,7 @@ const { content, href, className = "", invert = false } = Astro.props;
       transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
-    //   pointer-events: none;
+      //   pointer-events: none;
       background-color: white;
       mix-blend-mode: color;
       clip-path: circle(0% at 50% 50%);
