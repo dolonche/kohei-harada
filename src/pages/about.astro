@@ -81,12 +81,18 @@ import MncLogo from "../assets/images/logo-mnc.svg";
     >
       <div class="absolute w-full h-full object-cover top-0 left-0 z-10">
         <video
-          src="/video/office-video.mp4"
           playsinline
           autoplay
           loop
           muted
-          class="w-full h-full object-cover office-video"></video>
+          class="w-full h-full object-cover office-video"
+        >
+          <source
+            src="/video/office-video-mob.mp4"
+            media="(max-width:767.9px)"
+          />
+          <source src="/video/office-video.mp4" />
+        </video>
       </div>
       <div class="container h-full flex-grow z-20">
         <div
@@ -342,12 +348,11 @@ import MncLogo from "../assets/images/logo-mnc.svg";
 
   const filtersButton = document.querySelector(".media-content__filters-btn");
   const filtersSliders = document.querySelector(".filter-sliders");
-  const arContainer = document.querySelector('.ar-container');
-  arContainer.addEventListener('click', (e) => {
+  const arContainer = document.querySelector(".ar-container");
+  arContainer.addEventListener("click", (e) => {
     filtersButton.classList.remove("media-content__filters-btn--hidden");
-  filtersSliders.classList.remove("filter-sliders--open");
-
-  })  
+    filtersSliders.classList.remove("filter-sliders--open");
+  });
   filtersButton.addEventListener("click", (e) => {
     e.preventDefault();
     e.target.classList.add("media-content__filters-btn--hidden");
@@ -392,7 +397,7 @@ import MncLogo from "../assets/images/logo-mnc.svg";
       updateCSSVariable("--blur", `${event.target.value}px`);
     });
 
-    let isCameraAvailable = true;
+  let isCameraAvailable = true;
 
   navigator.mediaDevices
     .getUserMedia(
@@ -523,7 +528,7 @@ import MncLogo from "../assets/images/logo-mnc.svg";
 
     function init() {
       scene = new THREE.Scene();
-      if(!isCameraAvailable) scene.background = new THREE.Color(0x000);
+      if (!isCameraAvailable) scene.background = new THREE.Color(0x000);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setPixelRatio(window.devicePixelRatio);

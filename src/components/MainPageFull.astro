@@ -61,12 +61,14 @@ const t = useTranslations(lang);
           </div>
         </article>
         <video
-          src="/video/office-video.mp4"
           class="main-sections__top-video"
           autoplay
           loop
           muted
-          playsinline></video>
+          playsinline>
+          <source src="/video/office-video-mob.mp4" media="(max-width:767.9px)" />
+          <source src="/video/office-video.mp4" />
+        </video>
       </div>
       <article class="main-sections__item main-sections__item--collab">
         <video class="main-sections__item-video-bg z-10" muted playsinline>

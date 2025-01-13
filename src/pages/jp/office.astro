@@ -25,13 +25,10 @@ import OfficeImg10 from "../../assets/images/office-10.png";
   <span class="kh">(C)KOHEI HARADA</span>
   <section class="office">
     <div class="office__top">
-      <video
-        src="/video/office-video.mp4"
-        playsinline
-        autoplay
-        loop
-        muted
-        class="office__top-media"></video>
+      <video playsinline autoplay loop muted class="office__top-media">
+        <source src="/video/office-video-mob.mp4" media="(max-width:767.9px)" />
+        <source src="/video/office-video.mp4" />
+      </video>
     </div>
     <div class="office__map">
       <div class="office__map-info">
