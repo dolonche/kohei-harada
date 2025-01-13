@@ -11,16 +11,94 @@
     <title>Kohei Harada</title>
   </head>
   <body>
-    <div id="container"></div>
+    <article class="main-sections__item main-sections__item--ar">
+      <div class="media-content">
+        <video src="" playsinline autoplay class="media-content__video"></video>
+        <div id="ar-container" class="ar-container"></div>
+        <a href="#" class="media-content__filters-btn">Filters</a>
+      </div>
+      <div class="filter-sliders">
+        <div class="filter-sliders__item">
+          <span class="filter-sliders__item-name">Blur:</span>
+          <input
+            type="range"
+            name="blur"
+            id=""
+            class="filter-sliders__item-input"
+            min="0"
+            max="30"
+            value="0"
+          />
+        </div>
+        <div class="filter-sliders__item">
+          <span class="filter-sliders__item-name">Contrast:</span>
+          <input
+            type="range"
+            name="contrast"
+            id=""
+            class="filter-sliders__item-input"
+            min="0.4"
+            max="100"
+            value="1"
+          />
+        </div>
+        <div class="filter-sliders__item">
+          <span class="filter-sliders__item-name">Saturate:</span>
+          <input
+            type="range"
+            name="saturate"
+            id=""
+            class="filter-sliders__item-input"
+            min="0"
+            max="1000"
+            value="100"
+          />
+        </div>
+        <div class="filter-sliders__item">
+          <span class="filter-sliders__item-name">Color:</span>
+          <input
+            type="range"
+            name="hue"
+            id=""
+            class="filter-sliders__item-input"
+            min="0"
+            max="360"
+            value="0"
+          />
+        </div>
+      </div>
+    </article>
   </body>
 </html>
-<style is:global>
-  * {
-    margin: 0;
-    padding: 0;
+<style lang="scss">
+  :root {
+    --blur: 0px;
+    --contrast: 100%;
+    --saturate: 1;
+    --hue: 0deg;
   }
-  body {
-    filter: blur(0.45px) contrast(100);
+  .media-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .media-content__video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    filter: blur(var(--blur)) contrast(var(--contrast))
+      saturate(var(--saturate)) hue-rotate(var(--hue));
+  }
+  .main-sections__item--ar {
+    mix-blend-mode: difference;
+    overflow: hidden;
+  }
+  .main-sections__item--main-sub {
+    background-image: url(../images/office.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
   .tempcanvas {
     position: fixed;
@@ -30,682 +108,426 @@
     background: red;
     display: none;
   }
-  button#ARButton {
-    background-color: #fff !important;
-    color: #000 !important;
+  .media-content__filters-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    z-index: 2000;
+    background-color: #000;
+    color: #fff;
+    padding-inline: 20px;
+    padding-block: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: 0.4s clip-path ease-in-out 0.4s;
+    &--hidden {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      pointer-events: none;
+      transition-delay: 0s;
+    }
+  }
+  .filter-sliders {
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding-inline: 10px;
+    row-gap: 16px;
+    max-width: 800px;
+    // transform: translate(-50%, 100%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 3000;
+    transform: translate(-50%, 100%);
+    transition: 0.4s transform ease-in-out 0s;
+    &--open {
+      transform: translateX(-50%);
+      transition-delay: 0.4s;
+    }
+  }
+  .filter-sliders__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    font-size: 14px;
+  }
+  .filter-sliders__item-name {
+    font-family: sans-serif;
+    color: white;
+    letter-spacing: 0.03em;
+  }
+  input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  /* Track: webkit browsers */
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #111;
+    border-radius: 16px;
+  }
+
+  /* Track: Mozilla Firefox */
+  input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #111;
+    border-radius: 16px;
+  }
+
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #111;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #fff;
+  }
+
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #111;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #fff;
+  }
+
+  #ar-container {
+    z-index: 100;
+    mix-blend-mode: difference;
   }
 </style>
 <script>
   import * as THREE from "three";
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import gsap from "gsap";
-  import { ARButton } from "three/addons/webxr/ARButton.js";
-  async function initAR() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      70,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      100
-    );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.xr.enabled = true;
-    document.body.appendChild(renderer.domElement);
-    document.body.appendChild(ARButton.createButton(renderer));
+  document.addEventListener("DOMContentLoaded", function (event) {
+    const officeVideo = document.querySelector(".office-video");
+    officeVideo.play();
+  });
 
-    const size = 400;
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = size;
-    canvas.height = size;
+  const filtersButton = document.querySelector(".media-content__filters-btn");
+  const filtersSliders = document.querySelector(".filter-sliders");
+  const arContainer = document.querySelector(".ar-container");
+  arContainer.addEventListener("click", (e) => {
+    filtersButton.classList.remove("media-content__filters-btn--hidden");
+    filtersSliders.classList.remove("filter-sliders--open");
+  });
+  filtersButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.target.classList.add("media-content__filters-btn--hidden");
+    filtersSliders.classList.add("filter-sliders--open");
+  });
 
-    function hslToRgb(h, s, l) {
-      s /= 100;
-      l /= 100;
-      const c = (1 - Math.abs(2 * l - 1)) * s;
-      const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-      const m = l - c / 2;
-      let r = 0,
-        g = 0,
-        b = 0;
+  let size = 400;
+  let canvas = document.createElement("canvas");
+  let ctx = canvas.getContext("2d");
+  canvas.width = size;
+  canvas.height = size;
+  canvas.classList.add("tempcanvas");
+  canvas.classList.add("hidden");
+  document.body.appendChild(canvas);
+  const videoElement = document.querySelector(".media-content__video");
+  const isMobile = window.innerWidth < 768 ? true : false;
 
-      if (0 <= h && h < 60) {
-        r = c;
-        g = x;
-        b = 0;
-      } else if (60 <= h && h < 120) {
-        r = x;
-        g = c;
-        b = 0;
-      } else if (120 <= h && h < 180) {
-        r = 0;
-        g = c;
-        b = x;
-      } else if (180 <= h && h < 240) {
-        r = 0;
-        g = x;
-        b = c;
-      } else if (240 <= h && h < 300) {
-        r = x;
-        g = 0;
-        b = c;
-      } else if (300 <= h && h < 360) {
-        r = c;
-        g = 0;
-        b = x;
-      }
+  const updateCSSVariable = (name, value) => {
+    document.documentElement.style.setProperty(name, value);
+  };
 
-      return [
-        Math.round((r + m) * 255),
-        Math.round((g + m) * 255),
-        Math.round((b + m) * 255),
-      ];
-    }
+  document
+    .querySelector(".filter-sliders__item-input[name='saturate']")
+    .addEventListener("input", (event) => {
+      updateCSSVariable("--saturate", `${event.target.value}%`);
+    });
 
-    function getArrayFromImage(img, sizeX, sizeY) {
-      const imageCoords = [];
-      ctx.clearRect(0, 0, size, size);
-      ctx.drawImage(img, 0, 0, sizeX, sizeY);
-      const data = ctx.getImageData(0, 0, sizeX, sizeY).data;
+  document
+    .querySelector(".filter-sliders__item-input[name='hue']")
+    .addEventListener("input", (event) => {
+      updateCSSVariable("--hue", `${event.target.value}deg`);
+    });
 
-      for (let y = 0; y < sizeY; y++) {
-        for (let x = 0; x < sizeX; x++) {
-          const alpha = data[(size * y + x) * 4 + 3];
-          if (alpha > 0) {
-            imageCoords.push([10 * (x - size / 2), 10 * (size / 2 - y)]);
+  document
+    .querySelector(".filter-sliders__item-input[name='contrast']")
+    .addEventListener("input", (event) => {
+      updateCSSVariable("--contrast", `${event.target.value}`);
+    });
+  document
+    .querySelector(".filter-sliders__item-input[name='blur']")
+    .addEventListener("input", (event) => {
+      updateCSSVariable("--blur", `${event.target.value}px`);
+    });
+
+  let isCameraAvailable = true;
+
+  navigator.mediaDevices
+    .getUserMedia(
+      isMobile
+        ? {
+            video: {
+              facingMode: {
+                exact: "environment",
+              },
+            },
           }
-        }
-      }
-      return imageCoords;
-    }
+        : { video: true }
+    )
+    .then((stream) => {
+      videoElement.srcObject = stream;
+      videoElement.play();
+    })
+    .catch((error) => {
+      isCameraAvailable = false;
+    });
 
-    function loadImage(src) {
-      return new Promise((resolve) => {
-        const img = new Image();
+  function fillUp(array, max) {
+    let length = array.length;
+    for (let i = 0; i < max - length; i++) {
+      array.push(array[Math.floor(Math.random() * length)]);
+    }
+    return array;
+  }
+
+  function shuffle(a) {
+    for (let i = a.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+    return a;
+  }
+  function loadImagesSequentially(paths, whenLoaded) {
+    let imgs = [];
+
+    async function loadImage(path) {
+      return new Promise((resolve, reject) => {
+        let img = new Image();
         img.onload = () => resolve(img);
-        img.src = src;
+        img.onerror = reject;
+        img.src = path;
       });
     }
 
-    const image = await loadImage("../KH_logo.png");
-    const image2 = await loadImage("../CF_logo.png");
-    const particles = getArrayFromImage(image, 400, 400);
-    const particles2 = getArrayFromImage(image2, 400, 400);
+    async function loadAllImages() {
+      for (const path of paths) {
+        const img = await loadImage(path);
+        imgs.push(img);
+      }
+      whenLoaded(imgs);
+    }
 
-    const geometry = new THREE.BufferGeometry();
-    const vertices = [];
-    const vertices2 = [];
-    const colors = [];
-    const texture = new THREE.TextureLoader().load("particle.png");
-    const material = new THREE.PointsMaterial({
-      size: 0.0035, // Уменьшенный размер, чтобы частицы помещались
-      vertexColors: true,
-      map: texture,
-      alphaTest: 0.8,
-    });
-    let colorHue = Math.floor(Math.random() * 360);
-    const lightMultiList = [40, 50, 70, 80, 100];
-    const lightMulti =
-      lightMultiList[Math.floor(lightMultiList.length * Math.random())];
-    const saturateMultiList = [0, 40, 50, 70, 80, 100];
-    const saturateMulti =
-      saturateMultiList[Math.floor(saturateMultiList.length * Math.random())];
-    const center = new THREE.Vector3(0, 0, -1); // Центр перед камерой
-    const scale = 0.0001; // Масштаб для упрощения работы с AR
-
-    particles.forEach(([x, y]) => {
-      const zPos = Math.random() * 0.1;
-      vertices.push(
-        x * scale + center.x,
-        y * scale + center.y,
-        center.z + zPos / 2
-      );
-      const [r, g, b] = hslToRgb(
-        colorHue,
-        saturateMulti,
-        (zPos / 8) * lightMulti
-      );
-      colors.push(r, g, b);
-    });
-
-    particles2.forEach(([x, y]) => {
-      const zPos = Math.random() * 0.1;
-      vertices2.push(
-        x * scale + center.x,
-        y * scale + center.y,
-        center.z + zPos / 2
-      );
-      const [r, g, b] = hslToRgb(
-        colorHue,
-        saturateMulti,
-        (zPos / 8) * lightMulti
-      );
-      colors.push(r, g, b);
-    });
-
-    geometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(vertices, 3)
-    );
-    geometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
-    let count = 0;
-    const pointCloud = new THREE.Points(geometry, material);
-    scene.add(pointCloud);
-    let current = 0;
-    const movePoints = () => {
-  const positions = geometry.attributes.position.array;
-
-  // Выбираем целевые координаты: particles2
-  const targetParticles = count % 2 === 0 ? particles2 : particles;
-  count++;
-
-  for (let i = 0; i < positions.length; i += 3) {
-    const targetX = targetParticles[i / 3][0] * scale + center.x;
-    const targetY = targetParticles[i / 3][1] * scale + center.y;
-    const targetZ = center.z + Math.random() * 0.1;
-
-    gsap.to(positions, {
-      duration: 1.5,
-      [i]: targetX,
-      [i + 1]: targetY,
-      [i + 2]: targetZ,
-      onUpdate: () => (geometry.attributes.position.needsUpdate = true),
-    });
+    loadAllImages();
   }
-};
+  function hslToRgb(h, s, l) {
+    s /= 100;
+    l /= 100;
 
-    // Добавляем события для кликов
-    document.body.addEventListener("click", movePoints);
-    renderer.xr.addEventListener("selectstart", movePoints);
-    // document.body.addEventListener("click", function () {
-    //   current++;
-    //   current = current % 2;
-    //   geometry.attributes.position.array.forEach((value, index) => {
-    //     if (index % 3 === 0) {
-    //       gsap.to(geometry.attributes.position.array, {
-    //         duration: 1,
-    //         [index]: vertices2[index / 3][0],
-    //         [index + 1]: vertices2[index / 3][1],
-    //       });
-    //     }
-    //   });
-    //   geometry.attributes.position.needsUpdate = true;
-    // });
+    let c = (1 - Math.abs(2 * l - 1)) * s;
+    let x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    let m = l - c / 2;
+    let r = 0,
+      g = 0,
+      b = 0;
 
+    if (0 <= h && h < 60) {
+      r = c;
+      g = x;
+      b = 0;
+    } else if (60 <= h && h < 120) {
+      r = x;
+      g = c;
+      b = 0;
+    } else if (120 <= h && h < 180) {
+      r = 0;
+      g = c;
+      b = x;
+    } else if (180 <= h && h < 240) {
+      r = 0;
+      g = x;
+      b = c;
+    } else if (240 <= h && h < 300) {
+      r = x;
+      g = 0;
+      b = c;
+    } else if (300 <= h && h < 360) {
+      r = c;
+      g = 0;
+      b = x;
+    }
+
+    r = Math.round((r + m) * 255);
+    g = Math.round((g + m) * 255);
+    b = Math.round((b + m) * 255);
+
+    return [r / 255, g / 255, b / 255];
+  }
+
+  function getArrayFromImage(img, sizeX, sizeY) {
+    let imageCoords = [];
+    ctx.clearRect(0, 0, size, size);
+    ctx.drawImage(img, 0, 0, sizeX, sizeY);
+    let data = ctx.getImageData(0, 0, sizeX, sizeY).data;
+
+    for (let y = 0; y < size; y++) {
+      for (let x = 0; x < size; x++) {
+        let alpha = data[(size * y + x) * 4 + 3];
+        if (alpha > 0) {
+          imageCoords.push([10 * (x - size / 2), 10 * (size / 2 - y)]);
+        }
+      }
+    }
+    return shuffle(fillUp(imageCoords, 1500));
+  }
+
+  let images = ["../KH_logo.png", "../CF_logo.png"];
+  loadImagesSequentially(images, function (loadedImages) {
+    let gallery = [];
+    gallery.push(getArrayFromImage(loadedImages[0], 400, 400));
+    gallery.push(getArrayFromImage(loadedImages[1], 400, 400));
+
+    let camera, controls, scene, renderer;
+    let geometry, pointCloud;
+
+    function init() {
+      scene = new THREE.Scene();
+      if (!isCameraAvailable) scene.background = new THREE.Color(0x000);
+
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      let container = document.getElementById("ar-container");
+      container.appendChild(renderer.domElement);
+      const isMobile = window.innerWidth < 768 ? true : false;
+
+      camera = new THREE.PerspectiveCamera(
+        90,
+        window.innerWidth / window.innerHeight,
+        1,
+        8000
+      );
+      camera.position.z = isMobile ? 4800 : 5000;
+
+      controls = new OrbitControls(camera, renderer.domElement);
+
+      let texture = new THREE.TextureLoader().load("../particle.png");
+      let material = new THREE.PointsMaterial({
+        size: 10,
+        vertexColors: true,
+        map: texture,
+        alphaTest: 0.5,
+      });
+
+      geometry = new THREE.BufferGeometry();
+      const vertices = [];
+      const colors = [];
+      let colorHue = Math.floor(Math.random() * 360);
+      const lightMultiList = [40, 50, 70, 80, 100];
+      const lightMulti =
+        lightMultiList[Math.floor(lightMultiList.length * Math.random())];
+      const saturateMultiList = [0, 40, 50, 70, 80, 100];
+      const saturateMulti =
+        saturateMultiList[Math.floor(saturateMultiList.length * Math.random())];
+
+      gallery[0].forEach((el, index) => {
+        const zPos = Math.random() * 300;
+        vertices.push(el[0], el[1], zPos);
+        const [r, g, b] = hslToRgb(colorHue, 0, (zPos / 300) * lightMulti); // Adjust lightness based on zPos
+        colors.push(r, g, b);
+      });
+
+      geometry.setAttribute(
+        "position",
+        new THREE.Float32BufferAttribute(vertices, 3)
+      );
+      geometry.setAttribute(
+        "color",
+        new THREE.Float32BufferAttribute(colors, 3)
+      );
+
+      pointCloud = new THREE.Points(geometry, material);
+      scene.add(pointCloud);
+      console.log(geometry.attributes.position);
+
+      window.addEventListener("resize", onWindowResize, false);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    const clock = new THREE.Clock();
     let time = 0;
+
     function animate() {
+      requestAnimationFrame(animate);
       time++;
+
+      pointCloud.rotation.y += 0.01;
 
       let positions = geometry.attributes.position.array;
 
       for (let i = 0; i < positions.length; i += 3) {
         let dX = 0;
         let dY = 0;
-        let dZ = Math.cos(time / 200 + positions[i + 2] / 0.0001) * 0.003;
+        let dZ = Math.sin(time / 10 + positions[i] / 0.5) * 2;
 
         positions[i] += dX;
         positions[i + 1] += dY;
         positions[i + 2] += dZ;
       }
-
       geometry.attributes.position.needsUpdate = true;
-      renderer.render(scene, camera);
-
-      // Рекурсивно вызываем анимацию
-      requestAnimationFrame(animate);
+      render();
     }
 
-    // Инициализация анимации
+    function render() {
+      renderer.render(scene, camera);
+    }
+
+    init();
     animate();
 
-    renderer.setAnimationLoop(() => {
-      renderer.render(scene, camera);
+    let current = 0;
+    document.body.addEventListener("click", function () {
+      current++;
+      current = current % gallery.length;
+      geometry.attributes.position.array.forEach((value, index) => {
+        if (index % 3 === 0) {
+          gsap.to(geometry.attributes.position.array, {
+            duration: 1,
+            [index]: gallery[current][index / 3][0],
+            [index + 1]: gallery[current][index / 3][1],
+          });
+        }
+      });
+      geometry.attributes.position.needsUpdate = true;
     });
-  }
-
-  initAR();
-
-  // let size = 400;
-  // let canvas = document.createElement("canvas");
-  // let ctx = canvas.getContext("2d");
-  // canvas.width = size;
-  // canvas.height = size;
-  // canvas.classList.add("tempcanvas");
-  // document.body.appendChild(canvas);
-
-  // function fillUp(array, max) {
-  //   let length = array.length;
-  //   for (let i = 0; i < max - length; i++) {
-  //     array.push(array[Math.floor(Math.random() * length)]);
-  //   }
-  //   return array;
-  // }
-
-  // function shuffle(a) {
-  //   for (let i = a.length; i; i--) {
-  //     let j = Math.floor(Math.random() * i);
-  //     [a[i - 1], a[j]] = [a[j], a[i - 1]];
-  //   }
-  //   return a;
-  // }
-  // function loadImagesSequentially(paths, whenLoaded) {
-  //   let imgs = [];
-
-  //   async function loadImage(path) {
-  //     return new Promise((resolve, reject) => {
-  //       let img = new Image();
-  //       img.onload = () => resolve(img);
-  //       img.onerror = reject;
-  //       img.src = path;
-  //     });
-  //   }
-
-  //   async function loadAllImages() {
-  //     for (const path of paths) {
-  //       const img = await loadImage(path);
-  //       imgs.push(img);
-  //     }
-  //     whenLoaded(imgs);
-  //   }
-
-  //   loadAllImages();
-  // }
-  // function hslToRgb(h, s, l) {
-  //   s /= 100;
-  //   l /= 100;
-
-  //   let c = (1 - Math.abs(2 * l - 1)) * s;
-  //   let x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-  //   let m = l - c / 2;
-  //   let r = 0,
-  //     g = 0,
-  //     b = 0;
-
-  //   if (0 <= h && h < 60) {
-  //     r = c;
-  //     g = x;
-  //     b = 0;
-  //   } else if (60 <= h && h < 120) {
-  //     r = x;
-  //     g = c;
-  //     b = 0;
-  //   } else if (120 <= h && h < 180) {
-  //     r = 0;
-  //     g = c;
-  //     b = x;
-  //   } else if (180 <= h && h < 240) {
-  //     r = 0;
-  //     g = x;
-  //     b = c;
-  //   } else if (240 <= h && h < 300) {
-  //     r = x;
-  //     g = 0;
-  //     b = c;
-  //   } else if (300 <= h && h < 360) {
-  //     r = c;
-  //     g = 0;
-  //     b = x;
-  //   }
-
-  //   r = Math.round((r + m) * 255);
-  //   g = Math.round((g + m) * 255);
-  //   b = Math.round((b + m) * 255);
-
-  //   return [r / 255, g / 255, b / 255];
-  // }
-
-  // function getArrayFromImage(img, sizeX, sizeY) {
-  //   let imageCoords = [];
-  //   ctx.clearRect(0, 0, size, size);
-  //   ctx.drawImage(img, 0, 0, sizeX, sizeY);
-  //   let data = ctx.getImageData(0, 0, sizeX, sizeY).data;
-
-  //   for (let y = 0; y < size; y++) {
-  //     for (let x = 0; x < size; x++) {
-  //       let alpha = data[(size * y + x) * 4 + 3];
-  //       if (alpha > 0) {
-  //         imageCoords.push([10 * (x - size / 2), 10 * (size / 2 - y)]);
-  //       }
-  //     }
-  //   }
-  //   return shuffle(fillUp(imageCoords, 1500));
-  // }
-
-  // let images = ["../KH_logo.png", "../CF_logo.png"];
-  // loadImagesSequentially(images, function (loadedImages) {
-  //   let gallery = [];
-  //   gallery.push(getArrayFromImage(loadedImages[0], 400, 400));
-  //   gallery.push(getArrayFromImage(loadedImages[1], 400, 400));
-
-  //   let camera, controls, scene, renderer;
-  //   let geometry, pointCloud;
-
-  //   function init() {
-  //     scene = new THREE.Scene();
-  //     scene.background = new THREE.Color(0x000);
-
-  //     renderer = new THREE.WebGLRenderer();
-  //     renderer.setPixelRatio(window.devicePixelRatio);
-  //     renderer.setSize(window.innerWidth, window.innerHeight);
-  //     renderer.xr.enabled = true;
-  //     document.body.appendChild(renderer.domElement);
-  //     document.body.appendChild(ARButton.createButton(renderer));
-
-  //     let container = document.getElementById("container");
-  //     container.appendChild(renderer.domElement);
-
-  //     camera = new THREE.PerspectiveCamera(
-  //       90,
-  //       window.innerWidth / window.innerHeight,
-  //       1,
-  //       5000
-  //     );
-  //     camera.position.z = 20;
-
-  //     controls = new OrbitControls(camera, renderer.domElement);
-
-  //     let texture = new THREE.TextureLoader().load("../particle.png");
-  //     let material = new THREE.PointsMaterial({
-  //       size: 0.02,
-  //       vertexColors: true,
-  //       map: texture,
-  //       alphaTest: 0.5,
-  //     });
-
-  //     geometry = new THREE.BufferGeometry();
-  //     const vertices = [];
-  //     const colors = [];
-  //     let colorHue = Math.floor(Math.random() * 360);
-  //     const lightMultiList = [40, 50, 70, 80, 100];
-  //     const lightMulti =
-  //       lightMultiList[Math.floor(lightMultiList.length * Math.random())];
-  //     const saturateMultiList = [0, 40, 50, 70, 80, 100];
-  //     const saturateMulti =
-  //       saturateMultiList[Math.floor(saturateMultiList.length * Math.random())];
-  //       const center = new THREE.Vector3(0, 0, -1); // Центр перед камерой
-  //   const scale = 0.0001;
-
-  //     gallery[0].forEach((el, index) => {
-  //       const zPos = Math.random() * 300;
-  //       vertices.push(el[0] * scale + center.x, el[1] * scale + center.y, center.z + zPos / 8);
-  //       const [r, g, b] = hslToRgb(colorHue, 0, (zPos / 300) * lightMulti); // Adjust lightness based on zPos
-  //       colors.push(r, g, b);
-  //     });
-
-  //     geometry.setAttribute(
-  //       "position",
-  //       new THREE.Float32BufferAttribute(vertices, 3)
-  //     );
-  //     geometry.setAttribute(
-  //       "color",
-  //       new THREE.Float32BufferAttribute(colors, 3)
-  //     );
-
-  //     pointCloud = new THREE.Points(geometry, material);
-  //     scene.add(pointCloud);
-  //     console.log(geometry.attributes.position);
-
-  //     window.addEventListener("resize", onWindowResize, false);
-  //   }
-
-  //   function onWindowResize() {
-  //     camera.aspect = window.innerWidth / window.innerHeight;
-  //     camera.updateProjectionMatrix();
-  //     renderer.setSize(window.innerWidth, window.innerHeight);
-  //   }
-  //   const clock = new THREE.Clock();
-  //   let time = 0;
-
-  //   function animate() {
-  //     requestAnimationFrame(animate);
-  //     time++;
-
-  //     let positions = geometry.attributes.position.array;
-
-  //     for (let i = 0; i < positions.length; i += 3) {
-  //       let dX = 0;
-  //       let dY = 0;
-  //       let dZ = Math.sin(time / 10 + positions[i] / 0.5) * 2;
-
-  //       positions[i] += dX;
-  //       positions[i + 1] += dY;
-  //       positions[i + 2] += dZ;
-  //     }
-  //     geometry.attributes.position.needsUpdate = true;
-  //     render();
-  //   }
-
-  //   function render() {
-  //     renderer.render(scene, camera);
-  //   }
-
-  //   init();
-  //   animate();
-
-  //   let current = 0;
-  //   document.body.addEventListener("click", function () {
-  //     current++;
-  //     current = current % gallery.length;
-  //     geometry.attributes.position.array.forEach((value, index) => {
-  //       if (index % 3 === 0) {
-  //         gsap.to(geometry.attributes.position.array, {
-  //           duration: 1,
-  //           [index]: gallery[current][index / 3][0],
-  //           [index + 1]: gallery[current][index / 3][1],
-  //         });
-  //       }
-  //     });
-  //     geometry.attributes.position.needsUpdate = true;
-  //   });
-  // });
-  // async function initAR() {
-  //   const scene = new THREE.Scene();
-  //   scene.background = new THREE.Color(0x000);
-  //   const camera = new THREE.PerspectiveCamera(
-  //     70,
-  //     window.innerWidth / window.innerHeight,
-  //     0.1,
-  //     100
-  //   );
-  //   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  //   renderer.setSize(window.innerWidth, window.innerHeight);
-  //   renderer.xr.enabled = true;
-  //   document.body.appendChild(renderer.domElement);
-  //   document.body.appendChild(ARButton.createButton(renderer));
-
-  //   const size = 400;
-  //   const canvas = document.createElement("canvas");
-  //   const ctx = canvas.getContext("2d");
-  //   canvas.width = size;
-  //   canvas.height = size;
-
-  //   function hslToRgb(h, s, l) {
-  //     s /= 100;
-  //     l /= 100;
-  //     const c = (1 - Math.abs(2 * l - 1)) * s;
-  //     const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-  //     const m = l - c / 2;
-  //     let r = 0,
-  //       g = 0,
-  //       b = 0;
-
-  //     if (0 <= h && h < 60) {
-  //       r = c;
-  //       g = x;
-  //       b = 0;
-  //     } else if (60 <= h && h < 120) {
-  //       r = x;
-  //       g = c;
-  //       b = 0;
-  //     } else if (120 <= h && h < 180) {
-  //       r = 0;
-  //       g = c;
-  //       b = x;
-  //     } else if (180 <= h && h < 240) {
-  //       r = 0;
-  //       g = x;
-  //       b = c;
-  //     } else if (240 <= h && h < 300) {
-  //       r = x;
-  //       g = 0;
-  //       b = c;
-  //     } else if (300 <= h && h < 360) {
-  //       r = c;
-  //       g = 0;
-  //       b = x;
-  //     }
-
-  //     return [
-  //       Math.round((r + m) * 255),
-  //       Math.round((g + m) * 255),
-  //       Math.round((b + m) * 255),
-  //     ];
-  //   }
-
-  //   function loadImage(src) {
-  //     return new Promise((resolve) => {
-  //       const img = new Image();
-  //       img.onload = () => resolve(img);
-  //       img.src = src;
-  //     });
-  //   }
-
-  //   function getArrayFromImage(img, sizeX, sizeY) {
-  //     const imageCoords = [];
-  //     ctx.clearRect(0, 0, size, size);
-  //     ctx.drawImage(img, 0, 0, sizeX, sizeY);
-  //     const data = ctx.getImageData(0, 0, sizeX, sizeY).data;
-
-  //     for (let y = 0; y < sizeY; y++) {
-  //       for (let x = 0; x < sizeX; x++) {
-  //         const alpha = data[(size * y + x) * 4 + 3];
-  //         if (alpha > 0) {
-  //           imageCoords.push([10 * (x - size / 2), 10 * (size / 2 - y)]);
-  //         }
-  //       }
-  //     }
-  //     return imageCoords;
-  //   }
-
-  //   const image = await loadImage("../KH_logo.png");
-  //   const images = ["../KH_logo.png", "../CF_logo.png"];
-  //   const loadedImages = await Promise.all(images.map(loadImage));
-  //   const gallery = loadedImages.map((img) => getArrayFromImage(img, 400, 400));
-  //   const particles = getArrayFromImage(image, 400, 400);
-
-  //   const geometry = new THREE.BufferGeometry();
-  //   const vertices = [];
-  //   const colors = [];
-  //   const texture = new THREE.TextureLoader().load("particle.png");
-  //   const material = new THREE.PointsMaterial({
-  //     size: 0.0085,
-  //     vertexColors: true,
-  //     map: texture,
-  //     alphaTest: 0.8,
-  //   });
-
-  //   let currentGalleryIndex = 0;
-
-  //   // Установка начальных точек
-  //   gallery[currentGalleryIndex].forEach(([x, y]) => {
-  //     const zPos = Math.random() * 0.1;
-  //     vertices.push(x * 0.0001, y * 0.0001, -1 + zPos / 2);
-  //     const [r, g, b] = hslToRgb(200, 50, 50);
-  //     colors.push(r / 255, g / 255, b / 255);
-  //   });
-
-  //   particles.forEach(([x, y]) => {
-  //     const zPos = Math.random() * 0.1;
-  //     vertices.push(x * 0.0001, y * 0.0001, -1 + zPos / 2);
-  //     const [r, g, b] = hslToRgb(200, 50, 50);
-  //     colors.push(r / 255, g / 255, b / 255);
-  //   });
-
-  //   geometry.setAttribute(
-  //     "position",
-  //     new THREE.Float32BufferAttribute(vertices, 3)
-  //   );
-  //   geometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
-
-  //   const pointCloud = new THREE.Points(geometry, material);
-  //   scene.add(pointCloud);
-
-  //   function updatePoints(targetCoords) {
-  //   const positions = geometry.attributes.position.array;
-
-  //   targetCoords.forEach(([x, y], index) => {
-  //     const targetX = x * scale + center.x;
-  //     const targetY = y * scale + center.y;
-  //     const targetZ = Math.random() * 0.1;
-
-  //     const i = index * 3;
-  //     gsap.to(geometry.attributes.position.array, {
-  //       [i]: targetX,
-  //       [i + 1]: targetY,
-  //       [i + 2]: targetZ,
-  //       duration: 1,
-  //       onUpdate: () => {
-  //         geometry.attributes.position.needsUpdate = true;
-  //       },
-  //     });
-  //   });
-  // }
-
-  //   // Перемещение точек при клике
-  //   const movePoints = () => {
-  //     const positions = geometry.attributes.position.array;
-
-  //     for (let i = 0; i < positions.length; i += 3) {
-  //       const randomOffset = (Math.random() - 0.5) * 0.1;
-  //       gsap.to(positions, {
-  //         duration: 1,
-  //         [i]: positions[i] + randomOffset,
-  //         [i + 1]: positions[i + 1] + randomOffset,
-  //         [i + 2]: positions[i + 2] + randomOffset,
-  //         onUpdate: () => (geometry.attributes.position.needsUpdate = true),
-  //       });
-  //     }
-  //   };
-  //   let time = 0;
-  //   function animate() {
-  //     time++;
-
-  //     let positions = geometry.attributes.position.array;
-
-  //     for (let i = 0; i < positions.length; i += 3) {
-  //       let dX = 0;
-  //       let dY = 0;
-  //       let dZ = Math.cos(time / 200 + positions[i + 2] / 0.0001) * 0.003;
-
-  //       positions[i] += dX;
-  //       positions[i + 1] += dY;
-  //       positions[i + 2] += dZ;
-  //     }
-
-  //     geometry.attributes.position.needsUpdate = true;
-  //     renderer.render(scene, camera);
-
-  //     // Рекурсивно вызываем анимацию
-  //     requestAnimationFrame(animate);
-  //   }
-  //   animate();
-  //   let fullUpdate = function() {
-  //   currentGalleryIndex = (currentGalleryIndex + 1) % gallery.length;
-  //   console.log(gallery[currentGalleryIndex]);
-
-  //   updatePoints(gallery[currentGalleryIndex]);
-  //   }
-
-  //   // Добавляем события для кликов
-  //   document.body.addEventListener("click", fullUpdate);
-  //   renderer.xr.addEventListener("selectstart", fullUpdate);
-
-  //   // Анимация
-  //   renderer.setAnimationLoop(() => {
-  //     renderer.render(scene, camera);
-  //   });
-  // }
-
-  // initAR();
+  });
 </script>

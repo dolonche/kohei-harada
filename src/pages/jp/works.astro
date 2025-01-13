@@ -27,6 +27,7 @@ import Spacer from "../../components/Spacer.astro";
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
             </li>
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
           </ul>
         </div>
       </div>
@@ -46,6 +47,7 @@ import Spacer from "../../components/Spacer.astro";
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
             </li>
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
           </ul>
         </div>
       </div>
@@ -103,9 +105,13 @@ import Spacer from "../../components/Spacer.astro";
         <div class="works-slider-item__info">
           <span class="works-slider-item__info-name">貝印 AUGER</span>
           <ul class="works-slider-item__info-tags">
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
             <li class="works-slider-item__info-tags-item">MOVIE PRODUCE</li>
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
+            </li>
+            <li class="works-slider-item__info-tags-item">
+              EVENT PRODUCE
             </li>
           </ul>
         </div>
@@ -138,6 +144,7 @@ import Spacer from "../../components/Spacer.astro";
           <span class="works-slider-item__info-name">RIMOWA</span>
           <ul class="works-slider-item__info-tags">
             <li class="works-slider-item__info-tags-item">MOVIE PRODUCE</li>
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
           </ul>
         </div>
       </div>
@@ -172,7 +179,6 @@ import Spacer from "../../components/Spacer.astro";
           <span class="works-slider-item__info-name">CASIO</span>
           <ul class="works-slider-item__info-tags">
             <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
-            <li class="works-slider-item__info-tags-item">EVENT PRODUCE</li>
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
             </li>
@@ -290,6 +296,9 @@ import Spacer from "../../components/Spacer.astro";
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
             </li>
+            <li class="works-slider-item__info-tags-item">
+              EVENT PRODUCE
+            </li>
           </ul>
         </div>
       </div>
@@ -380,6 +389,7 @@ import Spacer from "../../components/Spacer.astro";
             <li class="works-slider-item__info-tags-item">
               PHOTOGRAPH PRODUCE
             </li>
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
           </ul>
         </div>
       </div>
@@ -403,11 +413,11 @@ import Spacer from "../../components/Spacer.astro";
     </article>
   </section>
   <article class="main-sections__item main-sections__item--collab">
-    <video class="main-sections__item-video-bg" loop autoplay muted>
+    <video class="main-sections__item-video-bg z-10" loop autoplay muted>
       <source src="/video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
       <source src="/video/adidas-icm-pc.mp4" />
     </video>
-    <div class="container h-full flex-grow">
+    <div class="container h-full flex-grow z-20">
       <div
         class="flex flex-col h-full justify-center text-white m-0 flex-grow max-md:justify-end max-md:pb-[42px]"
       >
@@ -846,7 +856,7 @@ import Spacer from "../../components/Spacer.astro";
         &--mob {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           z-index: 0;
         }
       }
