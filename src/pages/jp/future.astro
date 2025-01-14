@@ -50,14 +50,14 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
           <div class="future-coffee__about">
             <Image
               src={FutureCoffeeAboutImg}
-              width={323}
-              height={535}
+              width={650}
+              height={1050}
               alt="KOPPE 4th Wave Project"
               class:list={"future-coffee__about-img"}
             />
             <div class="future-coffee__about-descr">
               <b class="future-coffee__about-descr-title">
-                スタイルがカルチャーを創る
+                スタイルが <br/> カルチャーを創る
               </b>
               <p class="future-coffee__about-descr-text font-text-content">
                 KOPPEは、日本の誇るコーヒースタイルを世界に広める「4th
@@ -107,7 +107,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
               </div>
             </div>
             <div class="future-coffee__features-item">
-              <div class="future-coffee__features-item-media">
+              <div class="future-coffee__features-item-media future-coffee__features-item-media--dao">
                 <Image
                   src={FutureCoffeeFeatureImg3}
                   alt="Formation of a Coffee Community DAO"
@@ -115,7 +115,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
               </div>
               <div class="future-coffee__features-item-descr">
                 <b class="future-coffee__features-item-descr-title"
-                  >コーヒーコミュニティ DAOの形成</b
+                  >コーヒーコミュニティ<br/> DAOの形成</b
                 >
                 <p
                   class="future-coffee__features-item-descr-text font-text-content"
@@ -143,7 +143,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
           <div class="future-film__feature">
             <div class="future-film__feature-item">
               <b class="future-film__feature-item-title"
-                >村上龍の名作 「希望の国のエクソダス」 を映像化</b
+                >村上龍の名作 <br/> 「希望の国のエクソダス」<br/> を映像化</b
               >
               <p class="future-film__feature-item-descr font-text-content">
                 本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
@@ -154,7 +154,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
                 >DAOの未来を映像で描く</b
               >
               <p class="future-film__feature-item-descr font-text-content">
-                本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
+                『希望の国のエクソダス』に登場する中学生たちが構築した組織は、まさに現在注目されているDAO（分散型自律組織）のような仕組みです。この映像化を通じて、視聴者がDAOという新しい経済の概念を自然に理解できるようにしたいと考えています。難解に感じられるDAOの仕組みを、物語の中でわかりやすく描写することで、新しい経済の可能性を広く伝えます。
               </p>
             </div>
             <div class="future-film__feature-item">
@@ -449,6 +449,9 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
         justify-content: space-between;
         width: 100%;
         max-width: 1000px;
+        &-img {
+          max-width: 323px;
+        }
         &-descr {
           display: flex;
           flex-direction: column;
@@ -503,9 +506,14 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
               object-fit: contain;
               object-position: 50% 0;
             }
+            &--dao {
+              img {
+                max-height: 80%;
+              }
+            }
           }
           &-descr {
-            max-width: 620px;
+            max-width: 540px;
             display: flex;
             flex-direction: column;
             &-title {
@@ -573,7 +581,8 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
       background-color: #111;
       color: #fff;
       &__title {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -601,7 +610,8 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
         }
       }
       &__exp {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -658,13 +668,15 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.j
         }
       }
       &__ar {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-inline: auto;
         margin-bottom: 154px;
         margin-top: 54px;
+        column-gap: 80px;
         &-descr {
           display: flex;
           flex-direction: column;

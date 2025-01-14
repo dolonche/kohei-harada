@@ -50,8 +50,8 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
           <div class="future-coffee__about">
             <Image
               src={FutureCoffeeAboutImg}
-              width={323}
-              height={535}
+              width={650}
+              height={1050}
               alt="KOPPE 4th Wave Project"
               class:list={"future-coffee__about-img"}
             />
@@ -124,7 +124,7 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
               </div>
             </div>
             <div class="future-coffee__features-item">
-              <div class="future-coffee__features-item-media">
+              <div class="future-coffee__features-item-media future-coffee__features-item-media--dao">
                 <Image
                   src={FutureCoffeeFeatureImg3}
                   alt="Formation of a Coffee Community DAO"
@@ -516,6 +516,9 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
         justify-content: space-between;
         width: 100%;
         max-width: 1000px;
+        &-img {
+          max-width: 323px;
+        }
         &-descr {
           display: flex;
           flex-direction: column;
@@ -569,6 +572,11 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
             img {
               object-fit: contain;
               object-position: 50% 0;
+            }
+            &--dao {
+              img {
+                max-height: 80%;
+              }
             }
           }
           &-descr {
@@ -640,7 +648,8 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
       background-color: #111;
       color: #fff;
       &__title {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -668,7 +677,8 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
         }
       }
       &__exp {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -725,13 +735,15 @@ import FutureMagSliderImg16 from "../assets/images/magazine-slider-image-16.jpg"
         }
       }
       &__ar {
-        max-width: 1070px;
+        max-width: 1110px;
+        padding-inline: 20px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-inline: auto;
         margin-bottom: 154px;
         margin-top: 54px;
+        column-gap: 80px;
         &-descr {
           display: flex;
           flex-direction: column;
