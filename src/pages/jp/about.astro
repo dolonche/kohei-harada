@@ -371,7 +371,6 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
   canvas.classList.add("hidden");
   document.body.appendChild(canvas);
   const videoElement = document.querySelector(".media-content__video");
-  const isMobile = window.innerWidth < 768 ? true : false;
 
   const updateCSSVariable = (name, value) => {
     document.documentElement.style.setProperty(name, value);
@@ -539,8 +538,6 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
 
       let container = document.getElementById("ar-container");
       container.appendChild(renderer.domElement);
-      const isMobile = window.innerWidth < 768 ? true : false;
-
       camera = new THREE.PerspectiveCamera(
         90,
         window.innerWidth / window.innerHeight,
