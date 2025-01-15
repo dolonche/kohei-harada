@@ -31,7 +31,7 @@ import OfficeImg10 from "../assets/images/office-10.png";
         loop
         muted
         poster="/office-poster.webp"
-        class="office__top-media"
+        class="office__top-media video-responsive"
       >
         <source src="/video/office-video-mob.mp4" media="(max-width:767.9px)" />
         <source src="/video/office-video.mp4" />
@@ -392,13 +392,26 @@ import OfficeImg10 from "../assets/images/office-10.png";
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
+    const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
+    function updateVideoSource() {
+      const responsiveVideos = document.querySelectorAll(".video-responsive");
+      const source = document.getElementById("video-source");
+      if (isMobile)
+        responsiveVideos.forEach((video) => {
+          const mobileSource = video.querySelector("source").src;
+          video.src = mobileSource;
+          video.load();
+        });
+    }
     document.addEventListener("DOMContentLoaded", function (event) {
+      if (isMobile) {
+        updateVideoSource();
+      }
       const officeVideo = document.querySelector(".office__top-media");
       officeVideo.play();
 
       ScrollTrigger.matchMedia({
         "(min-width: 768px)": function () {
-          console.log(10);
 
           gsap.set(".gallery .gallery__item:not(:last-child)", {
             filter: "brightness(1)",

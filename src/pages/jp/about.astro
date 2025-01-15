@@ -26,7 +26,9 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
       </p>
     </div>
     <Button content="Contact" href="/jp/contact/" className="mr-auto mt-7" />
-    <h2 class="text-[40px] mt-[120px] font-title leading-[50px]">KOHEI HARADA</h2>
+    <h2 class="text-[40px] mt-[120px] font-title leading-[50px]">
+      KOHEI HARADA
+    </h2>
     <p class="leading-[24px] font-text-content mt-6">
       Creative Factory <br />
       WIT inc. (Japan) CEO / WIT B.V. <br />
@@ -71,7 +73,7 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
           autoplay
           loop
           muted
-          class="w-full h-full object-cover office-video"
+          class="w-full h-full object-cover office-video video-responsive"
         >
           <source
             src="/video/office-video-mob.mp4"
@@ -327,7 +329,22 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
   import * as THREE from "three";
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import gsap from "gsap";
+  const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
+  function updateVideoSource() {
+    const responsiveVideos = document.querySelectorAll(".video-responsive");
+
+    const source = document.getElementById("video-source");
+    if (isMobile)
+      responsiveVideos.forEach((video) => {
+        const mobileSource = video.querySelector("source").src;
+        video.src = mobileSource;
+        video.load();
+      });
+  }
   document.addEventListener("DOMContentLoaded", function (event) {
+    if (isMobile) {
+      updateVideoSource();
+    }
     const officeVideo = document.querySelector(".office-video");
     officeVideo.play();
   });
@@ -573,7 +590,6 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
 
       pointCloud = new THREE.Points(geometry, material);
       scene.add(pointCloud);
-      console.log(geometry.attributes.position);
 
       window.addEventListener("resize", onWindowResize, false);
     }

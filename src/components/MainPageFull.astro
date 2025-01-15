@@ -61,18 +61,26 @@ const t = useTranslations(lang);
           </div>
         </article>
         <video
-          class="main-sections__top-video"
+          class="main-sections__top-video video-responsive"
           poster="/office-poster.webp"
           autoplay
           loop
           muted
-          playsinline>
-          <source src="/video/office-video-mob.mp4" media="(max-width:767.9px)" />
+          playsinline
+        >
+          <source
+            src="/video/office-video-mob.mp4"
+            media="(max-width:767.9px)"
+          />
           <source src="/video/office-video.mp4" />
         </video>
       </div>
       <article class="main-sections__item main-sections__item--collab">
-        <video class="main-sections__item-video-bg z-10" muted playsinline>
+        <video
+          class="main-sections__item-video-bg z-10 video-responsive"
+          muted
+          playsinline
+        >
           <source src="/video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
           <source src="/video/adidas-icm-pc.mp4" />
         </video>
@@ -121,7 +129,9 @@ const t = useTranslations(lang);
                 <li class="main-sections__item-info-tags-item">
                   PHOTOGRAPH PRODUCE
                 </li>
-                <li class="main-sections__item-info-tags-item">CREATIVE PRODUCE</li>
+                <li class="main-sections__item-info-tags-item">
+                  CREATIVE PRODUCE
+                </li>
               </ul>
             </div>
           </div>
@@ -151,7 +161,9 @@ const t = useTranslations(lang);
                 <li class="main-sections__item-info-tags-item">
                   PHOTOGRAPH PRODUCE
                 </li>
-                <li class="main-sections__item-info-tags-item">CREATIVE PRODUCE</li>
+                <li class="main-sections__item-info-tags-item">
+                  CREATIVE PRODUCE
+                </li>
               </ul>
             </div>
           </div>
@@ -166,7 +178,7 @@ const t = useTranslations(lang);
             <video
               muted
               playsinline
-              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto"
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto video-responsive"
             >
               <source
                 src="/video/adidas-energy-mob.mp4"
@@ -202,7 +214,7 @@ const t = useTranslations(lang);
             <video
               muted
               playsinline
-              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto"
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto video-responsive"
             >
               <source src="/video/kode-mob.mp4" media="(max-width:767.9px)" />
               <source src="/video/kode-pc.mp4" />
@@ -299,7 +311,9 @@ const t = useTranslations(lang);
                 <li class="main-sections__item-info-tags-item">
                   MOVIE PRODUCE
                 </li>
-                <li class="main-sections__item-info-tags-item">CREATIVE PRODUCE</li>
+                <li class="main-sections__item-info-tags-item">
+                  CREATIVE PRODUCE
+                </li>
               </ul>
             </div>
           </div>
@@ -372,7 +386,7 @@ const t = useTranslations(lang);
             <video
               muted
               playsinline
-              class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto"
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[480px] h-[275px] mx-auto video-responsive"
             >
               <source
                 src="/video/adidas-base-mob.mp4"
@@ -429,7 +443,7 @@ const t = useTranslations(lang);
             <video
               muted
               playsinline
-              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto"
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto video-responsive"
             >
               <source
                 src="/video/north-face-mob.mp4"
@@ -607,7 +621,9 @@ const t = useTranslations(lang);
                 <li class="main-sections__item-info-tags-item">
                   PHOTOGRAPH PRODUCE
                 </li>
-                <li class="main-sections__item-info-tags-item">CREATIVE PRODUCE</li>
+                <li class="main-sections__item-info-tags-item">
+                  CREATIVE PRODUCE
+                </li>
               </ul>
             </div>
           </div>
@@ -722,6 +738,22 @@ const t = useTranslations(lang);
       video.pause();
     });
   };
+
+  function updateVideoSource() {
+    const responsiveVideos = document.querySelectorAll(".video-responsive");
+
+    const source = document.getElementById("video-source");
+    if (isMobile) responsiveVideos.forEach((video) => {
+      const mobileSource = video.querySelector("source").src;
+      video.src = mobileSource
+      video.load();      
+    });
+  }
+  const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
+  if (isMobile) {
+    window.addEventListener("DOMContentLoaded", updateVideoSource);
+  }
+
   const officeVideo = document.querySelector(".main-sections__top-video");
   officeVideo.play();
 
@@ -763,7 +795,6 @@ const t = useTranslations(lang);
           await pauseAllVideos();
 
           if (Math.abs(panel.parentNode.offsetTop - currentYpos) < 150) {
-
             if (panel.querySelector("video")) {
               panel.querySelector("video").play();
             }

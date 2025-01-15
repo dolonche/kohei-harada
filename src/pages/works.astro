@@ -56,7 +56,7 @@ import Spacer from "../components/Spacer.astro";
       <div class="container h-full pointer-events-none">
         <video
           muted
-          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto video-responsive"
         >
           <source
             src="/video/adidas-energy-mob.mp4"
@@ -80,7 +80,7 @@ import Spacer from "../components/Spacer.astro";
       <div class="container h-full pointer-events-none">
         <video
           muted
-          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto video-responsive"
         >
           <source src="/video/kode-mob.mp4" media="(max-width:767.9px)" />
           <source src="/video/kode-pc.mp4" />
@@ -224,7 +224,7 @@ import Spacer from "../components/Spacer.astro";
       <div class="container h-full pointer-events-none">
         <video
           muted
-          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto video-responsive"
         >
           <source
             src="/video/adidas-base-mob.mp4"
@@ -264,7 +264,7 @@ import Spacer from "../components/Spacer.astro";
       <div class="container h-full pointer-events-none">
         <video
           muted
-          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto"
+          class="works-slider-item__media works-slider-item__media--mob w-[480px] h-[275px] mx-auto video-responsive"
         >
           <source src="/video/north-face-mob.mp4" media="(max-width:767.9px)" />
           <source src="/video/north-face-pc.mp4" />
@@ -413,7 +413,7 @@ import Spacer from "../components/Spacer.astro";
     </article>
   </section>
   <article class="main-sections__item main-sections__item--collab">
-    <video class="main-sections__item-video-bg z-10" loop autoplay muted>
+    <video class="main-sections__item-video-bg z-10 video-responsive" loop autoplay muted>
       <source src="/video/adidas-icm-mob.mp4" media="(max-width:767.9px)" />
       <source src="/video/adidas-icm-pc.mp4" />
     </video>
@@ -881,6 +881,20 @@ import Spacer from "../components/Spacer.astro";
   import gsap from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
   import ScrollToPlugin from "gsap/ScrollToPlugin";
+  const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
+  function updateVideoSource() {
+    const responsiveVideos = document.querySelectorAll(".video-responsive");
+
+    const source = document.getElementById("video-source");
+    if (isMobile) responsiveVideos.forEach((video) => {
+      const mobileSource = video.querySelector("source").src;
+      video.src = mobileSource
+      video.load();      
+    });
+  }
+  if (isMobile) {
+    window.addEventListener("DOMContentLoaded", updateVideoSource);
+  }
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   const collabVideo = document.querySelector(".main-sections__item-video-bg");
   collabVideo.play();
