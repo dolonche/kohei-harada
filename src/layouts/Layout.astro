@@ -39,6 +39,22 @@ const { title, descr, keywords } = Astro.props;
       referrerpolicy="no-referrer"></script> -->
   </head>
   <body>
+    <div id="transition-overlay">
+      <div class="loader text-white">
+        <span>K</span>
+        <span>o</span>
+        <span>h</span>
+        <span>e</span>
+        <span>i</span>
+        <span class="w-3"></span>
+        <span>H</span>
+        <span>a</span>
+        <span>r</span>
+        <span>a</span>
+        <span>d</span>
+        <span>a</span>
+      </div>
+    </div>
     <div class="circle-cursor circle-cursor--inner"></div>
     <div class="circle-cursor circle-cursor--outer"></div>
     <slot />
@@ -131,7 +147,6 @@ const { title, descr, keywords } = Astro.props;
     .box {
       width: 330px;
       height: 248px;
-
     }
     #box1 {
       bottom: 20px;
@@ -143,9 +158,80 @@ const { title, descr, keywords } = Astro.props;
       right: -60px;
     }
   }
+  #transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* Цвет заливки */
+    z-index: 10000; /* Выше всего остального */
+    pointer-events: none;
+    transform: translateY(0%);
+    transition: opacity 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader {
+    font-size: 44px;
+    color: #111;
+    display: flex;
+    column-gap: 1px;
+  }
 </style>
 <script>
   import gsap from "gsap";
+  // Простой код для анимации перехода
+  const overlay = document.getElementById("transition-overlay");
+  const loader = overlay.querySelector(".loader");
+  // const content = document.getElementById("content");
+  // gsap.to triggers animations
+  gsap.set(".loader span", { yPercent: 200, opacity: 0 });
+  gsap.set(".overlay", { display: 'flex'});
+  const loaderTl = new gsap.timeline({ repeat: -1 });
+  loaderTl
+    .to(".loader span", 0.7, {
+      yPercent: 0,
+      opacity: 1,
+      ease: "sine.inOut",
+      stagger: { from: "center", amount: 0.5, ease: "power1.out" },
+    })
+    .to(".loader span", 0.7, {
+      yPercent: -200,
+      opacity: 0,
+      ease: "sine.inOut",
+      stagger: { from: "edges", amount: 0.5, ease: "power1.out" },
+    });
+
+  // При переходе на новую страницу показываем анимацию
+  document.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
+      event.preventDefault(); // предотвращаем стандартный переход
+
+      // Анимация начала перехода
+      overlay.style.display = "flex";
+      overlay.style.opacity = "1";
+      overlay.style.transform = "translateY(0%)";
+      loader.style.display = "none";
+
+      setTimeout(() => {
+        setTimeout(() => {
+          window.location.href = event.target.href;
+        }, 400);
+      }, 400);
+    }
+  });
+
+  // Событие после загрузки новой страницы
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+    overlay.style.opacity = "0";
+  }, 1400);
+    setTimeout(() => {
+      // overlay.style.display = "none";
+    }, 1400);
+  });
 
   class customCursor {
     constructor() {
@@ -257,7 +343,6 @@ const { title, descr, keywords } = Astro.props;
   const cursor = new customCursor();
 
   if (document.querySelector("#box1")) {
-
     const box1 = document.getElementById("box1");
     const box2 = document.getElementById("box2");
     gsap.set([box1, box2], { rotate: "-30deg" });
