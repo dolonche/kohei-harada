@@ -299,11 +299,13 @@ const t = useTranslations(lang);
             class="flex flex-col h-full justify-center text-white m-0 flex-grow"
           >
             <video
-              src="/video/rimowa.mp4"
               muted
               playsinline
-              class="main-sections__item-media w-[480px] h-[275px] mx-auto"
-            ></video>
+              class="main-sections__item-media main-sections__item-media--mob-fill w-[760px] h-[429px] mx-auto video-responsive"
+            >
+              <source src="/video/rimowa-mob.mp4" media="(max-width:767.9px)" />
+              <source src="/video/rimowa.mp4" /></video
+            >
             <div class="main-sections__item-info">
               <span class="main-sections__item-info-name">RIMOWA</span>
               <ul class="main-sections__item-info-tags">
@@ -678,238 +680,239 @@ const t = useTranslations(lang);
     </section>
   </main>
   <!-- <PageFooter></PageFooter> -->
-</Layout>
 
-<style lang="scss" is:global>
-  :root {
-    --topSectionBlur: 10px;
-  }
-  .container {
-    max-width: 1600px;
-    padding-inline: 45px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-  }
-  @media (max-width: 767.9px) {
-    .container {
-      padding-inline: 40px;
+  <style lang="scss" is:global>
+    :root {
+      --topSectionBlur: 10px;
     }
-  }
-</style>
-<script>
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  let pageTopTl = new gsap.timeline({
-    onComplete: () =>
-      document.querySelector(".main-sections__top-video").play(),
-  });
-  pageTopTl
-    .to(".main-section__title", 0.6, {
-      clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-    })
-    .to(
-      ".main-section__sub",
-      0.4,
-      { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
-      "-=0.2"
-    )
-    .to(
-      ".main-section__descr-text",
-      0.4,
-      { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
-      "-=0.2"
-    )
-    .to(
-      ".main-section__descr-btn",
-      0.4,
-      { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
-      "-=0.2"
-    );
-  const pauseAllVideos = () => {
-    const videos = document.querySelectorAll(
-      "video:not(.main-sections__top-video)"
-    );
-    videos.forEach((video) => {
-      video.pause();
-    });
-  };
-
-  function updateVideoSource() {
-    const responsiveVideos = document.querySelectorAll(".video-responsive");
-
-    const source = document.getElementById("video-source");
-    if (isMobile) responsiveVideos.forEach((video) => {
-      const mobileSource = video.querySelector("source").src;
-      video.src = mobileSource
-      video.load();      
-    });
-  }
-  const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
-  if (isMobile) {
-    window.addEventListener("DOMContentLoaded", updateVideoSource);
-  }
-
-  const officeVideo = document.querySelector(".main-sections__top-video");
-  officeVideo.play();
-
-  let panels = gsap.utils.toArray(".main-sections__item"),
-    observer = ScrollTrigger.normalizeScroll(true),
-    scrollTween;
-
-  document.addEventListener(
-    "touchstart",
-    (e) => {
-      if (scrollTween) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
+    .container {
+      max-width: 1600px;
+      padding-inline: 45px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+    }
+    @media (max-width: 767.9px) {
+      .container {
+        padding-inline: 40px;
       }
-    },
-    { capture: true, passive: false }
-  );
+    }
+  </style>
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
-  let tops = panels.map((panel) =>
-    ScrollTrigger.create({ trigger: panel, start: "top top" })
-  );
-  ScrollTrigger.create({
-    snap: {
-      snapTo: (progress, self) => {
-        let panelStarts = tops.map((st) => st.start),
-          snapScroll = gsap.utils.snap(panelStarts, self.scroll());
-
-        ScrollTrigger.refresh();
-
-        return gsap.utils.normalize(
-          0,
-          ScrollTrigger.maxScroll(window),
-          snapScroll
-        );
-      },
-      onComplete: () => {
-        const currentYpos = window.pageYOffset;
-        panels.forEach(async (panel) => {
-          await pauseAllVideos();
-
-          if (Math.abs(panel.parentNode.offsetTop - currentYpos) < 150) {
-            if (panel.querySelector("video")) {
-              panel.querySelector("video").play();
-            }
-            return;
-          }
-        });
-      },
-      duration: 0.5,
-    },
-  });
-
-  panels.forEach((panel, i) => {
-    ScrollTrigger.create({
-      trigger: panel,
-      start: () =>
-        panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-      pin: !panel.parentNode.classList.contains("main-sections__top"),
-      pinSpacing: false,
+    let pageTopTl = new gsap.timeline({
+      onComplete: () =>
+        document.querySelector(".main-sections__top-video").play(),
     });
-  });
+    pageTopTl
+      .to(".main-section__title", 0.6, {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+      })
+      .to(
+        ".main-section__sub",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      )
+      .to(
+        ".main-section__descr-text",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      )
+      .to(
+        ".main-section__descr-btn",
+        0.4,
+        { clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)" },
+        "-=0.2"
+      );
+    const pauseAllVideos = () => {
+      const videos = document.querySelectorAll(
+        "video:not(.main-sections__top-video)"
+      );
+      videos.forEach((video) => {
+        video.pause();
+      });
+    };
 
-  let rootStyle = document.querySelector(":root");
+    function updateVideoSource() {
+      const responsiveVideos = document.querySelectorAll(".video-responsive");
 
-  gsap.to(".main-sections__top", {
-    scrollTrigger: {
-      trigger: ".main-sections__item--main-sub",
-      toggleActions: "restart resume reverse resume",
-      start: "top bottom",
-      end: "top top",
-      //   markers: true,
-      scrub: true,
-      onUpdate: (self) => {
-        rootStyle.style.setProperty(
-          "--topSectionBlur",
-          `${10 * (1 - self.progress)}px`
-        );
+      const source = document.getElementById("video-source");
+      if (isMobile)
+        responsiveVideos.forEach((video) => {
+          const mobileSource = video.querySelector("source").src;
+          video.src = mobileSource;
+          video.load();
+        });
+    }
+    const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
+    if (isMobile) {
+      window.addEventListener("DOMContentLoaded", updateVideoSource);
+    }
 
-        if (self.direction === 1) {
-          self.progress;
-        } else {
+    const officeVideo = document.querySelector(".main-sections__top-video");
+    officeVideo.play();
+
+    let panels = gsap.utils.toArray(".main-sections__item"),
+      observer = ScrollTrigger.normalizeScroll(true),
+      scrollTween;
+
+    document.addEventListener(
+      "touchstart",
+      (e) => {
+        if (scrollTween) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
         }
       },
-    },
-  });
+      { capture: true, passive: false }
+    );
 
-  //   gsap.to(".main-sections__item--main", {
-  //     scrollTrigger: {
-  //       trigger: ".main-sections__item--main",
-  //       toggleActions: "restart resume reverse resume",
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       markers: true,
-  //       scrub: true,
-  //       onUpdate: (self) => {
-  // 		console.log(self);
+    let tops = panels.map((panel) =>
+      ScrollTrigger.create({ trigger: panel, start: "top top" })
+    );
+    ScrollTrigger.create({
+      snap: {
+        snapTo: (progress, self) => {
+          let panelStarts = tops.map((st) => st.start),
+            snapScroll = gsap.utils.snap(panelStarts, self.scroll());
 
-  //         if (self.direction === 1) {
-  //           console.log(self.progress);
+          ScrollTrigger.refresh();
 
-  //           self.progress;
-  //         } else {
-  //         }
-  //       },
-  //     },
-  //   });
-  // 	import * as THREE from 'three';
-  // 	let scene, camera, renderer, uniforms;
+          return gsap.utils.normalize(
+            0,
+            ScrollTrigger.maxScroll(window),
+            snapScroll
+          );
+        },
+        onComplete: () => {
+          const currentYpos = window.pageYOffset;
+          panels.forEach(async (panel) => {
+            await pauseAllVideos();
 
-  // function init() {
-  //   scene = new THREE.Scene();
-  //   camera = new THREE.OrthographicCamera(
-  //     window.innerWidth / -2, window.innerWidth / 2,
-  //     window.innerHeight / 2, window.innerHeight / -2,
-  //     1, 1000
-  //   );
-  //   camera.position.z = 1;
+            if (Math.abs(panel.parentNode.offsetTop - currentYpos) < 150) {
+              if (panel.querySelector("video")) {
+                panel.querySelector("video").play();
+              }
+              return;
+            }
+          });
+        },
+        duration: 0.5,
+      },
+    });
 
-  //   renderer = new THREE.WebGLRenderer();
-  //   renderer.setSize(window.innerWidth, window.innerHeight);
-  //   document.body.appendChild(renderer.domElement);
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: () =>
+          panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: !panel.parentNode.classList.contains("main-sections__top"),
+        pinSpacing: false,
+      });
+    });
 
-  //   const textureLoader = new THREE.TextureLoader();
-  //   const images = document.querySelectorAll('img');
+    let rootStyle = document.querySelector(":root");
 
-  //   images.forEach((img) => {
-  //     const texture = textureLoader.load(img.src);
-  //     const geometry = new THREE.PlaneGeometry(img.width, img.height);  // исправлено
+    gsap.to(".main-sections__top", {
+      scrollTrigger: {
+        trigger: ".main-sections__item--main-sub",
+        toggleActions: "restart resume reverse resume",
+        start: "top bottom",
+        end: "top top",
+        //   markers: true,
+        scrub: true,
+        onUpdate: (self) => {
+          rootStyle.style.setProperty(
+            "--topSectionBlur",
+            `${10 * (1 - self.progress)}px`
+          );
 
-  //     uniforms = {
-  //       uTexture: { value: texture },
-  //       uMouse: { value: new THREE.Vector2(0.5, 0.5) }
-  //     };
+          if (self.direction === 1) {
+            self.progress;
+          } else {
+          }
+        },
+      },
+    });
 
-  //     const material = new THREE.ShaderMaterial({
-  //       uniforms: uniforms,
-  //       vertexShader: document.getElementById('vertexShader').textContent,
-  //       fragmentShader: document.getElementById('fragmentShader').textContent
-  //     });
+    //   gsap.to(".main-sections__item--main", {
+    //     scrollTrigger: {
+    //       trigger: ".main-sections__item--main",
+    //       toggleActions: "restart resume reverse resume",
+    //       start: "top bottom",
+    //       end: "bottom top",
+    //       markers: true,
+    //       scrub: true,
+    //       onUpdate: (self) => {
+    // 		console.log(self);
 
-  //     const mesh = new THREE.Mesh(geometry, material);
-  //     scene.add(mesh);
-  //   });
+    //         if (self.direction === 1) {
+    //           console.log(self.progress);
 
-  //   window.addEventListener('mousemove', onMouseMove);
-  //   animate();
-  // }
+    //           self.progress;
+    //         } else {
+    //         }
+    //       },
+    //     },
+    //   });
+    // 	import * as THREE from 'three';
+    // 	let scene, camera, renderer, uniforms;
 
-  // function onMouseMove(event) {
-  //   uniforms.uMouse.value.x = event.clientX / window.innerWidth;
-  //   uniforms.uMouse.value.y = 1 - event.clientY / window.innerHeight;
-  // }
+    // function init() {
+    //   scene = new THREE.Scene();
+    //   camera = new THREE.OrthographicCamera(
+    //     window.innerWidth / -2, window.innerWidth / 2,
+    //     window.innerHeight / 2, window.innerHeight / -2,
+    //     1, 1000
+    //   );
+    //   camera.position.z = 1;
 
-  // function animate() {
-  //   requestAnimationFrame(animate);
-  //   renderer.render(scene, camera);
-  // }
+    //   renderer = new THREE.WebGLRenderer();
+    //   renderer.setSize(window.innerWidth, window.innerHeight);
+    //   document.body.appendChild(renderer.domElement);
 
-  // init();
-</script>
+    //   const textureLoader = new THREE.TextureLoader();
+    //   const images = document.querySelectorAll('img');
+
+    //   images.forEach((img) => {
+    //     const texture = textureLoader.load(img.src);
+    //     const geometry = new THREE.PlaneGeometry(img.width, img.height);  // исправлено
+
+    //     uniforms = {
+    //       uTexture: { value: texture },
+    //       uMouse: { value: new THREE.Vector2(0.5, 0.5) }
+    //     };
+
+    //     const material = new THREE.ShaderMaterial({
+    //       uniforms: uniforms,
+    //       vertexShader: document.getElementById('vertexShader').textContent,
+    //       fragmentShader: document.getElementById('fragmentShader').textContent
+    //     });
+
+    //     const mesh = new THREE.Mesh(geometry, material);
+    //     scene.add(mesh);
+    //   });
+
+    //   window.addEventListener('mousemove', onMouseMove);
+    //   animate();
+    // }
+
+    // function onMouseMove(event) {
+    //   uniforms.uMouse.value.x = event.clientX / window.innerWidth;
+    //   uniforms.uMouse.value.y = 1 - event.clientY / window.innerHeight;
+    // }
+
+    // function animate() {
+    //   requestAnimationFrame(animate);
+    //   renderer.render(scene, camera);
+    // }
+
+    // init();
+  </script>
+</Layout>
