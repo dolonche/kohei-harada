@@ -194,7 +194,7 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
     overflow: hidden;
   }
   .main-sections__item--main-sub {
-    background-image: url(../images/office.webp);
+    background-image: url(../../images/office.webp);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -518,7 +518,7 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
     return shuffle(fillUp(imageCoords, 1500));
   }
 
-  let images = ["../KH_logo.png", "../CF_logo.png"];
+  let images = ["../../KH_logo.png", "../../CF_logo.png"];
   loadImagesSequentially(images, function (loadedImages) {
     let gallery = [];
     gallery.push(getArrayFromImage(loadedImages[0], 400, 400));
@@ -549,7 +549,7 @@ import MncLogo from "../../assets/images/logo-mnc.svg";
       // controls.enableZoom = false;
       // controls.enableRotate = false
 
-      let texture = new THREE.TextureLoader().load("../particle.png");
+      let texture = new THREE.TextureLoader().load("../../particle.png");
       let material = new THREE.PointsMaterial({
         size: 10,
         vertexColors: true,
