@@ -10,6 +10,7 @@ export default {
 		fontFamily: {
 			title: 'Big Caslon',
 			'text-content': 'Roboto',
+			'base': 'Fenwick',
 		}
 	},
 	plugins: [],

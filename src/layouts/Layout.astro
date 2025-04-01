@@ -222,6 +222,31 @@ const { title, descr, keywords } = Astro.props;
     }
   });
 
+  window.addEventListener("popstate", (event) => {
+    if (event.state && event.state.path) {
+      overlay.style.display = "flex";
+      overlay.style.opacity = "1";
+      overlay.style.transform = "translateY(0%)";
+      loader.style.display = "none";
+
+      setTimeout(() => {
+        setTimeout(() => {
+          window.location.href = event.state.path;
+        }, 400);
+      });
+    } else {
+      console.log("vernulis");
+
+      window.history.back();
+    }
+  });
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      overlay.style.opacity = "0";
+    }
+  });
+
   window.addEventListener("load", () => {
     setTimeout(() => {
       overlay.style.opacity = "0";
