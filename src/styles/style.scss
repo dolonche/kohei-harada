@@ -162,7 +162,16 @@
         height: 100%;
         object-fit: contain;
       }
-
+    }
+    &--sekkisei {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(43, 43, 43, 0.4) 55%,
+          rgba(43, 43, 43, 1) 100%
+        ),
+        url(../images/sekkisei.webp);
     }
     &--sake {
       background-image: linear-gradient(
@@ -470,6 +479,16 @@
       }
       &--main-sub {
       }
+      &--sekkisei {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(43, 43, 43, 0.4) 55%,
+          rgba(43, 43, 43, 1) 100%
+        ),
+        url(../images/sekkisei-mob.webp);
+    }
     }
   }
 }

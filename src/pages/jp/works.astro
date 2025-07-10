@@ -14,6 +14,25 @@ import Spacer from "../../components/Spacer.astro";
     <h1 class="main-title">Works</h1>
   </div>
   <section class="works-slider">
+    <article class="works-slider-item works-slider-item--sekkisei">
+      <div class="container h-full pointer-events-none">
+        <video
+          src="/video/sekkisei.mp4"
+          muted
+          playsinline
+          class="works-slider-item__media w-[480px] h-[275px] mx-auto"></video>
+        <div class="works-slider-item__info">
+          <span class="works-slider-item__info-name">Sekkisei blue</span>
+          <ul class="works-slider-item__info-tags">
+            <li class="works-slider-item__info-tags-item">CREATIVE PRODUCE</li>
+            <li class="works-slider-item__info-tags-item">MOVIE PRODUCE</li>
+            <li class="works-slider-item__info-tags-item">
+              PHOTOGRAPH PRODUCE
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
     <article class="works-slider-item works-slider-item--sake">
       <div class="container h-full pointer-events-none">
         <video
@@ -493,6 +512,18 @@ import Spacer from "../../components/Spacer.astro";
         height: 100dvh;
       }
     }
+
+    &--sekkisei {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(43, 43, 43, 0.4) 55%,
+          rgba(43, 43, 43, 1) 100%
+        ),
+        url(../images/sekkisei.webp);
+    }
+
     &--sake {
       background-image: linear-gradient(
           to bottom,
