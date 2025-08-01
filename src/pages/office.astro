@@ -391,6 +391,9 @@ import OfficeImg10 from "../assets/images/office-10.png";
           position: static;
         }
       }
+      .office-360 {
+        margin-top: 40px;
+      }
     }
   </style>
   <script>
@@ -402,10 +405,10 @@ import OfficeImg10 from "../assets/images/office-10.png";
       container: "office-360",
       panorama: "/office-360.jpg",
       navbar: false,
-      mousewheel: false, 
+      mousewheel: false,
       moveSpeed: 1,
-      mousemove: true, 
-      touchmoveTwoFingers: true, 
+      mousemove: true,
+      touchmoveTwoFingers: true,
     });
     gsap.registerPlugin(ScrollTrigger);
     const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
