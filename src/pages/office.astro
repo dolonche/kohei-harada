@@ -175,6 +175,7 @@ import OfficeImg10 from "../assets/images/office-10.png";
       </div>
     </div>
   </section>
+  <div class="office-360" id="office-360"></div>
   <style lang="scss">
     .kh {
       position: fixed;
@@ -345,6 +346,11 @@ import OfficeImg10 from "../assets/images/office-10.png";
     .gallery__img {
       object-fit: contain;
     }
+    .office-360 {
+      width: 100vw;
+      height: 100vh;
+      margin-top: 100px;
+    }
     @media (max-width: 767.9px) {
       .office {
         &__map {
@@ -390,6 +396,17 @@ import OfficeImg10 from "../assets/images/office-10.png";
   <script>
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
+    import { Viewer } from "@photo-sphere-viewer/core";
+
+    const viewer = new Viewer({
+      container: "office-360",
+      panorama: "/office-360.jpg",
+      navbar: false,
+      mousewheel: false, 
+      moveSpeed: 1,
+      mousemove: true, 
+      touchmoveTwoFingers: true, 
+    });
     gsap.registerPlugin(ScrollTrigger);
     const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
     function updateVideoSource() {
@@ -411,7 +428,6 @@ import OfficeImg10 from "../assets/images/office-10.png";
 
       ScrollTrigger.matchMedia({
         "(min-width: 768px)": function () {
-
           gsap.set(".gallery .gallery__item:not(:last-child)", {
             filter: "brightness(1)",
           });
