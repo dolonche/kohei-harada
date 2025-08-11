@@ -400,6 +400,7 @@ import OfficeImg10 from "../../assets/images/office-10.png";
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import { Viewer } from "@photo-sphere-viewer/core";
+    import { VisibleRangePlugin } from "@photo-sphere-viewer/visible-range-plugin";
 
     const viewer = new Viewer({
       container: "office-360",
@@ -409,6 +410,11 @@ import OfficeImg10 from "../../assets/images/office-10.png";
       moveSpeed: 1,
       mousemove: true,
       touchmoveTwoFingers: true,
+      plugins: [
+        VisibleRangePlugin.withConfig({
+          verticalRange: [-Math.PI / 2.9, Math.PI / 2],
+        }),
+      ],
     });
     gsap.registerPlugin(ScrollTrigger);
     const isMobile = window.matchMedia("(max-width: 767.9px)").matches;
