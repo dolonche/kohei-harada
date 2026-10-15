@@ -8,7 +8,7 @@ export default {
 			},
 		},
 		fontFamily: {
-			title: 'Big Caslon',
+			title: ['Big Caslon FB Web', 'serif'],
 			'text-content': 'Roboto',
 			'base': 'Fenwick',
 		}

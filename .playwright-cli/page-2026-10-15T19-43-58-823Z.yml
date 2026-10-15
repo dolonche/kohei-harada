@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3]:
+      - /url: ../
+      - img "Kohei Korada" [ref=e4]
+    - generic [ref=e5]:
+      - navigation [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "About" [ref=e9]:
+              - /url: ../about/
+          - listitem [ref=e10]:
+            - link "Office" [ref=e11]:
+              - /url: ../office/
+          - listitem [ref=e12]:
+            - link "Works" [ref=e13]:
+              - /url: ../works/
+          - listitem [ref=e14]:
+            - link "Future" [ref=e15]:
+              - /url: ../future/
+          - listitem [ref=e16]:
+            - link "Contact" [ref=e17]:
+              - /url: ../contact/
+      - link "jp" [ref=e18]:
+        - /url: ../jp/
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - article [ref=e21]:
+        - button "Matcha" [ref=e22] [cursor=pointer]
+      - article [ref=e24]:
+        - button "Ar magazine" [ref=e25] [cursor=pointer]
+      - article [ref=e27]:
+        - button "Coffee" [ref=e28] [cursor=pointer]
+      - article [ref=e30]:
+        - button "Film" [ref=e31] [cursor=pointer]

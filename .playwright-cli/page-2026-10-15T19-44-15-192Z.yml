@@ -1,0 +1,81 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link [ref=f2e3]:
+      - /url: ../
+      - img "Kohei Korada" [ref=f2e4]
+    - generic [ref=f2e5]:
+      - navigation [ref=f2e6]:
+        - list [ref=f2e7]:
+          - listitem [ref=f2e8]:
+            - link "About" [ref=f2e9]:
+              - /url: ../about/
+          - listitem [ref=f2e10]:
+            - link "Office" [ref=f2e11]:
+              - /url: ../office/
+          - listitem [ref=f2e12]:
+            - link "Works" [ref=f2e13]:
+              - /url: ../works/
+          - listitem [ref=f2e14]:
+            - link "Future" [ref=f2e15]:
+              - /url: ../future/
+          - listitem [ref=f2e16]:
+            - link "Contact" [ref=f2e17]:
+              - /url: ../contact/
+      - link "jp" [ref=f2e18]:
+        - /url: ../jp/
+  - generic [ref=f2e19]:
+    - heading "About" [level=1] [ref=f2e20]
+    - generic [ref=f2e21]:
+      - paragraph [ref=f2e22]: As a Creative Director, I generate innovative business ideas, design projects, and oversee their execution. Whether directing promotional videos or capturing the essence on set as a cameraman, I bring creative visions to life. As a specialist in brand development, I provide groundbreaking solutions that lead to significant successes.
+      - paragraph [ref=f2e23]: My mission is to craft the DNA of brands through MVP (Mission, Value, Purpose) development, ensuring that the core essence of the brand resonates with customers. Additionally, I focus on designing user behaviors with an eye towards the future of DAOs (Decentralized Autonomous Organizations).
+      - paragraph [ref=f2e24]: In my role, I bridge the gap between creativity and strategy, transforming concepts into impactful realities.
+    - link "Contact" [ref=f2e25]:
+      - /url: ../contact/
+    - heading "KOHEI HARADA" [level=2] [ref=f2e26]
+    - paragraph [ref=f2e27]: Creative Factory WIT inc. (Japan) CEO / WIT B.V. (Netherlands) CEO
+    - link "Instagram" [ref=f2e28]:
+      - /url: https://www.instagram.com/koheiharada.nl
+    - generic [ref=f2e29]:
+      - generic [ref=f2e30]: Japan Branch
+      - link [ref=f2e31]:
+        - /url: https://witdesignplaats.com/
+        - img "WIT" [ref=f2e32]
+    - generic [ref=f2e33]:
+      - generic [ref=f2e34]: Project
+      - generic [ref=f2e35]:
+        - generic [ref=f2e36]:
+          - link [ref=f2e37]:
+            - /url: https://www.inspirationcult.net/
+            - img "Inspiration Cult" [ref=f2e38]
+          - link [ref=f2e39]:
+            - /url: https://mag.mnc-dao.com/en
+            - img "MNC" [ref=f2e40]
+        - link [ref=f2e41]:
+          - /url: https://wasui-japan.com/
+          - img "Wasui" [ref=f2e42]
+  - generic [ref=f2e43]:
+    - article [ref=f2e44]:
+      - generic [ref=f2e48]:
+        - heading "Office" [level=2] [ref=f2e49]
+        - link "View" [ref=f2e50]:
+          - /url: ../office/
+    - article [ref=f2e51]:
+      - generic [ref=f2e53]:
+        - heading "Future" [level=2] [ref=f2e54]
+        - link "View" [ref=f2e55]:
+          - /url: ../future/
+    - article [ref=f2e58]:
+      - generic [ref=f2e59]: Filters
+      - generic [ref=f2e64]:
+        - generic [ref=f2e65]:
+          - generic [ref=f2e66]: "Blur:"
+          - slider [ref=f2e67] [cursor=pointer]: "0"
+        - generic [ref=f2e68]:
+          - generic [ref=f2e69]: "Contrast:"
+          - slider [ref=f2e70] [cursor=pointer]: "1.4"
+        - generic [ref=f2e71]:
+          - generic [ref=f2e72]: "Saturate:"
+          - slider [ref=f2e73] [cursor=pointer]: "100"
+        - generic [ref=f2e74]:
+          - generic [ref=f2e75]: "Color:"
+          - slider [ref=f2e76] [cursor=pointer]: "0"

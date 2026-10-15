@@ -1,0 +1,14 @@
+[   16225ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[   16265ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[   92093ms] [WARNING] WARNING: Multiple instances of Three.js being imported. @ http://127.0.0.1:47833/_astro/index.module.DmAlOR-b.js:43
+[  171111ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[  182638ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[  184232ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[  185769ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[  187378ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[  188912ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[  190485ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[  211116ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[  213774ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0
+[  216376ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[  219095ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47833/_astro/hoisted.CDhQ9-SE.js:0

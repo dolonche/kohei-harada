@@ -1,22 +1,45 @@
 ---
 import "../styles/style.scss";
+import pageTransitionScript from "../scripts/page-transition.js?raw";
 interface Props {
   title: string;
   descr: string;
   keywords: string;
+  canonicalPath?: string;
+  alternatePaths?: { en: string; ja: string };
 }
 
-const { title, descr, keywords } = Astro.props;
+const { title, descr, keywords, canonicalPath, alternatePaths } = Astro.props;
+const site = Astro.site ?? new URL("https://koheiharada.com/");
+const language = Astro.url.pathname.startsWith("/jp/") ? "ja" : "en";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="description" content={descr} />
     <meta name="keywords" content={keywords} />
+    {canonicalPath && <link rel="canonical" href={new URL(canonicalPath, site).href} />}
+    {alternatePaths && <link rel="alternate" hreflang="en" href={new URL(alternatePaths.en, site).href} />}
+    {alternatePaths && <link rel="alternate" hreflang="ja" href={new URL(alternatePaths.ja, site).href} />}
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>
+      try {
+        const key = "kh-route-transition";
+        const pending = JSON.parse(sessionStorage.getItem(key) || "null");
+        sessionStorage.removeItem(key);
+        const path = location.pathname.replace(/\/$/, "") || "/";
+        if (
+          pending?.path === path + location.search &&
+          Date.now() - pending.time < 15000 &&
+          !matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          document.documentElement.classList.add("route-arriving");
+        }
+      } catch {}
+    </script>
     <link rel="icon" type="image/png" sizes="70x70" href="/70x70.png" />
     <link rel="icon" type="image/png" sizes="150x150" href="/150x150.png" />
     <link rel="icon" type="image/png" sizes="180x180" href="/180x180.png" />
@@ -43,77 +66,29 @@ const { title, descr, keywords } = Astro.props;
     />
   </head>
   <body>
+    <div class="route-curtain" aria-hidden="true"></div>
+    <script is:inline set:html={pageTransitionScript} />
     <div class="circle-cursor circle-cursor--inner"></div>
     <div class="circle-cursor circle-cursor--outer"></div>
     <slot />
   </body>
 </html>
 <style lang="scss" is:global>
-  @view-transition {
-    navigation: auto;
-  }
-
-  @keyframes page-wipe-cover {
-    0% {
-      clip-path: inset(0 0 0 0);
-      opacity: 1;
-      animation-timing-function: ease-out;
-    }
-
-    18% {
-      clip-path: inset(0 0 0 0);
-      opacity: 0.75;
-      animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-    }
-
-    55%,
-    100% {
-      clip-path: inset(0 0 100% 0);
-      opacity: 0.75;
-    }
-  }
-
-  @keyframes page-wipe-reveal {
-    0%,
-    55% {
-      clip-path: inset(100% 0 0 0);
-      animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-    }
-
-    100% {
-      clip-path: inset(0 0 0 0);
-    }
-  }
-
-  ::view-transition {
+  .route-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 30000;
     background: #111315;
+    transform: translateY(100%);
+    pointer-events: none;
   }
 
-  ::view-transition-group(root) {
-    animation-duration: 1400ms;
-  }
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    mix-blend-mode: normal;
-  }
-
-  ::view-transition-old(root) {
-    animation: 1400ms linear both page-wipe-cover;
-  }
-
-  ::view-transition-new(root) {
-    animation: 1400ms linear both page-wipe-reveal;
+  .route-arriving .route-curtain {
+    transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(root),
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation: none !important;
-    }
-
-    ::view-transition-old(root) {
+    .route-curtain {
       display: none;
     }
   }
@@ -131,11 +106,14 @@ const { title, descr, keywords } = Astro.props;
     src: url("/fonts/Roboto-Regular.ttf") format("truetype");
   }
   @font-face {
-    font-family: "Big Caslon";
+    font-family: "Big Caslon FB Web";
     src:
-      url("/fonts/BigCaslonFB-Regular.ttf") format("truetype"),
-      src("/fonts/BigCaslonFB-Regular.woff"),
-      src("/fonts/BigCaslonFB-Regular.woff2");
+      url("/fonts/BigCaslonFB-Regular.woff2") format("woff2"),
+      url("/fonts/BigCaslonFB-Regular.woff") format("woff"),
+      url("/fonts/BigCaslonFB-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
   }
   html {
     font-family: "Fenwick", sans-serif;

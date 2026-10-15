@@ -7,6 +7,10 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    "/future": "/own-projects/",
+    "/jp/future": "/jp/own-projects/",
+  },
   i18n: {
     locales: ["jp", "en"],
     defaultLocale: "en",
