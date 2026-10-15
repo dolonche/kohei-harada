@@ -8,6 +8,44 @@
   /* pointer-events: none; */
 }
 
+.project-logos,
+.project-logos__primary {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 767.9px) {
+  .project-logos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project-logos__primary {
+    width: 100%;
+    gap: 16px;
+
+    a {
+      min-width: 0;
+
+      &:first-child {
+        flex: 200 1 0%;
+      }
+
+      &:last-child {
+        flex: 162 1 0%;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 .main-title {
   font-size: 54px;
   font-family: "Big caslon";

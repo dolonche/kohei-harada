@@ -6,6 +6,7 @@ import Image from "astro/components/Image.astro";
 import WitLogo from "../assets/images/logo-wit.svg";
 import CultLogo from "../assets/images/logo-cult.svg";
 import MncLogo from "../assets/images/logo-mnc.svg";
+import WasuiLogoText from "../assets/images/wasui-logo-text.svg";
 ---
 
 <Layout
@@ -60,17 +61,17 @@ import MncLogo from "../assets/images/logo-mnc.svg";
     </div>
     <div class="flex flex-col gap-y-[20px] mt-[80px] max-md:mt-[57px]">
       <b class="font-title text-[24px] max-md:text-lg">Project</b>
-      <div class="flex items-center gap-x-[40px]">
-        <a href="https://www.inspirationcult.net/" target="_blank">
-          <Image
-            src={CultLogo}
-            width={200}
-            height={48}
-            alt="Inspiration Cult"
-          />
-        </a>
-        <a href="https://mag.mnc-dao.com/en" target="_blank">
-          <Image src={MncLogo} width={162} height={20} alt="MNC" />
+      <div class="project-logos">
+        <div class="project-logos__primary">
+          <a href="https://www.inspirationcult.net/" target="_blank" rel="noopener noreferrer">
+            <Image src={CultLogo} width={200} height={48} alt="Inspiration Cult" />
+          </a>
+          <a href="https://mag.mnc-dao.com/en" target="_blank" rel="noopener noreferrer">
+            <Image src={MncLogo} width={162} height={20} alt="MNC" />
+          </a>
+        </div>
+        <a href="https://wasui-japan.com/" target="_blank" rel="noopener noreferrer">
+          <Image src={WasuiLogoText} width={152} height={25} alt="Wasui" />
         </a>
       </div>
     </div>
@@ -117,7 +118,7 @@ import MncLogo from "../assets/images/logo-mnc.svg";
           >
             Future
           </h2>
-          <Button content="View" href="/future" className="w-max" invert />
+          <Button content="View" href="/future/" className="w-max" invert />
           <div class="box" id="box1"></div>
           <div class="box" id="box2"></div>
         </div>

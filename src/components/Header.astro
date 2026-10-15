@@ -29,23 +29,23 @@ const t = useTranslations(lang);
     <nav class="main-nav">
       <ul class="main-nav__list">
         <li class="main-nav__list-item">
-          <a href={lang === defaultLang ? "/about" : "/jp/about"} class="main-nav__list-item-link">About</a>
+          <a href={lang === defaultLang ? "/about/" : "/jp/about/"} class="main-nav__list-item-link">About</a>
         </li>
         <li class="main-nav__list-item">
-          <a href={lang === defaultLang ? "/office" : "/jp/office"} class="main-nav__list-item-link">Office</a>
+          <a href={lang === defaultLang ? "/office/" : "/jp/office/"} class="main-nav__list-item-link">Office</a>
         </li>
         <li class="main-nav__list-item">
-          <a href={lang === defaultLang ? "/works" : "/jp/works"} class="main-nav__list-item-link">Works</a>
+          <a href={lang === defaultLang ? "/works/" : "/jp/works/"} class="main-nav__list-item-link">Works</a>
         </li>
         <li class="main-nav__list-item">
-          <a href={lang === defaultLang ? "/future" : "/jp/future"} class="main-nav__list-item-link">Future</a>
+          <a href={lang === defaultLang ? "/future/" : "/jp/future/"} class="main-nav__list-item-link">Future</a>
         </li>
         <li class="main-nav__list-item">
-          <a href={lang === defaultLang ? "/contact" : "/jp/contact"} class="main-nav__list-item-link">Contact</a>
+          <a href={lang === defaultLang ? "/contact/" : "/jp/contact/"} class="main-nav__list-item-link">Contact</a>
         </li>
       </ul>
     </nav>
-    <a href={lang === "en" ? "/jp" : "/"} class="language-selector"
+    <a href={lang === "en" ? "/jp/" : "/"} class="language-selector"
       >{t("lang")}</a
     >
   </div>

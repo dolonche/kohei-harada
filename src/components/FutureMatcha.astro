@@ -1,0 +1,372 @@
+---
+import Image from "astro/components/Image.astro";
+import WasuiLogo from "../assets/images/wasui-logo.webp";
+import WasuiGallery1 from "../assets/images/wasui-gallery-1.webp";
+import WasuiGallery2 from "../assets/images/wasui-gallery-2.webp";
+import WasuiGallery3 from "../assets/images/wasui-gallery-3.webp";
+import WasuiGallery4 from "../assets/images/wasui-gallery-4.webp";
+import WasuiGallery5 from "../assets/images/wasui-gallery-5.webp";
+import WasuiGallery6 from "../assets/images/wasui-gallery-6.webp";
+import WasuiGallery7 from "../assets/images/wasui-gallery-7.webp";
+
+interface Props {
+  lang: "en" | "jp";
+}
+
+const { lang } = Astro.props;
+const isJapanese = lang === "jp";
+const gallery = [
+  { src: WasuiGallery1, alt: "Wasui tea display" },
+  { src: WasuiGallery2, alt: "Wasui interior and lighting" },
+  { src: WasuiGallery3, alt: "Matcha being prepared" },
+  { src: WasuiGallery4, alt: "Wasui matcha products" },
+  { src: WasuiGallery5, alt: "Matcha utensils" },
+  { src: WasuiGallery6, alt: "Wasui interior details" },
+  { src: WasuiGallery7, alt: "Matcha whisk and bowl" },
+];
+---
+
+<article class:list={["future-section", "future-matcha", { "future-matcha--jp": isJapanese }]}>
+  <button
+    type="button"
+    class="future-section__preview future-matcha__preview"
+    aria-expanded="false"
+    aria-controls="matcha-content"
+  >
+    <span class="future-section__preview-title font-title">Matcha</span>
+  </button>
+  <div class="future-section__content future-matcha__content" id="matcha-content" tabindex="-1">
+    <h2 class="future-matcha__title font-title">
+      <span class="future-matcha__title-top">Matcha</span>
+      <span class="future-matcha__title-main">Japanese <span>Matcha Wasui</span></span>
+    </h2>
+
+    <div class="future-matcha__intro">
+      <Image
+        src={WasuiLogo}
+        alt="Wasui — Japanese matcha"
+        class="future-matcha__logo"
+        width={882}
+        height={570}
+      />
+      <div class="future-matcha__story">
+        <h3 class="future-matcha__heading">SIP JAPAN.<br />DRINK CULTURE.</h3>
+        <div class="future-matcha__body font-text-content">
+          {
+            isJapanese ? (
+              <>
+                <p>和翠は、抹茶の奥にある日本を届けるために生まれました。世界中で抹茶が親しまれるようになった今、その一杯が、どこで生まれたのか。誰が育てたのか。どんな風土と時間を経てきたのか。それらが見えにくくなっています。私たちは日本各地の茶農家と直接向き合い、その土地の個性と、育てる人々の精神を映すシングルオリジン抹茶を選んでいます。私たちの目標は、ただひとつ。</p>
+                <p>SIP JAPAN. DRINK CULTURE.</p>
+                <p>抹茶は、飲みものではありません。日本という文化を味わう体験です。私たちが届けたいのは、抹茶だけではありません。その一杯の背景にある日本です。</p>
+              </>
+            ) : (
+              <>
+                <p>Wasui was created to share more than matcha. Within every bowl of tea lives a landscape, a season, a craft, and a way of seeing the world passed quietly from one generation to the next. As matcha grows across the globe, we believe its deepest value is not found in trends, but in the culture that shaped it. We work directly with tea farmers throughout Japan, choosing single-origin matcha that carries the character of its place and the spirit of the people who cultivate it.</p>
+                <p>Every tea has a story. Every name carries a philosophy.<br />Every sip is an invitation to slow down and return.</p>
+                <p>SIP JAPAN. DRINK CULTURE.</p>
+                <p>Because matcha is not simply something to drink. It is a way of seeing.</p>
+                <p>WE DON'T SHIP PRODUCTS. WE SHIP JAPAN.</p>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="future-matcha__flagship">
+      <div class="future-matcha__flagship-copy">
+        <span class="future-matcha__eyebrow">Flagship Rotterdam</span>
+        <h3 class="future-matcha__heading">A New Way to Experience Matcha.</h3>
+        <div class="future-matcha__body font-text-content">
+          {
+            isJapanese ? (
+              <>
+                <p>オーガニックを中心に、日本の一番茶のみを使用したシングルオリジン抹茶をご用意しています。Wasuiのオリジナルレシピは、それぞれの抹茶が持つ個性に合わせて設計されています。</p>
+                <p>ヘッドフォンをつけ、音に集中し、自分の手で抹茶を点てるひととき。</p>
+                <p>味、音、所作、空間。そのすべてに日本の本質を残しながら、今の暮らしに自然に届くかたちへ。Wasui Rotterdamでしか出会えない、新しい抹茶体験です。</p>
+              </>
+            ) : (
+              <>
+                <p>Japanese first-harvest, single-origin matcha, with a focus on organic selections. Each original Wasui recipe is created around the distinct character of its matcha.</p>
+                <p>A moment to put on headphones, focus on the sound, and whisk your own matcha. From flavour and sound to movement and space, every detail preserves the essence of Japan while bringing it naturally into modern life. A matcha experience found only at Wasui Rotterdam.</p>
+              </>
+            )
+          }
+        </div>
+      </div>
+      <video
+        class="future-matcha__video"
+        src="/video/wasui.mp4"
+        poster="/wasui-poster.webp"
+        width="347"
+        height="616"
+        preload="metadata"
+        muted
+        playsinline
+        loop
+        aria-label="Wasui Rotterdam movie"
+      ></video>
+    </div>
+
+    <div class="future-matcha__gallery" role="group" aria-label="Wasui gallery">
+      <div class="future-matcha__gallery-track" data-future-slider>
+        {gallery.map(({ src, alt }) => <Image src={src} alt={alt} width={800} height={1000} class="future-matcha__gallery-image" />)}
+      </div>
+    </div>
+  </div>
+</article>
+
+<style lang="scss">
+  .future-matcha {
+    display: flex;
+    flex-direction: column;
+
+    &__preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 25vh;
+      height: 25dvh;
+      padding: 0;
+      border: 0;
+      color: #fff;
+      background: #d8c5af url("/future-matcha.webp") 52.7% 51.2% / 190.55% auto no-repeat;
+      cursor: pointer;
+      overflow: hidden;
+
+      .future-section__preview-title {
+        font-size: 54px;
+        line-height: 65px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    &__content {
+      display: none;
+      padding: 110px 0 95px;
+      color: #263b11;
+      background: #fffef7;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+
+    &__title-top {
+      font-size: 32px;
+      line-height: 36px;
+      text-transform: uppercase;
+    }
+
+    &__title-main {
+      font-size: 54px;
+      line-height: 61px;
+    }
+
+    &__intro,
+    &__flagship {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      column-gap: 45px;
+      width: calc(100% - 80px);
+      max-width: 1060px;
+      margin-inline: auto;
+    }
+
+    &__intro {
+      margin-top: 80px;
+    }
+
+    &__logo {
+      width: 442px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 34px;
+    }
+
+    &__story {
+      min-width: 0;
+    }
+
+    &--jp &__story {
+      padding-top: 52px;
+    }
+
+    &__heading {
+      margin: 0;
+      font-size: 38px;
+      font-weight: normal;
+      line-height: 1.13;
+    }
+
+    &__body {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 24px;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__flagship {
+      grid-template-columns: minmax(0, 628px) 347px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 90px;
+    }
+
+    &--jp &__flagship {
+      margin-top: 114px;
+    }
+
+    &__flagship-copy {
+      max-width: 628px;
+    }
+
+    &__eyebrow {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__flagship &__body {
+      margin-top: 50px;
+    }
+
+    &__video {
+      display: block;
+      width: 347px;
+      height: 616px;
+      object-fit: cover;
+    }
+
+    &__gallery {
+      width: 100%;
+      margin-top: 61px;
+      overflow: hidden;
+    }
+
+    &__gallery-track {
+      display: flex;
+      gap: 15px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    &__gallery-image {
+      display: block;
+      width: 253px;
+      height: 316px;
+      flex: none;
+      object-fit: cover;
+    }
+
+    @media (max-width: 767.9px) {
+      &__preview {
+        background-size: 199.77% auto;
+        background-position: 51.5% 55.6%;
+
+        .future-section__preview-title {
+          font-size: 36px;
+          line-height: 44px;
+        }
+      }
+
+      &__content {
+        padding: 25px 0 97px;
+      }
+
+      &__title-top {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      &__title-main {
+        max-width: 393px;
+        padding-inline: 18px;
+        font-size: 36px;
+        line-height: 40px;
+
+        span {
+          display: block;
+        }
+      }
+
+      &__intro,
+      &__flagship {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 92px);
+        max-width: 520px;
+      }
+
+      &__intro {
+        margin-top: 40px;
+      }
+
+      &__logo {
+        width: 274px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      &__story,
+      &--jp &__story {
+        padding-top: 0;
+        margin-top: 40px;
+      }
+
+      &__heading {
+        font-size: 28px;
+        line-height: 34px;
+      }
+
+      &__body {
+        margin-top: 20px;
+      }
+
+      &__flagship,
+      &--jp &__flagship {
+        margin-top: 50px;
+      }
+
+      &__video {
+        order: -1;
+        align-self: center;
+        width: min(347px, calc(100vw - 42px));
+        height: auto;
+        aspect-ratio: 347 / 616;
+      }
+
+      &__flagship-copy {
+        margin-top: 20px;
+      }
+
+      &__flagship &__body {
+        margin-top: 20px;
+      }
+
+      &__gallery {
+        margin-top: 40px;
+      }
+
+      &__gallery-track {
+        gap: 11px;
+      }
+
+      &__gallery-image {
+        width: 170px;
+        height: 213px;
+      }
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageFooter from "../../components/PageFooter.astro";
 import Header from "../../components/Header.astro";
+import FutureMatcha from "../../components/FutureMatcha.astro";
 import Image from "astro/components/Image.astro";
 import FutureCoffeeAboutImg from "../../assets/images/future-coffee-about.webp";
 import FutureCoffeeFeatureImg1 from "../../assets/images/future-coffee-global.webp";
@@ -30,160 +31,20 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
 
 <Layout
   title="FUTURE | KOHEI HARADA"
-  keywords="KOHEIHARADA, コーヒー, 希望の国のエクソダス, コミュニティ, DAO, MNC, ARマガジン"
-  descr="「4th Wave」という新たなコーヒー文化を想像するブランド「KOPPE」や、村上龍の小説『希望の国のエクソダス』の映像化、未来のメディア体験を提供するARマガジン「MNC」などのプロジェクトを進行しています。"
+  keywords="KOHEIHARADA, 和翠, 抹茶, コーヒー, 希望の国のエクソダス, コミュニティ, DAO, MNC, ARマガジン"
+  descr="日本の抹茶文化を届ける「和翠」、そして「4th Wave」という新たなコーヒー文化を想像するブランド「KOPPE」や、村上龍の小説『希望の国のエクソダス』の映像化、未来のメディア体験を提供するARマガジン「MNC」などのプロジェクトを進行しています。"
 >
   <Header />
   <main class="page-main">
     <div class="flex flex-col">
-      <article class="future-section future-section--coffee">
-        <div class="future-section__preview">
-          <div class="future-section__preview-title text-font font-title">
-            Coffee
-          </div>
-        </div>
-        <div class="future-section__content future-coffee">
-          <h2 class="future-coffee__title font-title">
-            <div class="future-coffee__title-top">Coffee</div>
-            <div class="future-coffee__title-sub">KOPPE 0 Wave Project</div>
-          </h2>
-          <div class="future-coffee__about">
-            <Image
-              src={FutureCoffeeAboutImg}
-              width={650}
-              height={1050}
-              alt="KOPPE 4th Wave Project"
-              class:list={"future-coffee__about-img"}
-            />
-            <div class="future-coffee__about-descr">
-              <b class="future-coffee__about-descr-title"> Moment Coffee </b>
-              <p class="future-coffee__about-descr-text font-text-content">
-                ゆっくりと朝を迎えるとき、
-                丁寧に淹れた一杯のコーヒーが、心をそっと整えてくれる。
-                私にとって、それが一日のはじまりであり、感謝の時間です。
-                KOPPEは、そんな“淹れるという行為”に価値を見出したコーヒーブランド。
-                所作に個性を映し出し、気づきとともに、あなたの日常が少しだけ豊かになりますように。
-              </p>
-            </div>
-          </div>
-          <div class="future-coffee__purpose">
-            <b class="future-coffee__purpose-title">プロジェクトの目的</b>
-            <p class="future-coffee__purpose-descr font-text-content">
-              KOPPEの道具は、コーヒーを淹れるためだけにあるのではなく、
-              そのひとときを「整える」ためのパートナーです。
-              所作に宿る静けさ、手の動きに合わせた機能、そして多様な抽出方法に寄り添う柔軟さ。
-              誰かの正解ではなく、「あなたらしさ」に応える設計で、
-              一杯を通じて、その日その時の自分と向き合う時間を届けます。
-              <ul class="font-text-content mt-2.5">
-                <li><b class="font-base">コーヒースタンド</b>: 多様性と個性</li>
-                <li><b class="font-base">ケトル</b>: 注ぐリズムが心を整える</li>
-                <li><b class="font-base">フィルター</b>: 浸透への探求</li>
-              </ul>
-            </p>
-          </div>
-          <div class="future-coffee__features">
-            <div class="future-coffee__features-item">
-              <div class="future-coffee__features-item-media">
-                <Image src={FutureCoffeeFeatureImg1} alt="Global Expansion" />
-              </div>
-              <div class="future-coffee__features-item-descr">
-                <b class="future-coffee__features-item-descr-title"
-                  >グローバル展開</b
-                >
-                <p
-                  class="future-coffee__features-item-descr-text font-text-content"
-                >
-                  KOPPEは、2026年にフラッグシップショップのオープンを予定しています。このフラッグシップショップは、KOPPEの革新と伝統が融合した体験を提供し、コーヒーを愛する人々に新しい文化を発信する場となることを目指します。
-                </p>
-              </div>
-            </div>
-            <div class="future-coffee__features-item">
-              <div class="future-coffee__features-item-media">
-                <Image
-                  src={FutureCoffeeFeatureImg2}
-                  alt="Toward a Sustainable Future"
-                />
-              </div>
-              <div class="future-coffee__features-item-descr">
-                <b class="future-coffee__features-item-descr-title"
-                  >持続可能な未来へ</b
-                >
-                <p
-                  class="future-coffee__features-item-descr-text font-text-content"
-                >
-                  KOPPEは、コーヒー産業が直面する「2050年問題」にも対応し、環境保護と倫理的な生産方法を推進しています。すべての関係者にリスペクトを持ち、未来を見据えた持続可能なコーヒー文化を築くための活動を進めています。
-                </p>
-              </div>
-            </div>
-            <div class="future-coffee__features-item">
-              <div
-                class="future-coffee__features-item-media future-coffee__features-item-media--dao"
-              >
-                <Image
-                  src={FutureCoffeeFeatureImg3}
-                  alt="Formation of a Coffee Community DAO"
-                />
-              </div>
-              <div class="future-coffee__features-item-descr">
-                <b class="future-coffee__features-item-descr-title"
-                  >コーヒーコミュニティ<br /> DAOの形成</b
-                >
-                <p
-                  class="future-coffee__features-item-descr-text font-text-content"
-                >
-                  KOPPEは、コーヒーを通じてユーザー同士が繋がり、多様な淹れ方やスタイルを共有する「コーヒーコミュニティDAO」の形成を目指しています。このDAO（分散型自律組織）は、コーヒー愛好者が協力し、共に学び、コーヒー文化を発展させる場となります。コミュニティメンバーが主体となって、新しいコーヒー体験を創造し、共に成長することを目指しています。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="future-section future-section--film">
-        <div class="future-section__preview">
-          <div class="future-section__preview-title text-white font-title">
-            Film
-          </div>
-        </div>
-        <div class="future-section__content future-film">
-          <h2 class="future-film__title font-title">
-            <div class="future-film__title-top">
-              Exodus from the Land of Hope
-            </div>
-            <div class="future-film__title-sub">Film Adaptation Project</div>
-          </h2>
-          <div class="future-film__feature">
-            <div class="future-film__feature-item">
-              <b class="future-film__feature-item-title"
-                >村上龍の名作 <br /> 「希望の国のエクソダス」<br /> を映像化</b
-              >
-              <p class="future-film__feature-item-descr font-text-content">
-                本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
-              </p>
-            </div>
-            <div class="future-film__feature-item">
-              <b class="future-film__feature-item-title"
-                >DAOの未来を映像で描く</b
-              >
-              <p class="future-film__feature-item-descr font-text-content">
-                『希望の国のエクソダス』に登場する中学生たちが構築した組織は、まさに現在注目されているDAO（分散型自律組織）のような仕組みです。この映像化を通じて、視聴者がDAOという新しい経済の概念を自然に理解できるようにしたいと考えています。難解に感じられるDAOの仕組みを、物語の中でわかりやすく描写することで、新しい経済の可能性を広く伝えます。
-              </p>
-            </div>
-            <div class="future-film__feature-item">
-              <b class="future-film__feature-item-title">現実世界への展開</b>
-              <p class="future-film__feature-item-descr font-text-content">
-                このプロジェクトの最終目標は、映像内で描かれるDAOや仮想通貨「エクソ」の経済圏を現実世界で再現することです。映像で使用されるメディアや経済システムを、現実のWeb3.0技術と融合させ、誰もが参加できるプラットフォームを構築します。これにより、映像と現実の世界がリンクし、視聴者が物語の一部を体験できる新しいカルチャーを創り上げます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
+      <FutureMatcha lang="jp" />
       <article class="future-section future-section--magazine">
-        <div class="future-section__preview">
-          <div class="future-section__preview-title text-white font-title">
+        <button type="button" class="future-section__preview" aria-expanded="false" aria-controls="magazine-content">
+          <span class="future-section__preview-title text-white font-title">
             Ar magazine
-          </div>
-        </div>
-        <div class="future-section__content future-mag">
+          </span>
+        </button>
+        <div id="magazine-content" tabindex="-1" class="future-section__content future-mag">
           <div class="future-mag__title">
             <video
               src="/video/ar-magazine-1.mp4"
@@ -227,7 +88,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
               loop></video>
           </div>
           <div class="future-mag__slider">
-            <div class="future-mag__slider-media">
+            <div class="future-mag__slider-media" data-future-slider>
               <Image
                 src={FutureMagSliderImg1}
                 width={1191}
@@ -373,6 +234,148 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
           </div>
         </div>
       </article>
+      <article class="future-section future-section--coffee">
+        <button type="button" class="future-section__preview" aria-expanded="false" aria-controls="coffee-content">
+          <span class="future-section__preview-title text-font font-title">
+            Coffee
+          </span>
+        </button>
+        <div id="coffee-content" tabindex="-1" class="future-section__content future-coffee">
+          <h2 class="future-coffee__title font-title">
+            <div class="future-coffee__title-top">Coffee</div>
+            <div class="future-coffee__title-sub">KOPPE 0 Wave Project</div>
+          </h2>
+          <div class="future-coffee__about">
+            <Image
+              src={FutureCoffeeAboutImg}
+              width={650}
+              height={1050}
+              alt="KOPPE 4th Wave Project"
+              class:list={"future-coffee__about-img"}
+            />
+            <div class="future-coffee__about-descr">
+              <b class="future-coffee__about-descr-title"> Moment Coffee </b>
+              <p class="future-coffee__about-descr-text font-text-content">
+                ゆっくりと朝を迎えるとき、
+                丁寧に淹れた一杯のコーヒーが、心をそっと整えてくれる。
+                私にとって、それが一日のはじまりであり、感謝の時間です。
+                KOPPEは、そんな“淹れるという行為”に価値を見出したコーヒーブランド。
+                所作に個性を映し出し、気づきとともに、あなたの日常が少しだけ豊かになりますように。
+              </p>
+            </div>
+          </div>
+          <div class="future-coffee__purpose">
+            <b class="future-coffee__purpose-title">プロジェクトの目的</b>
+            <p class="future-coffee__purpose-descr font-text-content">
+              KOPPEの道具は、コーヒーを淹れるためだけにあるのではなく、
+              そのひとときを「整える」ためのパートナーです。
+              所作に宿る静けさ、手の動きに合わせた機能、そして多様な抽出方法に寄り添う柔軟さ。
+              誰かの正解ではなく、「あなたらしさ」に応える設計で、
+              一杯を通じて、その日その時の自分と向き合う時間を届けます。
+              <ul class="font-text-content mt-2.5">
+                <li><b class="font-base">コーヒースタンド</b>: 多様性と個性</li>
+                <li><b class="font-base">ケトル</b>: 注ぐリズムが心を整える</li>
+                <li><b class="font-base">フィルター</b>: 浸透への探求</li>
+              </ul>
+            </p>
+          </div>
+          <div class="future-coffee__features">
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image src={FutureCoffeeFeatureImg1} alt="Global Expansion" />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >グローバル展開</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、2026年にフラッグシップショップのオープンを予定しています。このフラッグシップショップは、KOPPEの革新と伝統が融合した体験を提供し、コーヒーを愛する人々に新しい文化を発信する場となることを目指します。
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div class="future-coffee__features-item-media">
+                <Image
+                  src={FutureCoffeeFeatureImg2}
+                  alt="Toward a Sustainable Future"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >持続可能な未来へ</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、コーヒー産業が直面する「2050年問題」にも対応し、環境保護と倫理的な生産方法を推進しています。すべての関係者にリスペクトを持ち、未来を見据えた持続可能なコーヒー文化を築くための活動を進めています。
+                </p>
+              </div>
+            </div>
+            <div class="future-coffee__features-item">
+              <div
+                class="future-coffee__features-item-media future-coffee__features-item-media--dao"
+              >
+                <Image
+                  src={FutureCoffeeFeatureImg3}
+                  alt="Formation of a Coffee Community DAO"
+                />
+              </div>
+              <div class="future-coffee__features-item-descr">
+                <b class="future-coffee__features-item-descr-title"
+                  >コーヒーコミュニティ<br /> DAOの形成</b
+                >
+                <p
+                  class="future-coffee__features-item-descr-text font-text-content"
+                >
+                  KOPPEは、コーヒーを通じてユーザー同士が繋がり、多様な淹れ方やスタイルを共有する「コーヒーコミュニティDAO」の形成を目指しています。このDAO（分散型自律組織）は、コーヒー愛好者が協力し、共に学び、コーヒー文化を発展させる場となります。コミュニティメンバーが主体となって、新しいコーヒー体験を創造し、共に成長することを目指しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="future-section future-section--film">
+        <button type="button" class="future-section__preview" aria-expanded="false" aria-controls="film-content">
+          <span class="future-section__preview-title text-white font-title">
+            Film
+          </span>
+        </button>
+        <div id="film-content" tabindex="-1" class="future-section__content future-film">
+          <h2 class="future-film__title font-title">
+            <div class="future-film__title-top">
+              Exodus from the Land of Hope
+            </div>
+            <div class="future-film__title-sub">Film Adaptation Project</div>
+          </h2>
+          <div class="future-film__feature">
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >村上龍の名作 <br /> 「希望の国のエクソダス」<br /> を映像化</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                本プロジェクトは、世界的に有名な村上龍の小説『希望の国のエクソダス』の映像化を目指しています。この物語は、希望を失った社会の中で中学生たちが独自に経済を創造し、自らの未来を切り開く姿を描いた作品です。そして、この作品のコピーライト権利を取得したので、現代にアップデートした形で世界中の視聴者に届けるために映像化します。
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title"
+                >DAOの未来を映像で描く</b
+              >
+              <p class="future-film__feature-item-descr font-text-content">
+                『希望の国のエクソダス』に登場する中学生たちが構築した組織は、まさに現在注目されているDAO（分散型自律組織）のような仕組みです。この映像化を通じて、視聴者がDAOという新しい経済の概念を自然に理解できるようにしたいと考えています。難解に感じられるDAOの仕組みを、物語の中でわかりやすく描写することで、新しい経済の可能性を広く伝えます。
+              </p>
+            </div>
+            <div class="future-film__feature-item">
+              <b class="future-film__feature-item-title">現実世界への展開</b>
+              <p class="future-film__feature-item-descr font-text-content">
+                このプロジェクトの最終目標は、映像内で描かれるDAOや仮想通貨「エクソ」の経済圏を現実世界で再現することです。映像で使用されるメディアや経済システムを、現実のWeb3.0技術と融合させ、誰もが参加できるプラットフォームを構築します。これにより、映像と現実の世界がリンクし、視聴者が物語の一部を体験できる新しいカルチャーを創り上げます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </main>
 
@@ -385,7 +388,14 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
       display: flex;
       flex-direction: column;
       &__preview {
-        height: max(calc(100vh / 3), 270px);
+        height: 25vh;
+        height: 25dvh;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -413,14 +423,14 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
                 rgba(255, 255, 255, 0.5),
                 rgb(128, 128, 128, 0.5)
               ),
-              url(../future-coffee.png);
+              url(/future-coffee.png);
           }
         }
       }
       &--film {
         .future-section {
           &__preview {
-            background-image: url(../future-film.png);
+            background-image: url(/future-film.png);
             background-size: cover;
           }
         }
@@ -428,7 +438,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
       &--magazine {
         .future-section {
           &__preview {
-            background-image: url(../future-magazine.png);
+            background-image: url(/future-magazine.png);
             background-size: cover;
           }
         }
@@ -485,7 +495,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
         text-align: center;
         padding-top: 220px;
         padding-bottom: 230px;
-        background-image: url(../future-coffee-purpose.png);
+        background-image: url(/future-coffee-purpose.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -541,7 +551,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
     }
 
     .future-film {
-      background-image: url(../future-film-bg.png);
+      background-image: url(/future-film-bg.png);
       background-position: center top;
       background-size: auto;
       background-repeat: no-repeat;
@@ -744,7 +754,7 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
           }
         }
         &__purpose {
-          background-image: url(../future-coffee-purpose-mobile.png);
+          background-image: url(/future-coffee-purpose-mobile.png);
           background-size: cover;
           padding-inline: 40px;
           max-width: 600px;
@@ -910,108 +920,6 @@ import FutureMagSliderImg16 from "../../assets/images/magazine-slider-image-16.w
     }
   </style>
   <script>
-    import gsap from "gsap";
-    import ScrollTrigger from "gsap/ScrollTrigger";
-    import ScrollToPlugin from "gsap/ScrollToPlugin";
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const sliderImg = document.querySelector(".future-mag__slider-img");
-
-    //   // Получаем ширину изображения и ширину окна
-    //   const imageWidth = sliderImg.offsetWidth;
-    //   const windowWidth = window.innerWidth;
-
-    //   // Рассчитываем расстояние прокрутки
-    //   const scrollDistance = imageWidth - windowWidth;
-
-    //   // Анимация GSAP
-    //   gsap.to(sliderImg, {
-    //     x: -scrollDistance, // Прокрутка изображения влево
-    //     ease: "none",
-    //     scrollTrigger: {
-    //       trigger: sliderImg, // Триггер ScrollTrigger
-    //       start: "top center", // Когда изображение по центру
-    //       end: `+=${scrollDistance}`, // Длина прокрутки равна расстоянию движения
-    //       scrub: true, // Привязка к скроллу
-    //       pin: true, // Фиксация изображения по центру
-    //     },
-    //   });
-    // });
-
-    const previewTitles = document.querySelectorAll(".future-section__preview");
-
-    previewTitles.forEach((title) => {
-      title.addEventListener("click", () => {
-        const preview = title.closest(".future-section__preview");
-        const content = preview.nextElementSibling;
-        const parent = preview.parentElement;
-
-        if (!content) return;
-
-        const initialHeight = parent.offsetHeight;
-
-        gsap.set(content, { display: "block" });
-        const contentHeight = content.offsetHeight;
-
-        gsap.set(content, { display: "none" });
-        gsap.to(window, {
-          ease: "power2.out",
-          duration: 1,
-          scrollTo: title,
-        }),
-          gsap.to(title, {
-            duration: 2,
-            opacity: 0,
-            height: 0,
-            onComplete: () => {
-              preview.style.display = "none";
-              ScrollTrigger.refresh();
-            },
-          });
-
-        gsap.to(parent, {
-          duration: 2,
-          height: contentHeight,
-          ease: "power2.out",
-          onComplete: () => {
-            parent.style.height = "auto";
-            if (parent.classList.contains("future-section--magazine")) {
-              const sliderImg = document.querySelector(
-                ".future-mag__slider-media"
-              );
-              const magVideos = document.querySelectorAll(
-                ".future-mag__ar-media"
-              );
-
-              const imageWidth = sliderImg.offsetWidth;
-              const windowWidth = window.innerWidth;
-              const scrollDistance = imageWidth - windowWidth;
-
-              gsap.to(sliderImg, {
-                x: -scrollDistance,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: sliderImg,
-                  start: "bottom bottom",
-                  end: `top top`,
-                  scrub: 100,
-                  // pin: true,
-                },
-              });
-              magVideos.forEach((video) => video.play());
-            }
-          },
-        });
-
-        gsap.set(content, { display: "block", opacity: 0 });
-        gsap.to(content, {
-          duration: 2,
-          opacity: 1,
-          scale: 1,
-          ease: "power2.out",
-        });
-      });
-    });
+    import "../../scripts/future";
   </script>
 </Layout>

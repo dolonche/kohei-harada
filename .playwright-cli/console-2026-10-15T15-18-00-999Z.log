@@ -1,0 +1,5 @@
+[   62154ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47832/_astro/hoisted.CDhQ9-SE.js:0
+[   82397ms] [LOG] WIPE_EVENT @ :1
+[   98243ms] [LOG] WIPE_EVENT @ :1
+[   98305ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47832/_astro/hoisted.CDhQ9-SE.js:0
+[  119865ms] [LOG] WIPE_EVENT @ :1

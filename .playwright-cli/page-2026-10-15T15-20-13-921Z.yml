@@ -1,0 +1,68 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - link [ref=f4e3] [cursor=pointer]:
+      - /url: ../../jp/
+      - img "Kohei Korada" [ref=f4e4]
+    - generic [ref=f4e5]:
+      - generic [ref=f4e6] [cursor=pointer]
+      - navigation:
+        - list:
+          - listitem:
+            - link "About":
+              - /url: ../../jp/about
+          - listitem:
+            - link "Office":
+              - /url: ../../jp/office
+          - listitem:
+            - link "Works":
+              - /url: ../../jp/works
+          - listitem:
+            - link "Future":
+              - /url: ../../jp/future
+          - listitem:
+            - link "Contact":
+              - /url: ../../jp/contact
+      - link "en" [ref=f4e7] [cursor=pointer]:
+        - /url: ../../
+  - main [ref=f4e8]:
+    - generic [ref=f4e9]:
+      - article [ref=f4e10]:
+        - button "Matcha" [disabled] [expanded] [ref=f4e11] [cursor=pointer]
+        - generic [ref=f4e22]:
+          - heading "Matcha Japanese Matcha Wasui" [level=2] [ref=f4e23]:
+            - generic [ref=f4e24]: Matcha
+            - generic [ref=f4e25]:
+              - text: Japanese
+              - generic [ref=f4e26]: Matcha Wasui
+          - generic [ref=f4e27]:
+            - img "Wasui — Japanese matcha" [ref=f4e28]
+            - generic [ref=f4e29]:
+              - heading "SIP JAPAN. DRINK CULTURE." [level=3] [ref=f4e30]: SIP JAPAN.DRINK CULTURE.
+              - generic [ref=f4e31]:
+                - paragraph [ref=f4e32]: 和翠は、抹茶の奥にある日本を届けるために生まれました。世界中で抹茶が親しまれるようになった今、その一杯が、どこで生まれたのか。誰が育てたのか。どんな風土と時間を経てきたのか。それらが見えにくくなっています。私たちは日本各地の茶農家と直接向き合い、その土地の個性と、育てる人々の精神を映すシングルオリジン抹茶を選んでいます。私たちの目標は、ただひとつ。
+                - paragraph [ref=f4e33]: SIP JAPAN. DRINK CULTURE.
+                - paragraph [ref=f4e34]: 抹茶は、飲みものではありません。日本という文化を味わう体験です。私たちが届けたいのは、抹茶だけではありません。その一杯の背景にある日本です。
+          - generic [ref=f4e35]:
+            - generic [ref=f4e36]:
+              - generic [ref=f4e37]: Flagship Rotterdam
+              - heading "A New Way to Experience Matcha." [level=3] [ref=f4e38]
+              - generic [ref=f4e39]:
+                - paragraph [ref=f4e40]: オーガニックを中心に、日本の一番茶のみを使用したシングルオリジン抹茶をご用意しています。Wasuiのオリジナルレシピは、それぞれの抹茶が持つ個性に合わせて設計されています。
+                - paragraph [ref=f4e41]: ヘッドフォンをつけ、音に集中し、自分の手で抹茶を点てるひととき。
+                - paragraph [ref=f4e42]: 味、音、所作、空間。そのすべてに日本の本質を残しながら、今の暮らしに自然に届くかたちへ。Wasui Rotterdamでしか出会えない、新しい抹茶体験です。
+            - generic "Wasui Rotterdam movie" [ref=f4e43]
+          - group "Wasui gallery" [ref=f4e44]:
+            - generic [ref=f4e45]:
+              - img "Wasui tea display" [ref=f4e46]
+              - img "Wasui interior and lighting" [ref=f4e47]
+              - img "Matcha being prepared" [ref=f4e48]
+              - img "Wasui matcha products" [ref=f4e49]
+              - img "Matcha utensils" [ref=f4e50]
+              - img "Wasui interior details" [ref=f4e51]
+              - img "Matcha whisk and bowl" [ref=f4e52]
+      - article [ref=f4e13]:
+        - button "Ar magazine" [ref=f4e14] [cursor=pointer]
+      - article [ref=f4e16]:
+        - button "Coffee" [ref=f4e17] [cursor=pointer]
+      - article [ref=f4e19]:
+        - button "Film" [ref=f4e20] [cursor=pointer]

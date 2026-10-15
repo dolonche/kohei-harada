@@ -1,0 +1,229 @@
+- generic [active] [ref=e1]:
+  - link "Vision Realized. Market Ready." [ref=e3] [cursor=pointer]:
+    - /url: /insights/validated_project__open_for_strategic_engagement/
+  - link "Vision Realized. Market Ready." [ref=e5] [cursor=pointer]:
+    - /url: /insights/validated_project__open_for_strategic_engagement/
+  - banner [ref=e6]:
+    - link "Data Room" [ref=e7] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e8]: 00:20:56
+  - main [ref=e9]:
+    - heading [level=1] [ref=e10]:
+      - text: "Explore Carbogatto insights: for"
+      - link "visionary partners" [ref=e11] [cursor=pointer]:
+        - /url: /insights/validated_project__open_for_strategic_engagement/
+      - text: attuned to depth and the exceptional
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - paragraph [ref=e14]: LR Monocoque is the crown of the Carbogatto portfolio, a proven design that blends precision, heritage, and individuality within a class where true luxury had not existed — until now. We collaborate with those whose purpose aligns with ours, across flexible formats and lasting horizons.
+        - link "Explore Strategic Library" [ref=e15] [cursor=pointer]:
+          - /url: /insights
+        - generic [ref=e16]:
+          - link "Light Electric Vehicles" [ref=e17] [cursor=pointer]:
+            - /url: /insights/carbogatto_lr_monocoque_overview/
+          - text: /
+          - link "Techno Art" [ref=e18] [cursor=pointer]:
+            - /url: /insights/carbogatto_techno_art_field/?darkmode
+          - link "Luxury Goods" [ref=e19] [cursor=pointer]:
+            - /url: /insights/luxury_continuum/?darkmode
+          - text: /
+          - link "Reimagined Heritage" [ref=e20] [cursor=pointer]:
+            - /url: /insights/reimagined_heritage/?darkmode
+      - link "Carbogatto LR Monocoque Carbogatto LR Monocoque Carbogatto LR Monocoque" [ref=e21] [cursor=pointer]:
+        - /url: /insights/carbogatto_lr_monocoque_overview/
+        - generic [ref=e22]: Carbogatto LR Monocoque
+        - img "Carbogatto LR Monocoque" [ref=e24]
+        - generic [ref=e25]: Carbogatto LR Monocoque
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: "1."
+        - generic [ref=e29]:
+          - generic [ref=e30]: Progress Update
+          - generic [ref=e31]:
+            - generic [ref=e32]: "Engineering stage:"
+            - generic [ref=e33]: Completed in Q1 2025
+            - generic [ref=e34]: "Project status:"
+            - link "Market Ready" [ref=e35] [cursor=pointer]:
+              - /url: /insights/validated_project__open_for_strategic_engagement/
+            - generic [ref=e36]: "Investment insights:"
+            - link "Limited Access" [ref=e37] [cursor=pointer]:
+              - /url: /insights/investor_dataroom_strategic_insights/
+            - generic [ref=e38]: "Production and supply:"
+            - link "35 factories, 9 countries" [ref=e39] [cursor=pointer]:
+              - /url: /insights/production_and_supply_chain/
+            - generic [ref=e40]: "Market entry:"
+            - link "Flexible" [ref=e41] [cursor=pointer]:
+              - /url: /insights/validated_project__open_for_strategic_engagement/
+            - generic [ref=e42]: (within 7 mo. of initial funding)
+      - generic [ref=e43]:
+        - generic [ref=e44]: "2."
+        - generic [ref=e45]:
+          - generic [ref=e46]: Corporate Overview
+          - generic [ref=e47]:
+            - generic [ref=e48]: "Founded date:"
+            - generic [ref=e49]: "2018"
+            - generic [ref=e50]: "Headquarters:"
+            - generic [ref=e51]: United Arab Emirates
+            - generic [ref=e52]: "Legal structure:"
+            - link "Private Holding (FZ-LLC)" [ref=e53] [cursor=pointer]:
+              - /url: /insights/driveeco_engineering/
+            - generic [ref=e54]: "Capital raised:"
+            - link "$8,4M" [ref=e55] [cursor=pointer]:
+              - /url: /insights/investment_story/
+            - generic [ref=e56]: "Ownership:"
+            - link "Artem F. Khayrullin" [ref=e57] [cursor=pointer]:
+              - /url: /insights/invitation_investors_round_a/
+            - generic [ref=e58]: "Production partner:"
+            - link "Enata Group" [ref=e59] [cursor=pointer]:
+              - /url: /insights/carbogatto_and_enata_group/
+    - figure "— Artēm F. Khayrullin, Founder" [ref=e60]:
+      - blockquote [ref=e61]:
+        - text: “
+        - paragraph [ref=e62]:
+          - text: Carbogatto emerges at the perfect intersection of niche, market, and moment—an opening for those who recognize the rare kairos unfolding
+          - link "... read more" [ref=e63] [cursor=pointer]:
+            - /url: /insights/perfect_moment_for_visionaries/
+    - generic [ref=e65]:
+      - link "Riding the Future – LR Monocoque in Motion Riding the Future – LR Monocoque in Motion Defining the Luxury Standard in L1e-B Micromobility" [ref=e66] [cursor=pointer]:
+        - /url: /insights/defining_the_luxury_standard_in_micromobility/
+        - generic [ref=e67]: Riding the Future – LR Monocoque in Motion
+        - img "Riding the Future – LR Monocoque in Motion" [ref=e68]
+        - generic [ref=e69]: Defining the Luxury Standard in L1e-B Micromobility
+      - link "Engineering Mastery – The Precision of LR Monocoque Engineering Mastery – The Precision of LR Monocoque Forged Through Generations" [ref=e70] [cursor=pointer]:
+        - /url: /insights/chapter_1_forged_through_generations_from_vision_to_form/
+        - generic [ref=e71]: Engineering Mastery – The Precision of LR Monocoque
+        - img "Engineering Mastery – The Precision of LR Monocoque" [ref=e72]
+        - generic [ref=e73]: Forged Through Generations
+    - heading "Vision clarity" [level=2] [ref=e74]
+    - generic [ref=e75]:
+      - generic [ref=e76]: "3."
+      - generic [ref=e77]: Marketing Presence
+      - paragraph [ref=e79]:
+        - text: Targeting a
+        - link "worldwide audience" [ref=e80] [cursor=pointer]:
+          - /url: /insights/target_audience_and_market_strategy/
+        - text: with refined taste and a passion for excellence, Carbogatto combines an
+        - link "offline-to-online sales" [ref=e81] [cursor=pointer]:
+          - /url: /insights/pop_up_experience_in_dubai_mall/
+        - text: strategy, offering limitless possibilities for style personalization. This is complemented by door-to-door delivery and expert maintenance via the
+        - link "Partner Service Center" [ref=e82] [cursor=pointer]:
+          - /url: /insights/partner_service_program/
+        - text: (PSC) network.
+    - generic [ref=e83]:
+      - link "01. Carbogatto & Formula 1 – A Fusion of Precision and Performance Carbogatto & Formula 1" [ref=e84] [cursor=pointer]:
+        - /url: /insights/carbogatto_and_formula1/
+        - generic [ref=e85]: "01."
+        - paragraph [ref=e86]: Carbogatto & Formula 1 – A Fusion of Precision and Performance
+        - img "Carbogatto & Formula 1" [ref=e87]
+      - 'link "02. Carbogatto and Classic Car Shows: A Tribute to Timeless Elegance Carbogatto and Classic Car Shows" [ref=e88] [cursor=pointer]':
+        - /url: /insights/carbogatto_and_classic_car_shows/
+        - generic [ref=e89]: "02."
+        - paragraph [ref=e90]: "Carbogatto and Classic Car Shows: A Tribute to Timeless Elegance"
+        - img "Carbogatto and Classic Car Shows" [ref=e91]
+      - link "03. Carbogatto Pop-Up Experience in Dubai Mall Carbogatto Pop-Up Experience" [ref=e92] [cursor=pointer]:
+        - /url: /insights/pop_up_experience_in_dubai_mall/
+        - generic [ref=e93]: "03."
+        - paragraph [ref=e94]: Carbogatto Pop-Up Experience in Dubai Mall
+        - img "Carbogatto Pop-Up Experience" [ref=e95]
+    - heading "Roles where voices matter" [level=2] [ref=e96]
+    - generic [ref=e97]:
+      - generic [ref=e98]: "4."
+      - generic [ref=e99]: Open Positions
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - link "Chief Marketing Officer" [ref=e102] [cursor=pointer]:
+          - /url: /vacancy/chief_marketing_officer/
+        - link "Open to early engagement | Dubai" [ref=e103] [cursor=pointer]:
+          - /url: /vacancy/chief_marketing_officer/
+      - generic [ref=e104]:
+        - link "Business Development Manager" [ref=e105] [cursor=pointer]:
+          - /url: /vacancy/business_development_manager/
+        - link "Open to early engagement | Dubai" [ref=e106] [cursor=pointer]:
+          - /url: /vacancy/business_development_manager/
+      - generic [ref=e107]:
+        - link "Supply Chain Manager" [ref=e108] [cursor=pointer]:
+          - /url: /vacancy/supply_chain_manager/
+        - link "Full Time | Dubai" [ref=e109] [cursor=pointer]:
+          - /url: /vacancy/supply_chain_manager/
+      - link "View all [5]" [ref=e110] [cursor=pointer]:
+        - /url: "#"
+    - heading "Get in touch" [level=2] [ref=e111]
+    - generic [ref=e112]:
+      - generic [ref=e113]: "5."
+      - generic [ref=e114]: Contact Details
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - generic [ref=e117]: "Requests:"
+        - link "dataroom@carobgatto.com" [ref=e118] [cursor=pointer]:
+          - /url: mailto:dataroom@carobgatto.com
+      - generic [ref=e119]:
+        - generic [ref=e120]: "Phone: Visiting:"
+        - generic [ref=e121]: "+971 58 503 4223 Office RL12, 31st floor, Prime Tower, Business Bay, Dubai, UAE, P.O.Box: 112037"
+      - generic [ref=e122]:
+        - generic [ref=e123]: "Legal:"
+        - generic [ref=e124]:
+          - link "Privacy Policy" [ref=e125] [cursor=pointer]:
+            - /url: /documents/privacy_policy/
+          - link "Terms Of Use" [ref=e126] [cursor=pointer]:
+            - /url: /documents/terms_and_conditions/
+      - generic [ref=e127]:
+        - generic [ref=e128]: "Follow us:"
+        - generic [ref=e129]:
+          - link "Youtube" [ref=e130] [cursor=pointer]:
+            - /url: https://www.youtube.com/@carbogatto
+          - text: /
+          - link "Instagram" [ref=e131] [cursor=pointer]:
+            - /url: https://www.instagram.com/carbogatto
+          - text: /
+          - link "Facebook" [ref=e132] [cursor=pointer]:
+            - /url: https://www.facebook.com/carbogatto
+          - text: /
+          - link "Threads" [ref=e133] [cursor=pointer]:
+            - /url: https://www.threads.net/@carbogatto?igshid=NTc4MTIwNjQ2YQ==
+          - text: /
+          - link "X" [ref=e134] [cursor=pointer]:
+            - /url: https://x.com/LR_Monocoque
+          - text: /
+          - link "LinkedIn" [ref=e135] [cursor=pointer]:
+            - /url: https://linkedin.com/company/carbogatto
+          - text: /
+          - link "Pinterest" [ref=e136] [cursor=pointer]:
+            - /url: https://www.pinterest.com/carbogatto/
+  - contentinfo [ref=e137]:
+    - generic [ref=e138]:
+      - link [ref=e139] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e142]:
+        - link [ref=e143] [cursor=pointer]:
+          - /url: /insights/
+          - generic [ref=e144]:
+            - generic: S
+            - generic: t
+            - generic: r
+            - generic: a
+            - generic: t
+            - generic: e
+            - generic: g
+            - generic: i
+            - generic: c
+            - generic: I
+            - generic: "n"
+            - generic: s
+            - generic: i
+            - generic: g
+            - generic: h
+            - generic: t
+            - generic: s
+        - button "E n q u i r y f o r m s" [ref=e145] [cursor=pointer]:
+          - generic: E
+          - generic: "n"
+          - generic: q
+          - generic: u
+          - generic: i
+          - generic: r
+          - generic: "y"
+          - generic: f
+          - generic: o
+          - generic: r
+          - generic: m
+          - generic: s

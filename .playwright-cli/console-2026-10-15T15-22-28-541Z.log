@@ -1,0 +1,18 @@
+[    8597ms] [LOG] DARK_WIPE_EVENT @ :1
+[    8615ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[    8678ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47832/_astro/hoisted.CDhQ9-SE.js:0
+[   46216ms] [LOG] DARK_WIPE_EVENT @ :1
+[   46216ms] [LOG] PAGE_REVEAL true @ :1
+[   58350ms] [LOG] PAGE_SWAP true @ :1
+[   58381ms] [LOG] DARK_WIPE_EVENT @ :1
+[   58382ms] [LOG] PAGE_REVEAL false @ :1
+[   58404ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[   58424ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47832/_astro/hoisted.CDhQ9-SE.js:0
+[   88251ms] [LOG] PAGE_SWAP true @ :1
+[   88283ms] [LOG] DARK_WIPE_EVENT @ :1
+[   88284ms] [LOG] PAGE_REVEAL false @ :1
+[   88294ms] Transition was aborted because of invalid state. ViewTransition opt-in disabled
+[   90210ms] [LOG] PAGE_SWAP true @ :1
+[   90232ms] [LOG] DARK_WIPE_EVENT @ :1
+[   90233ms] [LOG] PAGE_REVEAL true @ :1
+[   90260ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ http://127.0.0.1:47832/_astro/hoisted.CDhQ9-SE.js:0
