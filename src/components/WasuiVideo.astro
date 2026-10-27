@@ -1,0 +1,28 @@
+---
+interface Props {
+  className?: string;
+  width?: number;
+  height?: number;
+}
+const { className, width = 347, height = 616, ...attributes } = Astro.props;
+---
+
+<video
+  {...attributes}
+  class={className}
+  data-project-video
+  src="/video/wasui.mp4"
+  poster="/wasui-poster.webp"
+  width={width}
+  height={height}
+  preload="metadata"
+  muted
+  playsinline
+  loop
+  aria-label="Wasui Rotterdam movie"
+></video>
+
+<script>
+  import { observeProjectVideo } from "../scripts/project-media";
+  document.querySelectorAll<HTMLVideoElement>("[data-project-video]").forEach(observeProjectVideo);
+</script>

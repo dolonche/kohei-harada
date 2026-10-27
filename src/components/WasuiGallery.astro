@@ -1,0 +1,46 @@
+---
+import Image from "astro/components/Image.astro";
+import Gallery1 from "../assets/images/wasui-gallery-1.webp";
+import Gallery2 from "../assets/images/wasui-gallery-2.webp";
+import Gallery3 from "../assets/images/wasui-gallery-3.webp";
+import Gallery4 from "../assets/images/wasui-gallery-4.webp";
+import Gallery5 from "../assets/images/wasui-gallery-5.webp";
+import Gallery6 from "../assets/images/wasui-gallery-6.webp";
+import Gallery7 from "../assets/images/wasui-gallery-7.webp";
+
+interface Props { className?: string; deferred?: boolean; }
+const { className, deferred = false, ...attributes } = Astro.props;
+const gallery = [
+  { src: Gallery1, alt: "Wasui tea display" },
+  { src: Gallery2, alt: "Wasui interior and lighting" },
+  { src: Gallery3, alt: "Matcha being prepared" },
+  { src: Gallery4, alt: "Wasui matcha products" },
+  { src: Gallery5, alt: "Matcha utensils" },
+  { src: Gallery6, alt: "Wasui interior details" },
+  { src: Gallery7, alt: "Matcha whisk and bowl" },
+];
+---
+
+<div {...attributes} class:list={["wasui-gallery", className]} role="group" aria-label="Wasui gallery">
+  <div class="wasui-gallery__track" data-future-slider={deferred || undefined} data-project-slider={!deferred || undefined}>
+    {gallery.map(({ src, alt }) => <Image src={src} alt={alt} width={800} height={1000} class="wasui-gallery__image" />)}
+  </div>
+</div>
+
+<style lang="scss">
+  .wasui-gallery {
+    width: 100%;
+    overflow: hidden;
+    &__track { display: flex; gap: 15px; width: max-content; will-change: transform; }
+    &__image { display: block; width: 253px; height: 316px; flex: none; object-fit: cover; }
+    @media (max-width: 767.9px) {
+      &__track { gap: 11px; }
+      &__image { width: 170px; height: 213px; }
+    }
+  }
+</style>
+
+<script>
+  import { initializeProjectSlider } from "../scripts/project-media";
+  document.querySelectorAll<HTMLElement>("[data-project-slider]").forEach(initializeProjectSlider);
+</script>

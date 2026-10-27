@@ -1,0 +1,287 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "./Header.astro";
+import Button from "./Button.astro";
+import Image from "astro/components/Image.astro";
+import WasuiLogo from "../assets/images/wasui-logo.webp";
+import Arrow from "../assets/images/wit-bv-arrow.svg";
+import WasuiVideo from "./WasuiVideo.astro";
+import WasuiGallery from "./WasuiGallery.astro";
+
+interface Props { lang: "en" | "jp"; }
+const { lang } = Astro.props;
+const isJapanese = lang === "jp";
+const home = isJapanese ? "/jp/" : "/";
+const copy = isJapanese ? {
+  introTitle: ["国境を越えて、", "文化が根づくかたちを", "つくる。"],
+  intro: [
+    ["日本から世界へ。世界から日本へ。", "モノ、文化、イベントの可能性を見つけ、", "その土地に届くブランドと体験へ。"],
+    ["WIT B.V.は、構想からブランディング、流通、PRまでを", "一つにつなぐクリエイティブディストリビューターです。"],
+  ],
+  roleTitle: ["届け方から、つくる。"],
+  role: ["いいものは、国境を越えるだけでは伝わらない。", "言葉、習慣、美意識、楽しみ方。", "土地が変われば、価値の伝わり方も変わります。", "私たちは、その本質を守りながら、", "現地の人が共感し、手に取り、参加したくなるかたちをつくる。", "ローカライズを、クリエイティブの仕事として捉えています。"],
+  approachSubtitle: ["ゼロから構想し、", "その土地の日常になるまで。"],
+  steps: [
+    { label: "DISCOVER", title: "価値を見つけ、構想する。", body: "文化の背景と市場を読み、事業・プロジェクトの核を定める。" },
+    { label: "CREATE", title: "ブランドと体験をつくる。", body: "コンセプト、言葉、デザイン、商品やイベントを一貫して設計する。" },
+    { label: "CONNECT", title: "届け、関係を育てる。", body: "現地に合う流通とPR、人が出会う場をつなぎ、定着へと導く。" },
+  ],
+  physicalTitle: ["アイデアが", "あふれる時代に、", "実感できる接点を。"],
+  physical: ["AIによって、発想も表現も加速していく。", "その先で価値を生むのは、手に取ること、", "同じ場に集まること、人と出会うこと。", "私たちはフィジカルな体験を、日本と世界をつなぐ橋にしていきます。"],
+  projectTitle: ["自らつくる。その経験を、次の橋へ。"],
+  project: ["WIT B.V.が生み出したwasui。", "私たち自身も、ゼロからプロジェクトをつくる側にいます。", "その経験を、日本と世界の新たなつながりへ広げていきます。"],
+  direction: ["事業の構想からブランドづくり、プロジェクトの立ち上げまで。", "クリエイティブディレクションを、文化が届く仕組みへ。"],
+} : {
+  introTitle: ["Across borders.", "Into everyday life."],
+  intro: [
+    ["From Japan to the world. From the world to Japan. We bring products,", "culture and events across borders,", "creating brands and experiences that resonate locally."],
+    ["WIT B.V. is a Creative Distributor.", "We connect ideas, branding, distribution and PR", "to help culture take root in new places."],
+  ],
+  roleTitle: ["We create", "the way in."],
+  role: ["Crossing a border is only the beginning.", "Language, customs, aesthetics and ways of gathering:", "every place has its own way of finding meaning.", "We preserve what makes something distinctive,", "while shaping how people connect with it, use it and take part.", "For us, localization is an act of creation."],
+  approachSubtitle: ["From the first idea to a place in local life."],
+  steps: [
+    { label: "DISCOVER", title: "Find the potential. Shape the idea.", body: "Understand the culture and the market. Define the purpose of the project." },
+    { label: "CREATE", title: "Build the brand. Create the experience.", body: "Bring concept, language, design, products and events into one coherent vision." },
+    { label: "CONNECT", title: "Make connections. Build lasting relationships.", body: "Connect distribution, PR and real-world encounters to build a local presence." },
+  ],
+  physicalTitle: ["In a world of ideas,", "make it tangible."],
+  physical: ["AI accelerates ideas and expression.", "What gives them meaning is lived experience:", "holding something, sharing a space, meeting people.", "We create physical experiences that bridge Japan and the world."],
+  projectTitle: ["We create our own.", "Then build what’s next."],
+  project: ["wasui is a project created by WIT B.V.", "We know what it means to build something from the ground up.", "We bring that experience to new connections between Japan and the world."],
+  direction: ["Creative direction spanning business ideas,", "brand building and new ventures.", "Turning creative vision into ways for culture to travel and take root."],
+};
+---
+
+<Layout
+  title="WIT B.V. | KOHEI HARADA"
+  descr={isJapanese ? "WIT B.V.は、日本と世界をつなぐクリエイティブディストリビューターです。構想からブランディング、流通、PRまで、文化が根づくブランドと体験をつくります。" : "WIT B.V. is a Creative Distributor connecting Japan and the world through products, culture and events, from brand building to distribution and PR."}
+  keywords="WIT B.V., KOHEI HARADA, Creative Distributor, Japan, Rotterdam, Wasui, branding, distribution, PR"
+  canonicalPath={isJapanese ? "/jp/wit-bv/" : "/wit-bv/"}
+  alternatePaths={{ en: "/wit-bv/", ja: "/jp/wit-bv/" }}
+>
+  <Header alternateHref={isJapanese ? "/wit-bv/" : "/jp/wit-bv/"} />
+  <main class:list={["wit", { "wit--jp": isJapanese }]}>
+    <section class="container wit__container wit__hero" aria-labelledby="wit-title">
+      <p class="wit__eyebrow wit__connection"><span>JAPAN</span><Image src={Arrow} alt="to and from" /><span>THE WORLD</span></p>
+      <h1 id="wit-title" class="wit__title font-title">Creative <span>Distributor.</span></h1>
+      <div class="wit__columns wit__intro">
+        <div>
+          <h2 class:list={["wit__heading", "font-title", { "wit__heading--ja": isJapanese }]}>{copy.introTitle.map((line) => <span>{line}</span>)}</h2>
+          <p class="wit__eyebrow wit__categories">PRODUCTS / CULTURE / EVENTS</p>
+        </div>
+        <div class="wit__copy wit__intro-copy font-text-content">
+          {copy.intro.map((lines) => <p>{lines.map((line) => <span class="wit__line">{line}{!isJapanese && " "}</span>)}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <div class="container wit__container">
+      <section class="wit__columns wit__section wit__role" aria-labelledby="wit-role-title">
+        <div>
+          <p class="wit__eyebrow">01 <span class="wit__separator">|</span> OUR ROLE</p>
+          <h2 id="wit-role-title" class:list={["wit__heading", "font-title", { "wit__heading--ja": isJapanese }]}>{copy.roleTitle.map((line) => <span>{line}</span>)}</h2>
+        </div>
+        <p class="wit__copy font-text-content">{copy.role.map((line) => <span class="wit__line">{line}{!isJapanese && " "}</span>)}</p>
+      </section>
+
+      <section class="wit__columns wit__section wit__approach" aria-labelledby="wit-approach-title">
+        <div>
+          <p class="wit__eyebrow">02 <span class="wit__separator">|</span> OUR APPROACH</p>
+          <h2 id="wit-approach-title" class="wit__heading font-title"><span>From zero.</span><span>To belonging.</span></h2>
+          <p class:list={["wit__subtitle", "font-title", { "wit__heading--ja": isJapanese }]}>{copy.approachSubtitle.map((line) => <span>{line}</span>)}</p>
+        </div>
+        <ol class="wit__steps">
+          {copy.steps.map((step) => <li class="wit__step">
+            <p class="wit__eyebrow">{step.label}</p>
+            <h3 class="wit__step-title font-text-content">{step.title}</h3>
+            <p class="wit__copy font-text-content">{step.body}</p>
+          </li>)}
+        </ol>
+      </section>
+
+      <section class="wit__columns wit__section wit__physical" aria-labelledby="wit-physical-title">
+        <div>
+          <p class="wit__eyebrow">03 <span class="wit__separator">|</span> WHY PHYSICAL</p>
+          <h2 id="wit-physical-title" class:list={["wit__heading", "font-title", { "wit__heading--ja": isJapanese }]}>{copy.physicalTitle.map((line) => <span>{line}</span>)}</h2>
+        </div>
+        <p class="wit__copy font-text-content">{copy.physical.map((line) => <span class="wit__line">{line}{!isJapanese && " "}</span>)}</p>
+      </section>
+    </div>
+
+    <section class="wit__project" aria-labelledby="wit-project-label">
+      <div class="container wit__container wit__project-columns">
+        <div class="wit__project-copy">
+          <h2 id="wit-project-label" class="wit__eyebrow">04 <span class="wit__separator">|</span> OWN PROJECT</h2>
+          <Image src={WasuiLogo} alt="Wasui — Japanese matcha" width={882} height={570} class="wit__project-logo" />
+          <h3 class:list={["wit__project-title", "font-title", { "wit__heading--ja": isJapanese }]}>{copy.projectTitle.map((line) => <span>{line}{!isJapanese && " "}</span>)}</h3>
+          <p class="wit__copy font-text-content">{copy.project.map((line) => <span class="wit__line">{line}{!isJapanese && " "}</span>)}</p>
+        </div>
+        <WasuiVideo className="wit__project-video" width={262} height={465} />
+      </div>
+      <WasuiGallery className="wit__gallery" />
+    </section>
+
+    <section class="container wit__container wit__direction" aria-labelledby="wit-direction-title">
+      <p class="wit__eyebrow">05 <span class="wit__separator">|</span> CREATIVE DIRECTION</p>
+      <h2 id="wit-direction-title" class="wit__title font-title">KOHEI <span>HARADA</span></h2>
+      <p class="wit__copy font-text-content">{copy.direction.map((line) => <span class="wit__line">{line}{!isJapanese && " "}</span>)}</p>
+    </section>
+  </main>
+  <footer class="wit-footer">
+    <div class="container wit__container">
+      <h2 class="wit-footer__title font-title"><span>Let’s create</span> <span>the next</span> <span>connection.</span></h2>
+      <div class="wit-footer__bottom">
+        <p class="wit__eyebrow wit-footer__company">WIT B.V.</p>
+        <div class="wit-footer__actions">
+          <Button href={`${home}contact/`} content="Contact" invert />
+          <Button href={home} content="Index" invert />
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style lang="scss">
+  .wit {
+    --wit-background: #efefef;
+    --wit-project-background: #fffef7;
+    --wit-project-color: #263b11;
+    --wit-border: #ccc;
+    color: var(--fontColor);
+    background: var(--wit-background);
+
+    &__container { width: 100%; max-width: 1170px; }
+    &__columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    &__eyebrow { font-size: 16px; font-weight: 400; line-height: 19px; }
+    &__separator { font-family: "Roboto", sans-serif; }
+    &__connection { display: flex; align-items: center; gap: 11px; }
+    &__title { font-size: 80px; font-weight: 400; line-height: 96px; }
+    &__heading { font-size: 50px; font-weight: 400; line-height: 50px; letter-spacing: 0.05em; }
+    &__heading span, &__subtitle span { display: block; }
+    &__heading--ja { font-family: "WIT Noto Serif JP", "Yu Mincho", serif; font-weight: 500; }
+    &__heading.wit__heading--ja { font-size: 40px; line-height: 55px; letter-spacing: 0; }
+    &__copy { font-size: 16px; line-height: 24px; }
+    &__line { display: block; }
+    &--jp &__copy, &--jp &__step-title { font-family: "WIT Noto Sans JP", "Roboto", sans-serif; }
+
+    &__hero { padding-top: 121px; }
+    &__hero &__title { margin-top: 11px; }
+    &__intro { margin-top: 54px; padding-bottom: 96px; border-bottom: 1px solid var(--wit-border); }
+    &__intro-copy { padding-top: 6px; }
+    &__intro-copy, &__columns > .wit__copy, &__step > .wit__copy { max-width: 520px; }
+    &__intro-copy p + p { margin-top: 16px; }
+    &__categories { margin-top: 78px; }
+    &--jp &__categories { margin-top: 13px; }
+    &__section { border-bottom: 1px solid var(--wit-border); }
+    &__role { padding-block: 83px 71px; }
+    &__role &__heading, &__approach &__heading { margin-top: 19px; }
+    &__approach { padding-block: 99px 100px; }
+    &__subtitle { margin-top: 19px; font-size: 20px; line-height: 24px; }
+    &__steps { list-style: none; margin: 0; padding: 0; }
+    &__step { padding-block: 34px; border-bottom: 1px solid var(--wit-border); }
+    &__step:first-child { padding-top: 0; }
+    &__step-title { margin-top: 6px; font-size: 20px; font-weight: 500; line-height: 24px; }
+    &__step &__copy { margin-top: 6px; }
+    &__physical { padding-block: 83px 114px; border-bottom: 0; }
+    &__physical &__heading { margin-top: 13px; }
+
+    &__project { padding-block: 100px 106px; color: var(--wit-project-color); background: var(--wit-project-background); }
+    &__project-columns { display: grid; grid-template-columns: minmax(0, 1fr) 262px; column-gap: 80px; }
+    &__project-copy { padding-top: 4px; }
+    &__project-logo { display: block; width: 365px; max-width: 100%; height: auto; margin-top: 30px; margin-left: -5px; }
+    &__project-title { margin-top: 43px; font-size: 24px; font-weight: 400; line-height: 24px; }
+    &__project-title.wit__heading--ja { font-size: 20px; font-weight: 500; }
+    &__project-copy > .wit__copy { margin-top: 17px; }
+    &__project-video { display: block; width: 262px; height: 465px; object-fit: cover; }
+    &__gallery { --slider-start-offset: 289; margin-top: 79px; }
+    &__direction { padding-top: 100px; padding-bottom: 91px; }
+    &__direction &__title { margin-top: 19px; line-height: 80px; }
+    &__direction &__copy { margin-top: 17px; padding-left: 6px; }
+  }
+  .wit-footer {
+    padding-block: 106px 77px;
+    color: #efefef;
+    background: var(--fontColor);
+    &__title { font-size: 80px; font-weight: 400; line-height: 60px; text-align: center; }
+    &__bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 41px; }
+    &__actions { display: flex; gap: 15px; }
+    &__actions :global(.button) { min-width: 158px; height: 49px; color: inherit; border-color: currentColor; }
+  }
+  @font-face {
+    font-family: "WIT Noto Serif JP";
+    src: url("/fonts/wit-noto-serif-500.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "WIT Noto Sans JP";
+    src: url("/fonts/wit-noto-sans-400.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "WIT Noto Sans JP";
+    src: url("/fonts/wit-noto-sans-500.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+  @media (max-width: 767.9px) {
+    .wit {
+      &__container { padding-inline: clamp(24px, 10.465vw, 45px); }
+      &__columns { display: flex; flex-direction: column; }
+      &__title { font-size: 60px; line-height: 60px; }
+      &__title span { display: block; }
+      &__heading { font-size: 36px; line-height: 40px; }
+      &__heading.wit__heading--ja { font-size: 30px; line-height: 44px; }
+      &__line { display: inline; }
+      &__hero { padding-top: 84px; }
+      &__hero &__title { margin-top: 10px; }
+      &__intro { margin-top: 30px; padding-bottom: 34px; }
+      &__categories, &--jp &__categories { margin-top: 22px; }
+      &__intro-copy { padding-top: 0; margin-top: 22px; }
+      &__intro-copy p + p { margin-top: 20px; }
+      &__role { padding-block: 39px 33px; }
+      &__role &__heading, &__approach &__heading { margin-top: 11px; }
+      &__role > .wit__copy, &__physical > .wit__copy { margin-top: 22px; }
+      &__approach { padding-block: 39px 40px; }
+      &__subtitle { margin-top: 12px; }
+      &__steps { margin-top: 35px; margin-left: 30px; }
+      &__step, &__step:first-child { padding-block: 30px; border-top: 1px solid var(--wit-border); border-bottom: 0; }
+      &__step:last-child { padding-bottom: 0; }
+      &__step-title { margin-top: 11px; }
+      &__step &__copy { margin-top: 17px; }
+      &__step:first-child &__copy { margin-top: 11px; }
+      &__physical { padding-block: 39px 45px; }
+      &__physical &__heading { margin-top: 11px; }
+      &__project { padding-block: 39px 40px; }
+      &__project-columns { display: flex; flex-direction: column; }
+      &__project-copy { padding-top: 0; }
+      &__project-logo { width: 223px; margin-top: 29px; margin-left: 0; }
+      &__project-title, &__project-title.wit__heading--ja { margin-top: 28px; font-size: 20px; line-height: 24px; }
+      &__project-title span { display: block; }
+      &__project-video { align-self: center; width: min(347px, calc(100vw - 48px)); height: auto; aspect-ratio: 347 / 616; margin-top: 29px; }
+      &__gallery { --slider-start-offset: 410; margin-top: 30px; }
+      &__direction { padding-top: 40px; padding-bottom: 33px; }
+      &__direction &__title { margin-top: 31px; line-height: 60px; }
+      &__direction &__copy { margin-top: 20px; padding-left: 0; }
+    }
+    .wit-footer {
+      padding-block: 41px 37px;
+      &__title { font-size: 60px; line-height: 60px; }
+      &__title span { display: block; }
+      &__bottom { flex-direction: column; align-items: stretch; margin-top: 40px; }
+      &__actions { order: -1; justify-content: center; }
+      &__actions :global(.button) { min-width: 0; width: 158px; }
+      &__company { margin-top: 30px; text-align: right; }
+    }
+  }
+  @media (max-width: 389px) {
+    .wit__title, .wit-footer__title { font-size: 50px; line-height: 54px; }
+    .wit__heading { font-size: 30px; line-height: 36px; }
+    .wit__subtitle { font-size: 18px; }
+  }
+</style>

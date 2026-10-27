@@ -3,8 +3,10 @@ import Logo from "../assets/logo.svg";
 import Image from "astro/components/Image.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { defaultLang } from "../i18n/ui";
+interface Props { alternateHref?: string; }
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const { alternateHref } = Astro.props;
 ---
 
 <header class="page-header">
@@ -41,11 +43,14 @@ const t = useTranslations(lang);
           <a href={lang === defaultLang ? "/own-projects/" : "/jp/own-projects/"} class="main-nav__list-item-link">Own Projects</a>
         </li>
         <li class="main-nav__list-item">
+          <a href={lang === defaultLang ? "/wit-bv/" : "/jp/wit-bv/"} class="main-nav__list-item-link">WIT B.V.</a>
+        </li>
+        <li class="main-nav__list-item">
           <a href={lang === defaultLang ? "/contact/" : "/jp/contact/"} class="main-nav__list-item-link">Contact</a>
         </li>
       </ul>
     </nav>
-    <a href={lang === "en" ? "/jp/" : "/"} class="language-selector"
+    <a href={alternateHref ?? (lang === "en" ? "/jp/" : "/")} class="language-selector"
       >{t("lang")}</a
     >
   </div>
@@ -100,6 +105,12 @@ const t = useTranslations(lang);
         }
       }
     }
+  }
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .page-header__logo { flex-shrink: 0; }
+    .page-header__actions { column-gap: 20px; }
+    .main-nav__list { column-gap: clamp(14px, calc(4vw - 16px), 28px); font-size: 14px; }
+    .main-nav__list-item-link { white-space: nowrap; }
   }
   @media (max-width: 767.9px) {
     :root {
