@@ -63,12 +63,17 @@ export function initializeProjectSlider(track: HTMLElement) {
   if (!originals.length) return;
   track.dataset.sliderReady = "true";
 
-  originals.forEach((slide) => {
-    const duplicate = slide.cloneNode(true) as HTMLElement;
-    duplicate.setAttribute("aria-hidden", "true");
-    if (duplicate instanceof HTMLImageElement) duplicate.alt = "";
-    track.appendChild(duplicate);
-  });
+  let cycleCount = 1;
+  function appendCycle() {
+    originals.forEach((slide) => {
+      const duplicate = slide.cloneNode(true) as HTMLElement;
+      duplicate.setAttribute("aria-hidden", "true");
+      if (duplicate instanceof HTMLImageElement) duplicate.alt = "";
+      track.appendChild(duplicate);
+    });
+    cycleCount += 1;
+  }
+  appendCycle();
 
   const state: SliderState = { visible: false };
   sliders.add(state);
@@ -78,7 +83,17 @@ export function initializeProjectSlider(track: HTMLElement) {
     const firstCopy = track.children[originals.length] as HTMLElement;
     const cycleWidth = firstCopy.offsetLeft - originals[0].offsetLeft;
     if (cycleWidth <= 0) return;
-    const initialOffset = parseFloat(getComputedStyle(track).getPropertyValue("--slider-start-offset")) || 0;
+    const trackStyle = getComputedStyle(track);
+    const gap = parseFloat(trackStyle.columnGap) || 0;
+    // Cover the viewport even after the track has moved an entire original cycle.
+    const requiredCycles = Math.max(2, Math.ceil((viewport.clientWidth + gap) / cycleWidth) + 1);
+    while (cycleCount < requiredCycles) appendCycle();
+    while (cycleCount > requiredCycles) {
+      for (let index = 0; index < originals.length; index += 1) track.lastElementChild?.remove();
+      cycleCount -= 1;
+    }
+
+    const initialOffset = parseFloat(trackStyle.getPropertyValue("--slider-start-offset")) || 0;
     const phase = state.tween?.progress() ?? initialOffset / cycleWidth;
     state.tween?.kill();
     state.tween = gsap.fromTo(track, { x: 0 }, {
