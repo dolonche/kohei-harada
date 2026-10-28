@@ -14,21 +14,27 @@ const { alternateHref } = Astro.props;
     <Image src={Logo} width={62} height={30} alt="Kohei Korada" />
   </a>
   <div class="page-header__actions">
-    <div class="page-header__toggle">
-      <div class="page-header__toggle-item page-header__toggle-item--left">
-      </div>
-      <div class="page-header__toggle-item page-header__toggle-item--right">
-      </div>
-      <div
+    <button
+      type="button"
+      class="page-header__toggle"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      aria-label={lang === "jp" ? "メニューを開く" : "Open menu"}
+    >
+      <span class="page-header__toggle-item page-header__toggle-item--left">
+      </span>
+      <span class="page-header__toggle-item page-header__toggle-item--right">
+      </span>
+      <span
         class="page-header__toggle-item-active page-header__toggle-item-active--left"
       >
-      </div>
-      <div
+      </span>
+      <span
         class="page-header__toggle-item-active page-header__toggle-item-active--right"
       >
-      </div>
-    </div>
-    <nav class="main-nav">
+      </span>
+    </button>
+    <nav class="main-nav" id="main-nav">
       <ul class="main-nav__list">
         <li class="main-nav__list-item">
           <a href={lang === defaultLang ? "/about/" : "/jp/about/"} class="main-nav__list-item-link">About</a>
@@ -244,45 +250,52 @@ const { alternateHref } = Astro.props;
 </style>
 <script>
   import gsap from "gsap";
-  const pageHeader = document.querySelector(".page-header");
-  const headerToggle = pageHeader.querySelector(".page-header__toggle");
-  headerToggle.addEventListener("click", (e) => {
-    e.target.classList.toggle("page-header__toggle--active");
-    pageHeader.classList.toggle("page-header--active");
-    if (e.target.classList.contains("page-header__toggle--active")) {
-      const headerTl = new gsap.timeline();
-      headerTl
-        .to(".page-header", 0.6, {
+  const pageHeader = document.querySelector<HTMLElement>(".page-header");
+  const headerToggle = pageHeader?.querySelector<HTMLButtonElement>(".page-header__toggle");
+  const navigation = pageHeader?.querySelector<HTMLElement>(".main-nav");
+
+  if (pageHeader && headerToggle && navigation) {
+    const isJapanese = document.documentElement.lang === "ja";
+    const media = gsap.matchMedia(pageHeader);
+    media.add("(max-width: 767.9px)", () => {
+      let isOpen = false;
+      navigation.inert = true;
+      const menuAnimation = gsap.timeline({ paused: true })
+        .to(pageHeader, {
+          duration: 0.6,
           "--overlayHeight": "100%",
           ease: "power2.inOut",
         })
-        .to(
-          ".main-nav__list-item",
-          0.3,
-          {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            stagger: 0.1,
-            ease: "power2.inOut",
-          },
-          "-=0.4"
-        );
-    } else {
-      const headerTl = new gsap.timeline();
-      headerTl
-        .to(".main-nav__list-item", 0.3, {
-          clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-          stagger: -0.1,
+        .to(navigation.querySelectorAll(".main-nav__list-item"), {
+          duration: 0.3,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          stagger: 0.1,
           ease: "power2.inOut",
-        })
-        .to(
-          ".page-header",
-          0.6,
-          {
-            "--overlayHeight": "0%",
-            ease: "power2.inOut",
-          },
-          "-=0.4"
-        );
-    }
-  });
+        }, "-=0.4");
+
+      const setOpen = (open: boolean) => {
+        isOpen = open;
+        headerToggle.classList.toggle("page-header__toggle--active", open);
+        pageHeader.classList.toggle("page-header--active", open);
+        headerToggle.setAttribute("aria-expanded", String(open));
+        headerToggle.setAttribute("aria-label", isJapanese
+          ? (open ? "メニューを閉じる" : "メニューを開く")
+          : (open ? "Close menu" : "Open menu"));
+        navigation.inert = !open;
+      };
+      const toggleMenu = () => {
+        setOpen(!isOpen);
+        // Reversing the same timeline cancels every pending staggered reveal.
+        if (isOpen) menuAnimation.play();
+        else menuAnimation.reverse();
+      };
+      headerToggle.addEventListener("click", toggleMenu);
+
+      return () => {
+        headerToggle.removeEventListener("click", toggleMenu);
+        setOpen(false);
+        navigation.inert = false;
+      };
+    });
+  }
 </script>
